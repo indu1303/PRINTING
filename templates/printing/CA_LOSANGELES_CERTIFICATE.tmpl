@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>LA Cert</title>
+<style type="text/css">
+<!--
+body {
+	font-size:16px; font-family:Arial, Helvetica, sans-serif;
+	line-height:20px;
+}
+.line1 {background:#000000; height:1px; margin-right:20px;}
+-->
+</style>
+</head>
+
+<body>
+<table width="700" border="1" cellpadding="12" cellspacing="0" bgcolor="#000000">
+  <tr>
+    <td colspan="4" bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="23%"><img src="http://www.idrivesafely.com/newsite/images/comp/logo_sale.gif" width="89" height="88" /></td>
+        <td width="77%">I DRIVE SAFELY (TVS10016)<br />
+          283 4th st Unit 301<br />
+          Oakland, CA 94607<br />
+          Phone Number 760.692.3222<br />
+          Fax Number 760.692.3226<br />
+          TDD (800) 735-2929</td>
+      </tr>
+    </table></td>
+    <td width="157" bgcolor="#FFFFFF"><strong>Certificate Number:</strong><br />
+    <TMPL_VAR NAME=CERTIFICATE_NUMBER> </td>
+  </tr>
+  <tr>
+    <td height="105" colspan="5" bgcolor="#FFFFFF">This Certifies that <span style="font-weight: bold;"><TMPL_VAR NAME=STUDENT_NAME></span> has completed on <span style="font-weight: bold;"><TMPL_VAR NAME=COMPLETION_DATE></span> a Los Angeles Superior Court-approved <span style="font-weight: bold;"><TMPL_VAR NAME=COURSE_DESC></span> HSTS course, and has correctly answered <span style="font-weight: bold;"><TMPL_VAR NAME=FINAL_SCORE>%</span> of the questions on the final exam for this course.</td>
+  </tr>
+  <tr>
+    <td width="121" bgcolor="#FFFFFF"><strong>Student's<br />
+  Driver's Lic.<br />
+    Number:</strong></td>
+    <td colspan="2" bgcolor="#FFFFFF"><TMPL_VAR NAME=DRIVERS_LICENSE> </td>
+    <td width="146" bgcolor="#FFFFFF"><strong>Student's Date of<br />
+    Birth:</strong></td>
+    <td bgcolor="#FFFFFF"><TMPL_VAR NAME=DATE_OF_BIRTH> </td>
+  </tr>
+  <tr>
+    <td colspan="2" bgcolor="#FFFFFF"><strong>Citation / Docket Number:</strong></td>
+    <td colspan="3" bgcolor="#FFFFFF"><TMPL_VAR NAME=CITATION_NUMBER> </td>
+  </tr>
+   <tr>
+    <td width="121" bgcolor="#FFFFFF"><strong>Court:</strong></td>
+    <td colspan="4" bgcolor="#FFFFFF"><TMPL_VAR NAME=REGULATOR_DEF> </td>
+  </tr>
+   <tr>
+     <td colspan="3" rowspan="4" valign="top" bgcolor="#FFFFFF"><strong>Student's Address:</strong><br />
+<br />
+<TMPL_VAR NAME=ADDRESS><br />
+     <td bgcolor="#FFFFFF"><strong>City and State<br />
+      where certificate<br />
+     was executed:</strong></td>
+     <td bgcolor="#FFFFFF">Oakland, California </td>
+   </tr>
+   <tr>
+     <td bgcolor="#FFFFFF"><strong>Date of Student<br />
+     Registration:</strong></td>
+     <td bgcolor="#FFFFFF"><TMPL_VAR NAME=DATE_OF_REGISTRATION> </td>
+   </tr>
+   <tr>
+     <td bgcolor="#FFFFFF"><strong>Date of Certificate:</strong></td>
+     <td bgcolor="#FFFFFF"><TMPL_VAR NAME=PRINT_DATE> </td>
+   </tr>
+   <tr>
+     <td bgcolor="#FFFFFF"><strong>Date of Certificate<br />
+     Transmittal to Court:</strong></td>
+     <td bgcolor="#FFFFFF"><TMPL_VAR NAME=CERTIFICATE_TRANSMITTAL_DATE> </td>
+   </tr>
+   <tr>
+     <td colspan="5" valign="top" bgcolor="#FFFFFF">To be completed by the HSTS Owner:<br />
+       <strong>I CERTIFY UNDER PENALTY OF PERJURY THAT THE FOREGOING IS TRUE AND<br />
+     CORRECT. (PERJURY IS PUNISHABLE BY IMPRISONMENT, FINE OR BOTH.)<br />
+       <br />
+       </strong>
+       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+         <tr>
+           <td width="50%"><img src="http://www.idrivesafely.com/newsite/images/comp/sig_1.gif" width="148" height="46" /></td>
+           <td width="50%" valign="bottom">Rick Hernandez</td>
+         </tr>
+         <tr>
+           <td><div class="line1"></div></td>
+           <td><div class="line1"></div></td>
+         </tr>
+         <tr>
+           <td><strong>Signature of HSTS Owner</strong></td>
+           <td><strong>Printed Name of HSTS Owner</strong></td>
+         </tr>
+         <tr>
+           <td><TMPL_VAR NAME=CERTIFICATE_TRANSMITTAL_DATE></td>
+           <td>&nbsp;</td>
+         </tr>
+         <tr>
+           <td><strong>Date</strong></td>
+           <td>&nbsp;</td>
+         </tr>
+       </table></td>
+   </tr>
+</table>
+</body>
+</html>

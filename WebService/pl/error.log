@@ -1,0 +1,21 @@
+
+The file /tmp/248396_2.pdf can't be found, aborts
+
+The error occurred when executing:
+ at /usr/local/share/perl5/PDF/Reuse.pm line 1242
+	PDF::Reuse::findGet('/tmp/248396_2.pdf', undef) called at blib/lib/PDF/Reuse.pm (autosplit into blib/lib/auto/PDF/Reuse/analysera.al) line 5856
+	PDF::Reuse::analysera('/tmp/248396_2.pdf', 1, '') called at blib/lib/PDF/Reuse.pm (autosplit into blib/lib/auto/PDF/Reuse/prDoc.al) line 3562
+	PDF::Reuse::prDoc('HASH(0x28eebe0)') called at /ids/tools/PRINTING/lib/Certificate/PDF.pm line 168
+	Certificate::PDF::addPDF('Certificate::PDF=HASH(0x28ee580)', '/tmp/248396_2.pdf') called at /ids/tools/PRINTING/lib/Certificate/TXTeen32.pm line 355
+	Certificate::TXTeen32::printCertificate('Certificate::TXTeen32=HASH(0x284a720)', 248396, 'HASH(0x2854e60)', 'HASH(0x28ee058)', 0, 'CA', 0, 2) called at PrintTeen.pl line 118
+	IDSPrintTeen::printTeenCert('IDSPrintTeen=HASH(0x27e7f70)', 248396) called at PrintTeen.pl line 412
+
+Situation when the error occurred
+
+   Bytes written to the current pdf-file,    pos    = 714521
+   Object processed, not necessarily written objNr  = 10
+   Current pdf-file,                         utfil  = /tmp/248396.pdf
+   File logging the run,                     runfil = undef
+   Local time                                       = Wed Jun  4 15:42:11 2014
+
+

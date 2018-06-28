@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>IDRIVESAFELY FAX</title>
+</head>
+
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="600">
+<tr>
+        <td width="800">
+        	<font face="Arial"><b>Affordable Home Study Program, Inc.</b><br>
+		    283 4th st Unit 301<br>
+		    Oakland, CA 94607<br>
+		    800.984.7233</font> </td>
+</tr>
+</table>
+
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" width="600">
+<tr>
+        <td width="180"><b>Fax Date:</b></td>
+        <td width="422"><TMPL_VAR NAME=FAX_DATE></td>
+</tr>
+</table>
+
+
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" width="631">
+<tr>
+        <td width="179"><b>HSTS Program Number:</b></td>
+        <td width="452"><font size="2"><span style="text-transform: uppercase">
+        Affordable Home Study Program </span>BOOKLET TRAFFIC SAFETY COURSE-ENGLISH</font></td>
+</tr>
+<tr>
+        <td width="179"><b>TVS Number:</b></td>
+        <td width="452">TVS10022</td>
+</tr>
+
+<tr>
+        <td colspan="2" width="631"><img border="0" src="http://www.idrivesafely.com/newsite/images/comp/spacer.gif" width="104" height="10"></td>
+</tr>
+
+<tr>
+        <td width="179"><b>To Court:</b></td>
+        <td width="452"><TMPL_VAR NAME=REGULATOR_DEF></td>
+</tr>
+<tr>
+        <td width="179"><b>Number of certificates:</b></td>
+        <td width="452"><TMPL_VAR NAME=COUNT></td>
+</tr>
+</table>
+
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" width="600">
+<tr>
+        <td width="185" style="border-bottom-style: solid; border-bottom-width: 2"><b>Certificate Number</b></td>
+        <td width="264" style="border-bottom-style: solid; border-bottom-width: 2"><b>Student Name</b></td>
+        <td width="192" style="border-bottom-style: solid; border-bottom-width: 2"><b>Citation Number</b></td>
+        <td width="154" style="border-bottom-style: solid; border-bottom-width: 2"><b>Completion Date</b></td>
+</tr>
+<TMPL_LOOP NAME=USER_INFO>
+<tr>
+	<td width='185'><TMPL_VAR NAME=CERTIFICATE_NUMBER></td>
+	<td width='264'><TMPL_VAR NAME=NAME></td>
+	<td width='192'><TMPL_VAR NAME=CITATION></td>
+	<td width='154'><TMPL_VAR NAME=COMPLETION_DATE></td>
+</tr>
+</TMPL_LOOP>
+</table>
+</body>
+</html>

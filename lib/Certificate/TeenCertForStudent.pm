@@ -63,13 +63,19 @@ sub _generateCertificate
     if($userData->{COURSE_STATE} eq 'CO') {
 	$userData->{COURSE_AGGREGATE_DESC} = "Colorado Driver Eduction Course";
     }
+
+    if($userData->{COURSE_STATE} && $userData->{COURSE_STATE} eq 'FL') {
+	if($userData->{COURSE_AGGREGATE_DESC} =~ / \+ DHSMV Permit Exam\)/ig) {
+		$userData->{COURSE_AGGREGATE_DESC} =~ s/ \+ DHSMV Permit Exam\)//ig;
+	}   
+    }
     my $courseDesc = uc $userData->{COURSE_AGGREGATE_DESC};
     my @courseDescArr = split(/\s+/, $courseDesc);
     my $i = 1;
     my $modifiedDesc = "";
     foreach my $word(@courseDescArr) {
  	   $modifiedDesc .= "$word ";
-	   if($i%5==0) {
+	   if($i%4==0) {
      		$modifiedDesc .= "<BR>";
 	   }
 	   $i++;

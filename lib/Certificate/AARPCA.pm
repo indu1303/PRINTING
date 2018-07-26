@@ -49,8 +49,8 @@ sub _generateCertificate
     if($userData->{ADDRESS_2}){
 	$address .= ", $userData->{ADDRESS_2}";
     }
-    $self->{PDF}->writeLine( 304-$xDiff, 260-$yDiff, $address ,90);
-    $self->{PDF}->writeLine( 304-$xDiff, 451-$yDiff, $userData->{CITY} ,90);
+    $self->{PDF}->writeLine( 304-$xDiff, 235-$yDiff, $address ,90);
+    $self->{PDF}->writeLine( 304-$xDiff, 411-$yDiff, "$userData->{CITY} $userData->{STATE}, $userData->{ZIP}" ,90);
     $self->{PDF}->writeLine( 350-$xDiff, 451-$yDiff, Settings::getDate,90);
     $self->{PDF}->writeLine( 355-$xDiff, 150-$yDiff, 'AARP Smart Driver Online Course',90);
     #$self->{PDF}->writeLine( 403-$xDiff, 80-$yDiff, 'Julie E. Lee',90);

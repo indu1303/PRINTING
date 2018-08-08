@@ -56,9 +56,9 @@ sub _generateCertificate
     #$self->{PDF}->writeLine( 403-$xDiff, 80-$yDiff, 'Julie E. Lee',90);
     #$self->{PDF}->genImage($self->{SETTINGS}->{TEMPLATESPATH}."/printing/images/aarpsign90.jpg",
                                 #383-$xDiff, 391-$yDiff, 35, 105,305,1050);
-   #$self->{PDF}->writeLine( 403-$xDiff, 80-$yDiff, 'Kyle K. Rakow ',90);
-   #$self->{PDF}->genImage($self->{SETTINGS}->{TEMPLATESPATH}."/printing/images/KyleSignature.jpg",
-                                 #383-$xDiff, 391-$yDiff, 35, 105,305,1050);                               
+   $self->{PDF}->writeLine( 403-$xDiff, 80-$yDiff, 'Kyle K. Rakow ',90);
+   $self->{PDF}->genImage($self->{SETTINGS}->{TEMPLATESPATH}."/printing/images/KyleSignature.jpg",
+                                 383-$xDiff, 391-$yDiff, 35, 105,305,1050);                               
     
     if ( $userData->{AARPMEMBERCODE} eq '') {
          $self->{PDF}->genImage($self->{SETTINGS}->{TEMPLATESPATH}."/printing/images/tick90.jpg",
@@ -101,7 +101,7 @@ sub printCAAARPLabel
 
     ###### as we do w/ all things, let's start at the top.  Print the header
     ###### now, print the user's name and address
-    my $yPos=579;
+    my $yPos=560;
     $self->{PDF}->setFont('HELVETICABOLD', 9);
     $self->{PDF}->writeLine( 21, $yPos, $userData->{FIRST_NAME} . ' ' . $userData->{LAST_NAME} );
     $yPos -=11;

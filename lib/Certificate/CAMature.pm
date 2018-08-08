@@ -90,7 +90,7 @@ sub printCAMatureLabel
     }
     $self->_printCorporateAddress(21 , 665, $OFFICECA,'mature.idrivesafely.com');
 
-    my $yPos=579;
+    my $yPos=560;
     $self->{PDF}->setFont('HELVETICABOLD', 9);
     $self->{PDF}->writeLine( 21, $yPos, $userData->{FIRST_NAME} . ' ' . $userData->{LAST_NAME} );
     $yPos -=11;

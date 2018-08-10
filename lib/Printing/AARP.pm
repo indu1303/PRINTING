@@ -245,16 +245,16 @@ sub getUserData
 
 #    my $retval;
     my $sql         = $self->{PRODUCT_CON}->prepare(<<"EOM");
-		SELECT UI.USER_ID, UI.DRIVERS_LICENSE, UI.COURSE_ID,
+		SELECT UI.USER_ID, sf_decrypt(UI.DRIVERS_LICENSE) as DRIVERS_LICENSE, UI.COURSE_ID,
                 date_format(UI.COMPLETION_DATE,'%m/%d/%Y') AS COMPLETION_DATE,
                 date_format(UI.PRINT_DATE,'%m/%d/%Y') AS PRINT_DATE, UI.CERTIFICATE_NUMBER, UI.LOGIN_DATE, 
 		date_format(date_sub(UI.PRINT_DATE,interval -2 year),'%m/%d/%Y') as EXPIRATION_DATE, date_format(date_sub(NOW(),interval -2 year),'%m/%d/%Y') as EXPIRATION_DATE2,
-                UPPER(UC.FIRST_NAME) as FIRST_NAME, UPPER(UC.LAST_NAME) as LAST_NAME, UC.ADDRESS_1, UC.ADDRESS_2, 
-		UC.CITY, UC.STATE, UC.ZIP, UC.EMAIL,UC.SEX,
+                UPPER(sf_decrypt(UC.FIRST_NAME)) as FIRST_NAME, UPPER(sf_decrypt(UC.LAST_NAME)) as LAST_NAME, sf_decrypt(UC.ADDRESS_1) as ADDRESS_1, sf_decrypt(UC.ADDRESS_2) as ADDRESS_2, 
+		sf_decrypt(UC.CITY) as CITY, sf_decrypt(UC.STATE) as STATE, sf_decrypt(UC.ZIP) as ZIP, UC.EMAIL, sf_decrypt(UC.SEX) as SEX,
                 UD.DELIVERY_ID,
                 C.STATE AS COURSE_STATE,C.SHORT_DESC,C.COURSE_LENGTH,D.DEFINITION AS DELIVERY_DEF,
                 UL.LOCK_DATE,round(UI.PRINT_DATE) as CERT_PRINT_DATE,
-                date_format(UC.DATE_OF_BIRTH,'%m/%d/%Y') AS DATE_OF_BIRTH,UC.PHONE, date_format(REGISTRATION_DATE,'%m/%d/%Y') as DATE_OF_REGISTRATION,
+                date_format(sf_decrypt(UC.DATE_OF_BIRTH),'%m/%d/%Y') AS DATE_OF_BIRTH,UC.PHONE, date_format(REGISTRATION_DATE,'%m/%d/%Y') as DATE_OF_REGISTRATION,
 		UI.LOGIN AS LOGIN
                 FROM
                 (((((user_info UI left outer join  user_contact UC  on UI.USER_ID=UC.USER_ID) left outer join user_delivery UD on UI.USER_ID=UD.USER_ID) left outer join course C on UI.COURSE_ID=C.COURSE_ID)  left outer join user_lockout UL on UI.USER_ID=UL.USER_ID) left outer join delivery D on  UD.DELIVERY_ID=D.DELIVERY_ID)  WHERE UI.USER_ID = ?
@@ -329,7 +329,7 @@ EOM
     }	
     ##### get user citation information
     $sql                    = $self->{PRODUCT_CON}->prepare(<<"EOM");
-select param, value from user_citation where user_id = ?
+select param, sf_decrypt(value) from user_citation where user_id = ?
 EOM
     $sql->execute($userId);
 

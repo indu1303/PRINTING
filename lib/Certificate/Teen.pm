@@ -203,6 +203,11 @@ sub _generateCertificate
     $self->{PDF}->setFont('HELVETICA', 8);
     $userData->{COURSE_AGGREGATE_DESC}=($self->Settings::getCourseAggregateOverride($courseId,$productId))?$self->Settings::getCourseAggregateOverride($courseId,$productId):$userData->{COURSE_AGGREGATE_DESC};
     $userData->{COURSE_AGGREGATE_DESC} =~ s/<BR>/ /gi;
+    if($userData->{COURSE_STATE} && $userData->{COURSE_STATE} eq 'FL') {
+        if($userData->{COURSE_AGGREGATE_DESC} =~ / \+ DHSMV Permit Exam/ig) {
+                $userData->{COURSE_AGGREGATE_DESC} =~ s/ \+ DHSMV Permit Exam//ig;
+        }
+    }
     $self->{PDF}->writeLine ( 135-$xDiff, 320, $userData->{COURSE_AGGREGATE_DESC} );
     my $variableDataStr=join '~',@variableData;
     my $fixedData=Certificate::_generateFixedData($userData);

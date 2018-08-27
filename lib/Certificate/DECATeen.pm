@@ -34,13 +34,13 @@ sub _generateCertificate
     ###### as we do w/ all things, let's start at the top.  Print the header	
     ###### now, print the user's name and address
     $self->{PDF}->setFont('HELVETICABOLD', 10);
-    $self->{PDF}->writeLine( 138-$xDiff, 530+$yDiff, $userData->{FIRST_NAME} . ' ' . $userData->{LAST_NAME} );
-    $self->{PDF}->writeLine( 367-$xDiff, 530+$yDiff, $userData->{DATE_OF_BIRTH} );
+    $self->{PDF}->writeLine( 138-$xDiff, 525+$yDiff, $userData->{FIRST_NAME} . ' ' . $userData->{LAST_NAME} );
+    $self->{PDF}->writeLine( 367-$xDiff, 525+$yDiff, $userData->{DATE_OF_BIRTH} );
 
 
     $self->{PDF}->writeLine( 138-$xDiff, 482+$yDiff, 'DriversEd.com - Easy Driving School, LLC');
     $self->{PDF}->writeLine( 373-$xDiff, 482+$yDiff, '4442');
-    $self->{PDF}->writeLine( 138-$xDiff, 508+$yDiff, $userData->{COMPLETION_DATE});
+    $self->{PDF}->writeLine( 138-$xDiff, 500+$yDiff, $userData->{COMPLETION_DATE});
 
 
     $self->{PDF}->writeLine( 132-$xDiff, 455+$yDiff, '283 4th Street Unit 301, Oakland CA 94607');

@@ -271,7 +271,8 @@ sub putUserPrintRecord {
         {
                 my $studId = $self->{PRODUCT_CON}->selectrow_array("select student_id from classroom_certificate_printing where student_id = $studentId");
                 if($studId){
-                   my $sth = $self->{PRODUCT_CON}->prepare('update classroom_certificate_printing set print_date = now(), certificate_number_issued = ? where student_id = ?');
+                   #my $sth = $self->{PRODUCT_CON}->prepare('update classroom_certificate_printing set print_date = now(), certificate_number_issued = ? where student_id = ?');
+                   my $sth = $self->{PRODUCT_CON}->prepare('update classroom_certificate_printing set certificate_number_issued = ? where student_id = ?');
                    $sth->execute($certNumber, $studentId);
                    $sth->finish;
                 } else{

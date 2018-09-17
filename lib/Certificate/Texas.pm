@@ -118,6 +118,10 @@ sub _generateCertificate
         $classroom = $userData->{LOCATION_ID};
         $instructor = "$userData->{INSTRUCTOR_NAME} ($userData->{EDUCATOR_ID})";
     }
+    ##EMAINT-522
+    if($userData->{COURSE_ID} eq '1011' || $userData->{COURSE_ID} eq '1015') {
+        $instructor = "RENTERIA, REBECCA (7948)";
+    }
     
 
     my @cData = split(/ /,$userData->{COMPLETION_DATE});

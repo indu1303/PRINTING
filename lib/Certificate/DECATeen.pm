@@ -82,7 +82,7 @@ sub printDECATeenLabel
     my $xDiff='';
     my $OFFICECA = $self->{SETTINGS}->getOfficeCa('DRIVERSED');
     if(!($userData->{COURSE_STATE} && exists $self->{SETTINGS}->{WEST_COAST_STATES}->{$userData->{COURSE_STATE}})){
-        $OFFICECA = $self->{SETTINGS}->getOfficeCa('',1);
+        $OFFICECA = $self->{SETTINGS}->getOfficeCa('DRIVERSEDTX');
     }
     $self->_printCorporateAddress(21-$xDiff, 662, $OFFICECA,'www.driversed.com');
 

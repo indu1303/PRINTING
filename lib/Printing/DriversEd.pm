@@ -1339,7 +1339,7 @@ DATA
 			use MIME::Lite;
 			my $emailData = "Hi,<br><br>DriversEd CO Teen - Attendance Sheet not printed for Request Id: $requestId; User Id: $userId, at ". Settings::getDateTime() .".<br><br>Thank you,<br>I DRIVE SAFELY";
 			my $msg = MIME::Lite->new(From => 'I Drive Safely <wecare@idrivesafely.com>',
-				To => 'hamsa.palepu@edriving.com,rajesh@edriving.com,formeco.spencer@edriving.com,idcqa@ed-ventures-online.com',
+				To => 'hamsa.palepu@edriving.com,rajesh@edriving.com,formeco.spencer@edriving.com,idcqa@ed-ventures-online.com,ramya.sathyanarayanan@edriving.com',
 				#To => 'rajesh@ed-ventures-online.com, rajesh2@ed-ventures-online.com',
 				Subject => "DriversEd CO Teen - Attendance Sheet not printed for Request Id: $requestId, at " . Settings::getDateTime(),
 				Type    => 'multipart/mixed');
@@ -1464,7 +1464,7 @@ CMD
 		use MIME::Lite;
 		my $emailData = "Hi,<br><br>DriversEd CO Teen - Attendance Sheet not printed for Request Id: $requestId; User Id: $userId, at ". Settings::getDateTime() .".<br><br>Thank you,<br>I DRIVE SAFELY";
 		my $msg = MIME::Lite->new(From => 'I Drive Safely <wecare@idrivesafely.com>',
-			To => 'hamsa.palepu@edriving.com,rajesh@edriving.com,formeco.spencer@edriving.com,idcqa@ed-ventures-online.com',
+			To => 'hamsa.palepu@edriving.com,rajesh@edriving.com,formeco.spencer@edriving.com,idcqa@ed-ventures-online.com,ramya.sathyanarayanan@edriving.com',
 			#To => 'rajesh@ed-ventures-online.com, rajesh2@ed-ventures-online.com',
 			Subject => "DriversEd CO Teen - Attendance Sheet not printed for Request Id: $requestId, at " . Settings::getDateTime(),
 			Type    => 'multipart/mixed');

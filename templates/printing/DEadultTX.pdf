@@ -1,22 +1,30 @@
 %PDF-1.3%âãÏÓ
-1 0 obj<</Metadata 2 0 R/Pages 3 0 R/Type/Catalog>>endobj2 0 obj<</Length 65843/Subtype/XML/Type/Metadata>>stream
+1 0 obj<</AcroForm 126 0 R/Metadata 2 0 R/Pages 3 0 R/Type/Catalog>>endobj126 0 obj<</DA(/Helv 0 Tf 0 g )/DR<</Encoding<</PDFDocEncoding 134 0 R>>/Font<</Helv 132 0 R/ZaDb 133 0 R>>>>/Fields[]>>endobj2 0 obj<</Length 65533/Subtype/XML/Type/Metadata>>stream
 <?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?>
-<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.0-c060 61.134777, 2010/02/12-17:32:00        ">
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.147326, 2012/08/23-13:03:03        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description rdf:about=""
-            xmlns:dc="http://purl.org/dc/elements/1.1/">
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+            xmlns:xmpGImg="http://ns.adobe.com/xap/1.0/g/img/"
+            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
+            xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"
+            xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#"
+            xmlns:stMfs="http://ns.adobe.com/xap/1.0/sType/ManifestItem#"
+            xmlns:illustrator="http://ns.adobe.com/illustrator/1.0/"
+            xmlns:xmpTPg="http://ns.adobe.com/xap/1.0/t/pg/"
+            xmlns:stDim="http://ns.adobe.com/xap/1.0/sType/Dimensions#"
+            xmlns:stFnt="http://ns.adobe.com/xap/1.0/sType/Font#"
+            xmlns:xmpG="http://ns.adobe.com/xap/1.0/g/"
+            xmlns:pdf="http://ns.adobe.com/pdf/1.3/">
          <dc:format>application/pdf</dc:format>
          <dc:title>
             <rdf:Alt>
                <rdf:li xml:lang="x-default">adultTX-var2</rdf:li>
             </rdf:Alt>
          </dc:title>
-      </rdf:Description>
-      <rdf:Description rdf:about=""
-            xmlns:xmp="http://ns.adobe.com/xap/1.0/"
-            xmlns:xmpGImg="http://ns.adobe.com/xap/1.0/g/img/">
-         <xmp:MetadataDate>2015-04-23T10:36:37+05:30</xmp:MetadataDate>
-         <xmp:ModifyDate>2015-04-23T10:36:37+05:30</xmp:ModifyDate>
+         <xmp:MetadataDate>2018-10-11T12:39:22+05:30</xmp:MetadataDate>
+         <xmp:ModifyDate>2018-10-11T12:39:22+05:30</xmp:ModifyDate>
          <xmp:CreateDate>2015-04-22T10:22:43+06:30</xmp:CreateDate>
          <xmp:CreatorTool>Adobe Illustrator CS5.1</xmp:CreatorTool>
          <xmp:Thumbnails>
@@ -29,13 +37,7 @@
                </rdf:li>
             </rdf:Alt>
          </xmp:Thumbnails>
-      </rdf:Description>
-      <rdf:Description rdf:about=""
-            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
-            xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"
-            xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#"
-            xmlns:stMfs="http://ns.adobe.com/xap/1.0/sType/ManifestItem#">
-         <xmpMM:InstanceID>uuid:3f7095a1-aadb-4388-b0ba-de99be98264a</xmpMM:InstanceID>
+         <xmpMM:InstanceID>uuid:f4ba2f26-7672-4482-9c9c-86ba7cb37053</xmpMM:InstanceID>
          <xmpMM:DocumentID>xmp.did:96A970CEAAE8E41191B7950FFCA221E3</xmpMM:DocumentID>
          <xmpMM:OriginalDocumentID>uuid:5D20892493BFDB11914A8590D31508C8</xmpMM:OriginalDocumentID>
          <xmpMM:RenditionClass>proof:pdf</xmpMM:RenditionClass>
@@ -66,16 +68,7 @@
                </rdf:li>
             </rdf:Seq>
          </xmpMM:Manifest>
-      </rdf:Description>
-      <rdf:Description rdf:about=""
-            xmlns:illustrator="http://ns.adobe.com/illustrator/1.0/">
          <illustrator:StartupProfile>Print</illustrator:StartupProfile>
-      </rdf:Description>
-      <rdf:Description rdf:about=""
-            xmlns:xmpTPg="http://ns.adobe.com/xap/1.0/t/pg/"
-            xmlns:stDim="http://ns.adobe.com/xap/1.0/sType/Dimensions#"
-            xmlns:stFnt="http://ns.adobe.com/xap/1.0/sType/Font#"
-            xmlns:xmpG="http://ns.adobe.com/xap/1.0/g/">
          <xmpTPg:HasVisibleOverprint>False</xmpTPg:HasVisibleOverprint>
          <xmpTPg:HasVisibleTransparency>False</xmpTPg:HasVisibleTransparency>
          <xmpTPg:NPages>1</xmpTPg:NPages>
@@ -646,9 +639,6 @@
                </rdf:li>
             </rdf:Seq>
          </xmpTPg:SwatchGroups>
-      </rdf:Description>
-      <rdf:Description rdf:about=""
-            xmlns:pdf="http://ns.adobe.com/pdf/1.3/">
          <pdf:Producer>Adobe PDF library 9.90</pdf:Producer>
       </rdf:Description>
    </rdf:RDF>
@@ -675,33 +665,21 @@
                                                                                                     
                            
 <?xpacket end="w"?>
-endstreamendobj3 0 obj<</Count 1/Kids[6 0 R]/Type/Pages>>endobj6 0 obj<</ArtBox[7.99951 0.0 612.0 395.0]/BleedBox[0.0 0.0 612.0 396.0]/Contents 67 0 R/LastModified(D:20150423103637+06'30')/MediaBox[0.0 0.0 612.0 396.0]/Parent 3 0 R/PieceInfo<</Illustrator 68 0 R>>/Resources<</ExtGState<</GS0 69 0 R>>/Font<</TT0 66 0 R>>/ProcSet[/PDF/Text/ImageC]/Properties<</MC0<</Color[20224 32768 65535]/Dimmed false/Editable true/Preview true/Printed true/Title(Layer 1)/Visible true>>>>/XObject<</Im0 70 0 R>>>>/Thumb 71 0 R/TrimBox[0.0 0.0 612.0 396.0]/Type/Page>>endobj67 0 obj<</Filter/FlateDecode/Length 224>>stream
-H‰ÜR=OÃ@İı+<¶>û.w9m’¢ †
-q¨CÕAa@iE™ø÷\¢¨bY²¬çç'Û¬?g4]Å¸¬+„w(IU‘1pAÌ‚N=°ÅcNšë{Æ×Â¤.D¯’©<ˆ£Xk=¼H‰W|Ÿz0mÏXŸà.Û2SŠ)X¼sƒ‡o—!&%FÁôB£'Maa)/èQÊHê‹Ìêa7Û¬VmÕ.Öõ¦zèšÛ4—ø?°}º‘0&=ÿ­s™}ƒõÇòI&“+~%sä7	š.î—  °©°A
-endstreamendobj71 0 obj<</BitsPerComponent 8/ColorSpace 72 0 R/Filter[/ASCII85Decode/FlateDecode]/Height 49/Length 951/Width 76>>stream
-8;Yhs4*oX8%#1(Z#>l7&99k.6Ms-uu82V8klAN^kWPuN+]F`[$8BH`?.t49g^?4TK
-Jo?5`!.t$)!&.tRTaW86OF#pe\H^oTJ/5p3A/Z<>jQ9bpAA3^R#EV)W(D^(M"k^s/
-8@-,P's-*/]rWLO(>XselY48AP-TE&F\.A*c[,PK:'%SNf8Ni7`[3Pj`4O_b-HnA9
-A=3s1'SKN\&=Htl)MGH)EN_Hd8@jP#Pm^W:G2^;^M+&2+m<.6HW59$58/4IfW&$3-
-#uOWkV<("jOZ(qS<5-&:B@k/Pb=5)[*qBYZ(LMcSHVFfcZ0l,F%V)W*m83g>^j5PE
-B#j/3FM@*$n)tR7rR>SU7@!>P0_/gj1*4EI:%ah.YpQs5&F5e8G2]\:P'V"@oMW/Z
-1QHCjj8F&&JQ0Y8<<LOP.h^po<*97gIR:VHN>L^IMX;fp<V]NGm/p"P2mHoIiA:dC
-M^\>7JrY\Ob(3-o$7@(9T>7o>)c&W`[J1s9=`T.;A4'Cj?%1>';d2B])Ji[>j"!1<
-m#Z'8O5/u`:%Ye3m,8:.)rgh[1MKgJ7pji,Q=gFa4H/YkhrekYm(^DiGPG"]/ek(8
-MNmNE#Z9u2Pi"C-3t`-FANSK>Ud2:t&F3Kr@;Ym7TZ/jaqX$")-%AAD$XFZVGqOSs
-`dE];)YrGmp<U9TU!]YKA+Y!+,3_.XC8[2g.NUueD9shP7'FQh#:nhJ$[2:Mc>uP4
-;")E]JPU;Xcf>+niqgg%6tU;K,u<&dgd<\h_qOKg##sp+V:(0c[JBi63H(\P&4>O+
-+UZ!h<P_\]]pK!4!M/?DMn\YPGTUgWYb-^_FX!UmkYnR<S.$*DrUZQO;/XH;`iBDn
-lf1j-%6`r@,tOOoV>Vf:@b4O1ng,`Ajm<cE'rP*j?(B-<r`OgUDHmH"7B9DW+tMnN
-`K*01e:G=%HRLea$SMS^j_7OT~>
-endstreamendobj72 0 obj[/Indexed/DeviceRGB 255 73 0 R]endobj73 0 obj<</Filter[/ASCII85Decode/FlateDecode]/Length 428>>stream
-8;X]O>EqN@%''O_@%e@?J;%+8(9e>X=MR6S?i^YgA3=].HDXF.R$lIL@"pJ+EP(%0
-b]6ajmNZn*!='OQZeQ^Y*,=]?C.B+\Ulg9dhD*"iC[;*=3`oP1[!S^)?1)IZ4dup`
-E1r!/,*0[*9.aFIR2&b-C#s<Xl5FH@[<=!#6V)uDBXnIr.F>oRZ7Dl%MLY\.?d>Mn
-6%Q2oYfNRF$$+ON<+]RUJmC0I<jlL.oXisZ;SYU[/7#<&37rclQKqeJe#,UF7Rgb1
-VNWFKf>nDZ4OTs0S!saG>GGKUlQ*Q?45:CI&4J'_2j<etJICj7e7nPMb=O6S7UOH<
-PO7r\I.Hu&e0d&E<.')fERr/l+*W,)q^D*ai5<uuLX.7g/>$XKrcYp0n+Xl_nU*O(
-l[$6Nn+Z_Nq0]s7hs]`XX1nZ8&94a\~>
+endstreamendobj3 0 obj<</Count 1/Kids[6 0 R]/Type/Pages>>endobj6 0 obj<</ArtBox[7.99951 0.0 612.0 395.0]/BleedBox[0.0 0.0 612.0 396.0]/Contents 141 0 R/LastModified(D:20181011123922+05'30')/MediaBox[0.0 0.0 612.0 396.0]/Parent 3 0 R/PieceInfo<</Illustrator 68 0 R>>/Resources<</ExtGState<</GS0 69 0 R/GS1 142 0 R>>/Font<</TT0 66 0 R>>/ProcSet[/PDF/Text/ImageC]/Properties<</MC0 130 0 R>>/XObject<</Im0 70 0 R/Im1 138 0 R>>>>/Thumb 71 0 R/TrimBox[0.0 0.0 612.0 396.0]/Type/Page>>endobj141 0 obj<</Filter/FlateDecode/Length 257>>stream
+H‰Ü’=OÃ@†÷û›!}w¾‘&)
+j¨‡B…D™ø÷Ü¥U%–ÌY²¬×¯?†§Ù>}ïĞŒ-ÁºkA}*1F pd‘ˆÁDÃ^İÃ{n6—·¯_Ê1a4.Häl¥bB
+¬µ˜³‡šÎâó¤ša"è>ÔMuR„®£Ó±dcJfoç#MJéE1
+z¾t*­Æü  û€QlvMêaµÛl†v¸Øv»önì¯SÅáhµeÍç%­âÕ/9.WµÑBË–Çt¥ú¤úqæ3ÓÁ…!´DÁ˜#ƒXçÅ€’Ù ( “G¯%Dæ‚|DğG€ yİ¹6
+endstreamendobj71 0 obj<</BitsPerComponent 8/ColorSpace 72 0 R/Filter/FlateDecode/Height 49/Length 748/Width 76>>stream
+H‰ÔV;zÛ0†–ºQAK•ƒ°‹è¥:H5^ê‹È©Å¼ˆ¼×	HÉŠ,+~¤M¾æçG‚o‚  ‚ù‹ 0eF¡&Azã ¹Ş”€ÀdÛäæ^%d¾„4=aWRØÊH³Á¬ÙÇ½¬$ôİmëiÃ±’²zïuI‡ÂÏzıŒN°‚×ŒYÆ&5'Ä»Ú;&Ì6Dd™X„Vö™aê„³µq¯;‘Hº†x•VwváÂw‰Ezíuİ¨ÂEHB¥¨32¨	QSœ¥åAÑ‘6ÚäT¾½g×ÆÓËFJ3ò
+s_‚{M	p±îcËc­”íPÿ4ÀyóõfÇé¤t¾ì8ïè{ıÔj¡E•ï¹0òfj2Å¼Mõ–İ±&·ÙëšÕvá±’znNôR·3oÂãıs¯TÆÏUÎ²+äÖTYì~BºVåòŠí(YUùR/íK7±dÚá4Z‹(÷¿‚‰“ÊI¸
+'#ÃŸÀ·O=ìµø"ñYrƒudCV ]~Õ©S[<ûl\äã+:Ñìm,Üé“Mô´ìá
+4âıè3iTG_Ö–g;<Œí>ßçnì¿ÂƒwøPĞ.£†Š”îQít”ß6¶;qe;Öú¤@´dëYûamûK Æ5£úí1C%Eã]]y.€Æ|‹ ùäSöÏ¹]¡Ñ¤côwä"é:›j§‘¢*DbmĞ,oD¯Å8+ãhvøÎsHİPïÆßOrIÏä—âúÊ°Dfm¼%OÕNÜC.NÃÚídTëÃ¥Òˆ–µùÿe9o£âCäÑ!
+ÀUÁUÏ½˜åó‹¾ïŸxn…°Ÿˆu"¤èS¬‡œfıóœôQnÈ<Æ«	|ëãQ•=é@%HœD¥ı(Mb×S-ò%)‰åíæ§Và]œÌ©şY‚n\.E«Tğ"+éKÅ=}Ô½ï{(6»/ åiP>
+endstreamendobj72 0 obj[/Indexed/DeviceRGB 255 73 0 R]endobj73 0 obj<</Filter/FlateDecode/Length 336>>stream
+H‰´R[•BA«,`¡°€…X¸°XÀB,`Ùd<lÿz¦Mó˜™ÔÎ`†3šq»İYÌrV³î#v€¸³Ü!†jè®jGq¤‘ƒ4Ş1Ækì:XYÎ´{§…]îj×=›Xp¡…Ë"Ä’K-]R™V\iåpÌêk®µv)WCH‡eh¹
+z)ĞÁÊ²+¨}Š€ W_Î¦#A®Ü°È£	rÔ‡TfaÂ‚]3jV¶cGô»ŞTRÀB:,]«z8Ø–ë\ŸÓ§DºFF_Î¦“(Ç×È‹<Ò¢]››
+:[£]×ëºZ;ÜªE*i7“ò@íFÔiôNËI,FF_Î¦“íó|òöIÔ'3ŸT||÷qÖÇ;w|ôû(ôÑàÃÒ‡‡Ï%,ŸiŸşv»İï÷Çãñ|>¯ëz½^ï÷ûóù|¿ßßïç«¿ q«c
 endstreamendobj70 0 obj<</BitsPerComponent 8/ColorSpace/DeviceCMYK/DecodeParms<</BitsPerComponent 4/Colors 4/Columns 934>>/Filter/FlateDecode/Height 604/Intent/RelativeColorimetric/Length 620561/Name/X/Subtype/Image/Type/XObject/Width 934>>stream
 H‰ì—[oä8…%êbÉvU’JOĞû°ìÿÿ“{);Á`æm€}9_£:U¶.II<)	!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„B!„ÿr«©ægªøŞrJ[~ñşZšéL…Ïğ²[J…íï‰ÓÈ|Š—i`´Gß†ß–ã±¿Æ´Ä»-e<7<³š“uüÆ»Y'ŞÁ¼o˜µ§#õ²£Mõi®9±ÇXVıïc¾ù|†ÿÙß~Œq`-=¼m†æ}‚#®1}İ\›­ßXh­±RË†¹®%ò»­OOzÃß=úîXXwK2>Å?ó5<‡O±®Äoş¶êsŸ¥{_Ëa_YŸøQÓD[·ïkÅZ«İ¶à5|MçZË£¼y,ZûÄÂbÌƒ°ñÉÃmÊ‘m©”ğAOŒú¯´œÿs¢ŒvÕWR"¾5ùZGÃ¨ó2í·)ävnşEÒgªå·YfØÜÊ;Ö1,n5½Gg"ö‘#óörpbÈw|ì·Ùæ15&°‡.{ôs#ÓÛÊ›ŸÎ5Ÿc¸;-ú }ÿ…şÈåŞbİŞÅ"Oøß1÷|„ô3Ú³ìuxë	¶¶µ§<û³¯ÎsÊÌ5ôË…0nåWKáÛ¿ƒ63‡råúûò!ö ƒ¸ºtzü™$'ÚÜY´,šØX£ååŸr/şoîA·t´ı{¿0o»œ^‰Ûê0¶¨XÍ3ùôØän>ì¾GÍmìØ0çéK¦¦·¹§Ouà(^aK“‡•¯»¹§òÚ÷‘híİŸÖ²EÄÖ~g®?¼ynÓs)ëYQyFx@±|à¼ÊşìkofO«æQuƒ¹W¹¹-¹×áçá²Î7[û3Ç\-Çş{Ô_hût/ú\>Hö5—÷ÏÙ¹Ô”1İ¶5?[éÃ·¾‡¸^˜Àœ(ÎÁ¼²}D¦¥Í{à}C&ôÈ1öœ9’dú®^#çù±-ÎåœÖ~¡+sõü1?ãgœœcuˆlş1?‹ã˜rçÃ¶w¿#jœşşûLş+|~Ú”c˜½5ÏgÔ:÷ï„Ï×¤ñÕß¸O™›Üá#‚1ÃÂÓïªäkpû^Î<‡xf_ç/bU£Ï¼‘ıü_|yÄj¶ïó¸x¶ôÕãK”cœÓç¢yşõ{İ\Bãµbp}lõ5Ÿ¤øNˆ“%¯}ùc vè>Ru¤³Õ&cùX%sñäîj o[Ú{èå,×Ç>ÁfÊ»†ÏŸù:?„BˆŠìw[Ü…,õ¿«ÖQƒ7°ÅóK}VŞÏ(¼
 jÏ¶O¯D¦±ºám}øMÌ[k«vë¸äÕÈÎêÖË¹KR´òF5¥P/±oó×É-¡¹–êißPŸò-ß"±{m‚£ ³Ã+éîwnTg“wòÒ}û©¹šıéÎg™Ùñnû®•¨åc»³>´XûÀX€v—1^ÛÖnMê53ç,ÕW°çu;XèBúuYÍ‰ZËBŸy­DUb>Ãàµ±½wÿ[İQC7×7Ïz`\Taíå¯šBÌQó>§wPc„úª^s™e+¸ÛêéRÌŸÛ·.°®ºpÁúë—ZaÍ*[
@@ -2887,7 +2865,36 @@ Mª€àé–‚Å"T­”6¡m –[Ú´PÒ¡&J)4Aàj$&&ú‡øÌ¬µwKô‹çÙÙ{­ygŞëì/¿ªÈ°éŞíıGŸydd
 #Í6¹°âRáÎ‘`"rÎ°š‹ŸuŠ‚=øYfl^1j'ï±W`¨ÃèÊS‰"QLÃkàüúœ!{6ì‘õ¥¬!ÓU¹±ŒÅûa}NeIëÔõ‹ÿÊ¿************ê?“Àù|*jÖ”‚¬&<GZhÏV“$°dßOñŒçÕŠQeàYïvRyM»â ÎH[Ó&Â~Ÿ™]&=
 V9»‘å¸íùOx”¤Q•¿ô9²²IÛÇJ™µkF¥Yëª¿œhĞ¤+c*ÍÈ#dÍ1d)93ÉyBâ%>v½°V‡yÆó	Ã^uU±ÏV`¼Ú¿Æ>+UXÅ3¶š°gEƒ$xdÆ!O]ím`™Óêj.©q»%ã{ö0¶bbÆ¬ı­T	¥Ïcªz£Hóğ”!V:Èñq.ŠŠŠŠŠŠŠŠŠŠŠú´¨bÓŠk*ó<£¤¬ı13ğZbüDõÑ0Â!%ùU¸ÕS_Ÿo3Ê1*Ù°fÙ>ÓjY³làÉŠ5scĞ0ŸYØãQzz#Si²˜6ä-§}Ö+”GÕÀ‹sU9}ÍFz¢ô—2v’~UÌ¥­Îé´>FÙ°¶:LÇ%šıòI_Ïv2å¯#‡ÒÖ¯ØoÆ÷„	=3z~L‚gkÔB„:TíÕ—†¶FxO4{²_vò6”°ü¦u?"Äõã4¬_Š*C˜Ïg*?)ûìYß«ï%\£Â9&\õi“l—‘SlF&5CõùTÖoşİ³g!ÏZÙ ’–ÿÊ<*˜Ho2G”°ê¸’{
 D6ú•°dW¯kĞ¡ªÔ’%Yø=ƒ$#Kz£İzL¶„7Ïy2°¨+­H•y™#è‡•KPbyNz %ÿ±>2/'|5ÓÙŠË\“&{´ZH'1rx»®iS„iø^|HÿnQñ«©ÚB¦}ïièßZT+-ı»a¶}´:¡ÇóZ8O¼ÕlÏál5;áWN­0”µKæ¤9KùOöëØ `XQùÿf„ÄÀÈöÙóçU³ÛûKã                                                                       ÀE	0 ?ƒHÈ
-endstreamendobj66 0 obj<</BaseFont/QHAJRH+ArialMT/Encoding/WinAnsiEncoding/FirstChar 65/FontDescriptor 74 0 R/LastChar 85/Subtype/TrueType/Type/Font/Widths[667 0 722 722 667 611 0 0 278 0 0 556 833 722 778 0 0 0 0 611 722]>>endobj74 0 obj<</Ascent 1006/CapHeight 716/Descent -325/Flags 32/FontBBox[-665 -325 2000 1006]/FontFamily(Arial)/FontFile2 75 0 R/FontName/QHAJRH+ArialMT/FontStretch/Normal/FontWeight 400/ItalicAngle 0/StemV 88/Type/FontDescriptor/XHeight 519>>endobj75 0 obj<</Filter/FlateDecode/Length 12623/Length1 28366>>stream
+endstreamendobj138 0 obj<</BitsPerComponent 8/ColorSpace/DeviceRGB/Filter/DCTDecode/Height 12/Length 2559/Metadata 139 0 R/Name/X/Subtype/Image/Type/XObject/Width 77>>stream
+ÿØÿà JFIF      ÿá Exif  II*            ÿì Ducky     P  ÿá+http://ns.adobe.com/xap/1.0/ <?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?> <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.3-c011 66.145661, 2012/02/06-14:56:27        "> <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#" xmp:CreatorTool="Adobe Photoshop CS6 (Windows)" xmpMM:InstanceID="xmp.iid:66478211CD2411E89B80E3C0879C85ED" xmpMM:DocumentID="xmp.did:66478212CD2411E89B80E3C0879C85ED"> <xmpMM:DerivedFrom stRef:instanceID="xmp.iid:6647820FCD2411E89B80E3C0879C85ED" stRef:documentID="xmp.did:66478210CD2411E89B80E3C0879C85ED"/> </rdf:Description> </rdf:RDF> </x:xmpmeta> <?xpacket end="r"?>ÿî Adobe dÀ   ÿÛ C 		
+
+		ÿÛ C			ÿÀ   M ÿÄ           	
+ÿÄ µ   } !1AQa"q2‘¡#B±ÁRÑğ$3br‚	
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyzƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚáâãäåæçèéêñòóôõö÷øùúÿÄ        	
+ÿÄ µ  w !1AQaq"2B‘¡±Á	#3RğbrÑ
+$4á%ñ&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz‚ƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚâãäåæçèéêòóôõö÷øùúÿÚ   ? ıPø7Ä(><ü.ğ^‹ñÄ¾ğ×Ä};Ä·Ú–›gcáÉ~Äú$6&³–óF¹”+µÃ™<æ6•P˜EñCâ–—áo|W¹øƒ©k6¾øÇwàôøy&Ÿ£®>‹ÿ 	:BCØE|'H®$†å²WæVÉ tøKã¯xŸÃÿ /uÍSí×^øƒâİÃ’ùEö{1”ZCˆ£@şX?yÃ34óÏÀ?Œ|m¬|·¼CãM[ÅZ-Ö¯ñsÃ~ Ğ,´>ÆÃìî-ï´›˜t6IÁ¼	˜æ¸Œ‚Û¶ğÔÚ|HøÓãï|uñ†ı©øe£øN–æİ­ /¦jÚÄ·ĞÙj&söŒÜ[ÅnèìPyªØj ÃĞkmgEø?©øŸÄ~ÿ „¯_ğ?€<âmgPûlv?Ú×>-[Ê<¸lÚ;)•X6v…N´Ü·í/â«ŸÇáÍámßö—¼KàOŞİx‰í¼ûÿ Fó¼ó¢ésy0KNr­#«»|ÔçwíYãM[SÕü}¡ø]5_‡šÂ]/Çº¯ƒ¯/à²Ãı;P‹Q’Úå,¦’êo.Øãsl;£c† õ]öŸoxîãÃ¾øeâ_Â–z˜Ño¼c¦¥ ·»6)zeŸÊÓ¤°ŠÙ<ÔÙïÄÊNï#ËÃ
+Ãöñ¯ü3´Ÿ´+|,Ò†š,“X‹ÂãÄÒ›–ÒÊ²¼Í7ö@ŒJ%ˆ†AŒ—ŞXÚ|Eÿ 
+ßşÃ_øH?ä¥ıƒ^ÿ …wÿ Ÿñé²×û_ıWú7İò×sÿ <ÿ Š€<#Bÿ †Zÿ „Òÿ û;ûwûGşÛß´ÿ iÂ_ÿ ·ü&m?ËûwüI>Ùö¬ìÙÎïõ}¨öƒÿ õÿ 	Ÿ‹ÿ áÿ „ûûOş_şoì¿øO¿áşİŞßÚkòâOßwÉ¸ãm tÿ †uûìñÿ Öÿ 'Ê¸ÿ …	öOíŸµ}—ìßé[±ûÿ ³ù8ó¾Ùû¿»¿´©ã_øPğ|Yÿ „ßìßÛ?ğ‚ÛÂÔû_Ûü¯øE÷İ}Ÿ;sşvß#÷Û±ße x_Šá‡ÿ áÓ?·şÑÿ Çü!>ÇØÿ á*û?ü#hOìí±q»ÎÇ‘ö¿ßg8ş* ö-;ş×şoıƒşF?øX)şÁÿ ¿üÿ f¸şŞûÿ »ÿ Sæıÿ Üÿ Ï.q@&?á†³tO#í¿Ù?ğ†XıŸìŸğ—ùğ‰h]y?Ú>OËö/µù¾wÚşO»ç|¾] zÙÿ †`ÿ …¸Û>Ëÿ í_òÇûSûûSû4ãg—ÿ í°tÇúW•Óå ÏøÇÿ øf¿ú·oøFÿ ê+ÿ  lÿ àÃ¯ü€?ÿÙ
+endstreamendobj139 0 obj<</Length 1037/Subtype/XML/Type/Metadata>>stream
+<?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.147326, 2012/08/23-13:03:03        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
+            xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#">
+         <xmp:CreatorTool>Adobe Photoshop CS6 (Windows)</xmp:CreatorTool>
+         <xmpMM:InstanceID>xmp.iid:66478211CD2411E89B80E3C0879C85ED</xmpMM:InstanceID>
+         <xmpMM:DocumentID>xmp.did:66478212CD2411E89B80E3C0879C85ED</xmpMM:DocumentID>
+         <xmpMM:DerivedFrom rdf:parseType="Resource">
+            <stRef:instanceID>xmp.iid:6647820FCD2411E89B80E3C0879C85ED</stRef:instanceID>
+            <stRef:documentID>xmp.did:66478210CD2411E89B80E3C0879C85ED</stRef:documentID>
+         </xmpMM:DerivedFrom>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<?xpacket end="r"?>
+endstreamendobj130 0 obj<</Color[20224 32768 65535]/Dimmed false/Editable true/Preview true/Printed true/Title(Layer 1)/Visible true>>endobj66 0 obj<</BaseFont/QHAJRH+ArialMT/Encoding/WinAnsiEncoding/FirstChar 65/FontDescriptor 74 0 R/LastChar 85/Subtype/TrueType/Type/Font/Widths[667 0 722 722 667 611 0 0 278 0 0 556 833 722 778 0 0 0 0 611 722]>>endobj74 0 obj<</Ascent 1006/CapHeight 716/Descent -325/Flags 32/FontBBox[-665 -325 2000 1006]/FontFamily(Arial)/FontFile2 75 0 R/FontName/QHAJRH+ArialMT/FontStretch/Normal/FontWeight 400/ItalicAngle 0/StemV 88/Type/FontDescriptor/XHeight 519>>endobj75 0 obj<</Filter/FlateDecode/Length 12623/Length1 28366>>stream
 H‰|•	XTGÇ«ª_*¨ŠoŞˆŠàºJX‚·›MâW£¢ˆ ¢â‰‰ŠŠŠˆˆ ¨(Š÷…‚W¼ï5ÑÌÈ¡k‚‰‰x¬3Î¤å“o?·ç«éş÷«~¯û÷UW@cˆıûêàcUê3QÌè…	‰n·*¢ ú X„LŸ*gxO¢TŞaÑã"®ÇË°Ï:rÜ¤Ø°Â¨¢ NÖ 6ãCƒÇŞ\­MğĞŠ÷u/&ì|íÌBÚm|ÄÔ™Ö†
 'Ö¸OŠ
 	†Ñ6ƒzìÚ+"xf´e+1y[øË‘Á¡.=c%¡_ğãÑQS¦NÉŠV„äV?	hºğXè€Ff@–€)À…o&÷§p®íY„‘]N–*‰ª›xã¬ÅbÕ­AõßWQ‘Q²ÙÈo™ ¯E î4›Í5>XÓ;jb„NÂÄ.j'EO5>õ›xÈ$®²hĞ°‘¥UckÛ&vöM›5wláäÜ²•KkY­quS´mÜ=<ÛzµkßÁ»£o§¿uş{—®~Ÿùÿ#àóÀnİ{ôìÕ»Oß~ñ¯/¿úº_ÿşfÈ¿‡ûvøˆ‘A£FÃ˜±¡aãÆOŸ8)"2*zrÌ”©Ó¦Ï˜;ë»ïgÏ™7oş‚ø…‹',I\š´,yyÊŠÔ´•é«V¯É\».kı†ì›6oÙºmû»v³œ={sóöí?pğĞ‡=vüÄÉS§Ïœ=wşÂÅK—¯\Í¿vıÆÍ‚B(*¾uûÎ?İ½÷³N¿¤$K7qĞ–â¨Ğæà\\©¸óPfF—é*İgÈkÈ\Ù–È’ØFvS²’úI#¤QRš´JÊ’6K¤ãÒ=é1?Ïã/UV*gUk•ŸêÕ*“ËB—·²ÜTv‘5²Vn/{Ë¾²Ÿì/È=å(y®¼EŞ.ç¨¹Ú^İL­QkÕíÕƒÕAêtõiT¦©ÆIÓZã¡i«é«	Ö„º’«­«Z…+ÅVqP•–Š›â¥tRü•IJœ¯$(IJš²QÉQö+Ç”ÊåšR ÜS~Ñúkµİµ£µ!Ú0íÄ
@@ -2937,7 +2944,7 @@ I!-£Dbä¢\šK¤$ÓH†M”B¯ •‰ÿ.Š”ë‰ô,‰ô_‹ô¦¡Ë”Âü†®@/3tôù†Hßgu())7ñg²C†.ÑXù ¡3J‘ÿlè
 ƒzˆ½#ä{l¿Ù>!ß…y€íoç&ÿÍÈ'ÔqAº s‘ŸÀövd¤¹5*ëÆğ¸‘æ‚BPªÀ³ÀÁºÙíÕî4<ä7t ‰P²>òÚšD¾ÅnŸg:Ö˜ÊÏ½÷ACÒª¶z˜Ï³á9˜<ñ<³O<«VCã‰ç‡+¡ñÄZ'êÅĞxâ™W'²JhH:Ù–W32İ÷”ÕIªßÉš1JÍ¥fŒR3)¬™ÿéœÂû¶¹}âDŒØ&_Ö„‰îh—}]ŠVHÑ­R4(EWHÑ•RtŠıÍ’¢c¥è8)úÆËè§‘"à3ÛÊnáJb¯^·İ-¥²Üa³@Ïv[º³p€¤‹Í]4Áøp&÷&®$s‡‰Éiî/¸x¹8mM³€‰$}’_4>Êƒú„Üƒç=ÕofHÄÄi¿ï›ù¾ßÌ7;3»İªØÚÃc°V¿9×WƒØ:ÀÖl™ØJ`+­lÉ8©Ú\´ööëÌhÌÔ³ô¾ûfzÄsŒÂŠFáXGá¶ÿô -ÖR’ûøåµıõÁŒÓ¾61r';Å5¡c¶¡‰~qÃ5á5a&à¹²rÒé º&¾Í´ô0Hä6ÈG G l:G ºÓâ×lbÃíIOÓ×„O?|¢\TûE¿âŸrm‹ØÁÓ‘V„K¢@ q½=B½gŞ¿y‘'ëáîsÛ(ñYÛn×‡%YKìIÙ—ğ(â†S‡ÇQÇÁ!“µ¯#Q v‰Üc°#5qºùj‰!iwÓ^é¹ø«ô»hsPıMÜ“~–m7®I?çqCúQÜ’¾¶ğ|›°1˜]™¡;â˜ôä€¡CàaMÚ ¦!}(¤÷E¨8[&´TŸ4›X”¦`¼¼¸,©&ŒÙ2â-é†C]§}Òk0Å©Âd_YÒX„øNÒÆ«êÿ€/òÓüü?ÄGy‰ó!¾OèüB·pIè¡Cpœ€„>»u¨*¶®¯ÃOM‡›j7«û9ªé¿ú\Ã?«äE—Îés9¬“ı¤/ËäÏ¹˜;o.’b9Lzu¤ÏçÈ˜¢Û|k–$ğ3ï«ß7ÀK¸OlŒæ‹6nQ×fˆôNwÆ=›÷BÔ¾²yÏ0P0p7Ìô¦{ÆßÊ_ Êm­œ•à¹z˜<ĞçŠä«°AFh¥6tòùœ\*îà§ø-¿ƒ©1Š;®4~ªÍR¿+7İÆŒC2>NÌ1ã„’)‡d!âp.ı 8Å÷xçÆ”«šZ¾:0À˜Ë22c^–ÿÉÄ‰Ç°ĞceHš!¢HDd¾‚D†ˆø
 CÎá6²uŠl±L.|Æˆã=<a¼‡À(ÿ·TrŠ‚ë)c¥¤UbZ9¦U@ÊäÓ»«Ab-ËruÅ ™¸åå•Uj—*ÄˆUòd%–—«©Òá§bù**ióÅjI­äk)5¥Å–òF½03š<—kë4×èÌƒÍĞÁFi®Bò‚p’†4W’æJÒ\µÀr!vÆgŠUåŒÉ’cë\W'œ×r(jäşÒìğ¦¢ÁĞ.¼<B]ŠA.ÅrÄBCW³W³4÷uƒÛ×7RÑĞ.~ÔùÁİË!emİ\GAí½¼ó5¡€km.¸£ó¿
 Ä4¢.åÍ5„t28§“ÌÍÅb•çÁ[¦—D&N|]]šİÚwœ×À9A.×)H}7¨ÏãiƒÿŞÿõ¶¤wÅíÕ±ÁğÚo¸HDŸçàQ0¿×ZZ,îÂëıy0¸@+Ø<ƒM9uD¯÷DÖÖÛµö:¬µ­Óº˜'ËqZè*ı-À H<td
-endstreamendobj69 0 obj<</AIS false/BM/Normal/CA 1.0/OP false/OPM 1/SA true/SMask/None/Type/ExtGState/ca 1.0/op false>>endobj68 0 obj<</LastModified(D:20150423103637+06'30')/Private 76 0 R>>endobj76 0 obj<</AIMetaData 77 0 R/AIPDFPrivateData1 78 0 R/AIPDFPrivateData10 79 0 R/AIPDFPrivateData11 80 0 R/AIPDFPrivateData12 81 0 R/AIPDFPrivateData13 82 0 R/AIPDFPrivateData14 83 0 R/AIPDFPrivateData15 84 0 R/AIPDFPrivateData16 85 0 R/AIPDFPrivateData17 86 0 R/AIPDFPrivateData18 87 0 R/AIPDFPrivateData19 88 0 R/AIPDFPrivateData2 89 0 R/AIPDFPrivateData20 90 0 R/AIPDFPrivateData21 91 0 R/AIPDFPrivateData22 92 0 R/AIPDFPrivateData23 93 0 R/AIPDFPrivateData24 94 0 R/AIPDFPrivateData25 95 0 R/AIPDFPrivateData26 96 0 R/AIPDFPrivateData27 97 0 R/AIPDFPrivateData28 98 0 R/AIPDFPrivateData29 99 0 R/AIPDFPrivateData3 100 0 R/AIPDFPrivateData30 101 0 R/AIPDFPrivateData31 102 0 R/AIPDFPrivateData32 103 0 R/AIPDFPrivateData33 104 0 R/AIPDFPrivateData34 105 0 R/AIPDFPrivateData35 106 0 R/AIPDFPrivateData36 107 0 R/AIPDFPrivateData37 108 0 R/AIPDFPrivateData38 109 0 R/AIPDFPrivateData39 110 0 R/AIPDFPrivateData4 111 0 R/AIPDFPrivateData40 112 0 R/AIPDFPrivateData41 113 0 R/AIPDFPrivateData42 114 0 R/AIPDFPrivateData43 115 0 R/AIPDFPrivateData44 116 0 R/AIPDFPrivateData45 117 0 R/AIPDFPrivateData46 118 0 R/AIPDFPrivateData47 119 0 R/AIPDFPrivateData5 120 0 R/AIPDFPrivateData6 121 0 R/AIPDFPrivateData7 122 0 R/AIPDFPrivateData8 123 0 R/AIPDFPrivateData9 124 0 R/ContainerVersion 9/CreatorVersion 15/NumBlock 47/RoundtripVersion 15>>endobj77 0 obj<</Length 986>>stream
+endstreamendobj69 0 obj<</AIS false/BM/Normal/CA 1.0/OP false/OPM 1/SA true/SMask/None/Type/ExtGState/ca 1.0/op false>>endobj142 0 obj<</AIS false/BM/Normal/CA 1.0/OP false/OPM 0/SA false/SMask/None/Type/ExtGState/ca 1.0/op false>>endobj68 0 obj<</LastModified(D:20150423103637+06'30')/Private 76 0 R>>endobj76 0 obj<</AIMetaData 77 0 R/AIPDFPrivateData1 78 0 R/AIPDFPrivateData10 79 0 R/AIPDFPrivateData11 80 0 R/AIPDFPrivateData12 81 0 R/AIPDFPrivateData13 82 0 R/AIPDFPrivateData14 83 0 R/AIPDFPrivateData15 84 0 R/AIPDFPrivateData16 85 0 R/AIPDFPrivateData17 86 0 R/AIPDFPrivateData18 87 0 R/AIPDFPrivateData19 88 0 R/AIPDFPrivateData2 89 0 R/AIPDFPrivateData20 90 0 R/AIPDFPrivateData21 91 0 R/AIPDFPrivateData22 92 0 R/AIPDFPrivateData23 93 0 R/AIPDFPrivateData24 94 0 R/AIPDFPrivateData25 95 0 R/AIPDFPrivateData26 96 0 R/AIPDFPrivateData27 97 0 R/AIPDFPrivateData28 98 0 R/AIPDFPrivateData29 99 0 R/AIPDFPrivateData3 100 0 R/AIPDFPrivateData30 101 0 R/AIPDFPrivateData31 102 0 R/AIPDFPrivateData32 103 0 R/AIPDFPrivateData33 104 0 R/AIPDFPrivateData34 105 0 R/AIPDFPrivateData35 106 0 R/AIPDFPrivateData36 107 0 R/AIPDFPrivateData37 108 0 R/AIPDFPrivateData38 109 0 R/AIPDFPrivateData39 110 0 R/AIPDFPrivateData4 111 0 R/AIPDFPrivateData40 112 0 R/AIPDFPrivateData41 113 0 R/AIPDFPrivateData42 114 0 R/AIPDFPrivateData43 115 0 R/AIPDFPrivateData44 116 0 R/AIPDFPrivateData45 117 0 R/AIPDFPrivateData46 118 0 R/AIPDFPrivateData47 119 0 R/AIPDFPrivateData5 120 0 R/AIPDFPrivateData6 121 0 R/AIPDFPrivateData7 122 0 R/AIPDFPrivateData8 123 0 R/AIPDFPrivateData9 124 0 R/ContainerVersion 9/CreatorVersion 15/NumBlock 47/RoundtripVersion 15>>endobj77 0 obj<</Length 986>>stream
 %!PS-Adobe-3.0 
 %%Creator: Adobe Illustrator(R) 15.0
 %%AI8_CreatorVersion: 15.1.0
@@ -6030,136 +6037,153 @@ Bh ±ÌlLØƒç´“kgz­óØ	â¹³ÓjçœŞSC¨²®Ûük=kÒx'íİcà‰°sd'úy­ó¡Üãì)°³c§Şï%ùÿ“ˆÜ
 £T†ĞÙx°ˆkY°å'™¶ÛvM"ŞowG–}$ÄÜ|&Ê	Ÿò‡²#2…VeŸÚf™Ô-‹Å¶À‹göoÂdª6ÖÏcÉ¸ñ%IYÙäA'I“2Na7ERføÑİ8æ³v™ßã¶ÃL;0#Çò˜*Ë›×vLQB·Â¶œËÕ£¨ı¥ŸğîA à+úïŒÂ}h<W¦W!w@ÄAd|â?D¡.@HnÍj‘Ø¡™ÑKïÆâØÃ÷öCvƒã%H™¨×-u†
 ›"‘7.£IgO:­qâçÁèöENºÁ$i²ô–¿Ä…%›â~Vt^«7 X†4?2áü=ßÚÉ²@^ «°=¦.Å°e”j»¬Z'Ì«´D]¿Ç˜‡ß£0¿™H·­ÂÌô»~'¼WAÏ#ºäÙ$
 ÓC©e9Ì®ÖsìÚ(e—A‰Ë†Œââ2ˆ§¼‹5‹E¶ûé4©Ût¾íœty0Í£ÓXÅ99²àn"Â-¯B†j)´…ä£ãEu›…º­¶ç8âÂé›.qa-%.u@á×ELrï”ü!”¼VB½4	§QşgêYíJëEr^)-\Ş¿MøÑ=Oúa¨–P3_À@áÉŠÍ<-_¯Õ3îÆ<	ÿŞ”éïs«Ìiîbå¤ ÏÑ/>šŠ`şVÈõéa¯Š"j²¥Àt,˜Ô"lKÀÄúÈe–ÎOj½#~=]³ágÃÏó“4ü\ŸŸÌ®G@k­ÎÖxI ¹ÕéÖSım’³ wH»äÚ€´	£Ë I1©ÖjÒm’YŞ íwHË¥¤ácÃÇó‘6|\›3ëÉ#H¢AÊvÙ)µt>RònøHà£ca·dÈÒi ¹6 ©c9K ibVëºéFi3ÇÑù~òG³íÂ·»ÁcƒÇãÑmğ¸6[KÔ0óØRZ:vµ®õÜ(,1v˜OË¢:<I=âß&=)ui“]6øÜ5>½Ÿëg—.Ñ ‰í*šô&Š=-Ûô¶…ObºÕ:Á„høôh=óß">I;®g7ølğ¹c|²Máó·  “ZS
-endstreamendobj125 0 obj<</CreationDate(D:20150422102243+06'30')/Creator(Adobe Illustrator CS5.1)/ModDate(D:20150423103637+05'30')/Producer(Adobe PDF library 9.90)/Title(adultTX-var2)>>endobjxref
-0 126
+endstreamendobj132 0 obj<</BaseFont/Helvetica/Encoding 134 0 R/Name/Helv/Subtype/Type1/Type/Font>>endobj133 0 obj<</BaseFont/ZapfDingbats/Name/ZaDb/Subtype/Type1/Type/Font>>endobj134 0 obj<</Differences[24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek/ring/tilde 39/quotesingle 96/grave 128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin/fraction/guilsinglleft/guilsinglright/minus/perthousand/quotedblbase/quotedblleft/quotedblright/quoteleft/quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE/Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron 160/Euro 164/currency 166/brokenbar 168/dieresis/copyright/ordfeminine 172/logicalnot/.notdef/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu 183/periodcentered/cedilla/onesuperior/ordmasculine 188/onequarter/onehalf/threequarters 192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]/Type/Encoding>>endobj125 0 obj<</CreationDate(D:20150422102243+06'30')/Creator(Adobe Illustrator CS5.1)/ModDate(D:20181011123922+05'30')/Producer(Adobe PDF library 9.90)/Title(adultTX-var2)>>endobjxref
+0 143
 0000000004 65535 f
 0000000016 00000 n
-0000000076 00000 n
-0000065997 00000 n
+0000000222 00000 n
+0000065833 00000 n
+0000000005 00000 f
+0000000007 00000 f
+0000065884 00000 n
+0000000008 00000 f
+0000000009 00000 f
+0000000010 00000 f
+0000000011 00000 f
+0000000012 00000 f
+0000000013 00000 f
+0000000014 00000 f
+0000000015 00000 f
+0000000016 00000 f
+0000000017 00000 f
+0000000018 00000 f
+0000000019 00000 f
+0000000020 00000 f
+0000000021 00000 f
+0000000022 00000 f
+0000000023 00000 f
+0000000024 00000 f
+0000000025 00000 f
+0000000026 00000 f
+0000000027 00000 f
+0000000028 00000 f
+0000000029 00000 f
+0000000030 00000 f
+0000000031 00000 f
+0000000032 00000 f
+0000000033 00000 f
+0000000034 00000 f
+0000000035 00000 f
+0000000036 00000 f
+0000000037 00000 f
+0000000038 00000 f
+0000000039 00000 f
+0000000040 00000 f
+0000000041 00000 f
+0000000042 00000 f
+0000000043 00000 f
+0000000044 00000 f
+0000000045 00000 f
+0000000046 00000 f
+0000000047 00000 f
+0000000048 00000 f
+0000000049 00000 f
+0000000050 00000 f
+0000000051 00000 f
+0000000052 00000 f
+0000000053 00000 f
+0000000054 00000 f
+0000000055 00000 f
+0000000056 00000 f
+0000000057 00000 f
+0000000058 00000 f
+0000000059 00000 f
+0000000060 00000 f
+0000000061 00000 f
+0000000062 00000 f
+0000000063 00000 f
+0000000064 00000 f
+0000000065 00000 f
+0000000067 00000 f
+0000692761 00000 n
+0000000127 00000 f
+0000706163 00000 n
+0000705935 00000 n
+0000067964 00000 n
+0000066636 00000 n
+0000067510 00000 n
+0000067558 00000 n
+0000692979 00000 n
+0000693226 00000 n
+0000706237 00000 n
+0000707583 00000 n
+0000708620 00000 n
+0000720629 00000 n
+0000731525 00000 n
+0000744082 00000 n
+0000752019 00000 n
+0000758808 00000 n
+0000793836 00000 n
+0000809665 00000 n
+0000835898 00000 n
+0000863256 00000 n
+0000893425 00000 n
+0000916898 00000 n
+0000935817 00000 n
+0000948165 00000 n
+0000958764 00000 n
+0000983992 00000 n
+0001007757 00000 n
+0001034420 00000 n
+0001068744 00000 n
+0001093604 00000 n
+0001111847 00000 n
+0001129211 00000 n
+0001129829 00000 n
+0001151003 00000 n
+0001157328 00000 n
+0001170122 00000 n
+0001172963 00000 n
+0001210584 00000 n
+0001231260 00000 n
+0001232679 00000 n
+0001246781 00000 n
+0001258509 00000 n
+0001265949 00000 n
+0001288467 00000 n
+0001296381 00000 n
+0001307066 00000 n
+0001318326 00000 n
+0001371962 00000 n
+0001400321 00000 n
+0001419389 00000 n
+0001425293 00000 n
+0001427925 00000 n
+0001428388 00000 n
+0001432000 00000 n
+0001455544 00000 n
+0001481073 00000 n
+0001505638 00000 n
+0001525457 00000 n
+0000000093 00000 n
+0000000131 00000 f
 0000000000 00000 f
 0000000000 00000 f
-0000066048 00000 n
+0000692633 00000 n
+0000000000 00000 f
+0001524094 00000 n
+0001524186 00000 n
+0001524264 00000 n
 0000000000 00000 f
 0000000000 00000 f
 0000000000 00000 f
+0000688778 00000 n
+0000691517 00000 n
 0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000000000 00000 f
-0000689312 00000 n
-0000066549 00000 n
-0000702599 00000 n
-0000702486 00000 n
-0000068498 00000 n
-0000066843 00000 n
-0000067936 00000 n
-0000067984 00000 n
-0000689530 00000 n
-0000689777 00000 n
-0000702673 00000 n
-0000704019 00000 n
-0000705056 00000 n
-0000717065 00000 n
-0000727961 00000 n
-0000740518 00000 n
-0000748455 00000 n
-0000755244 00000 n
-0000790272 00000 n
-0000806101 00000 n
-0000832334 00000 n
-0000859692 00000 n
-0000889861 00000 n
-0000913334 00000 n
-0000932253 00000 n
-0000944601 00000 n
-0000955200 00000 n
-0000980428 00000 n
-0001004193 00000 n
-0001030856 00000 n
-0001065180 00000 n
-0001090040 00000 n
-0001108283 00000 n
-0001125647 00000 n
-0001126265 00000 n
-0001147439 00000 n
-0001153764 00000 n
-0001166558 00000 n
-0001169399 00000 n
-0001207020 00000 n
-0001227696 00000 n
-0001229115 00000 n
-0001243217 00000 n
-0001254945 00000 n
-0001262385 00000 n
-0001284903 00000 n
-0001292817 00000 n
-0001303502 00000 n
-0001314762 00000 n
-0001368398 00000 n
-0001396757 00000 n
-0001415825 00000 n
-0001421729 00000 n
-0001424361 00000 n
-0001424824 00000 n
-0001428436 00000 n
-0001451980 00000 n
-0001477509 00000 n
-0001502074 00000 n
-0001520530 00000 n
+0000066308 00000 n
+0000706048 00000 n
 trailer
-<</Size 126/Root 1 0 R/Info 125 0 R/ID[<B39B60D679732E43BD73FD9AB783122C><0E1FF4AB4363BF46866D4FD334A50A5E>]>>
+<</Size 143/Root 1 0 R/Info 125 0 R/ID[<B39B60D679732E43BD73FD9AB783122C><95276CE0E0728E458CC1F7E43A7182E6>]>>
 startxref
-1520709
+1525636
 %%EOF

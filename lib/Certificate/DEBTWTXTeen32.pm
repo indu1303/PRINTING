@@ -40,7 +40,7 @@ sub printCertificate {
 		$self->{PDF}->writeLine(465-$xDiff, 722-$yDiff, $userData->{REPLACED_CERTIFICATE_NUMBER});
 	}
 	$self->{PDF}->writeLine(44-$xDiff, 722-$yDiff, 'X' ); ##Driver Education School
-	$self->{PDF}->writeLine(178-$xDiff, 722-$yDiff, 'X' ); ##Transfer
+	#$self->{PDF}->writeLine(178-$xDiff, 722-$yDiff, 'X' ); ##Transfer
 	#if($userData->{COURSE_REASON}) {
 		#if($userData->{COURSE_REASON} eq 'DEDS') {
 			###For DEDS, not to check the Transfer(See Back of Details)
@@ -157,14 +157,14 @@ sub printCertificate {
 				#$self->{PDF}->writeLine(136-$xDiff, 689-$yDiff, $schoolData1->{FIRST_NAME} );
 				#$self->{PDF}->writeLine(328-$xDiff, 689-$yDiff, "$schoolData1->{ADDRESS_1},$schoolData1->{CITY},$schoolData1->{STATE} $schoolData1->{ZIP}" );
 			#} elsif($userData->{COURSE_REASON} eq 'OTHERDS') {
-				$schoolData1->{FIRST_NAME}="DriversEd.com";#$userData->{DSPROVIDER};
-				$schoolData1->{LAST_NAME}='';
-				$schoolData1->{ADDRESS_1}="4201 FM 1960 WEST, STE. 100"; #$userData->{DSADDRESS};
-				$schoolData1->{CITY}="HOUSTON"; #$userData->{DSCITY};
-				$schoolData1->{STATE}='TX'; #$userData->{DSSTATE};
-				$schoolData1->{ZIP}='77068'; #$userData->{DSZIPCODE};
-				$self->{PDF}->writeLine(136-$xDiff, 689-$yDiff, $schoolData1->{FIRST_NAME} );
-				$self->{PDF}->writeLine(328-$xDiff, 689-$yDiff, "$schoolData1->{ADDRESS_1},$schoolData1->{CITY},$schoolData1->{STATE} $schoolData1->{ZIP}" );
+				###$schoolData1->{FIRST_NAME}="DriversEd.com";#$userData->{DSPROVIDER};
+				###$schoolData1->{LAST_NAME}='';
+				###$schoolData1->{ADDRESS_1}="4201 FM 1960 WEST, STE. 100"; #$userData->{DSADDRESS};
+				###$schoolData1->{CITY}="HOUSTON"; #$userData->{DSCITY};
+				###$schoolData1->{STATE}='TX'; #$userData->{DSSTATE};
+				###$schoolData1->{ZIP}='77068'; #$userData->{DSZIPCODE};
+				###$self->{PDF}->writeLine(136-$xDiff, 689-$yDiff, $schoolData1->{FIRST_NAME} );
+				###$self->{PDF}->writeLine(328-$xDiff, 689-$yDiff, "$schoolData1->{ADDRESS_1},$schoolData1->{CITY},$schoolData1->{STATE} $schoolData1->{ZIP}" );
 			#}
 		#}
 	#}
@@ -198,7 +198,7 @@ sub printCertificate {
 	open ($ph,"| /usr/bin/lp -o nobanner -q 1 -d $printer -o sides=two-sided-long-edge -o media=$media $outputFile");
 	close $ph;
 	if(-e $outputFile){
-		#print STDERR "\n printCertificate -- /usr/bin/lp -o nobanner -q 1 -d $printer -o sides=two-sided-long-edge -o media=$media $outputFile \n";
+		##print STDERR "\n printCertificate -- /usr/bin/lp -o nobanner -q 1 -d $printer -o sides=two-sided-long-edge -o media=$media $outputFile \n";
 		unlink $outputFile;
 	}
 	$self->{PDF} = Certificate::PDF->new($userId."_F",'','','','','',612,792);
@@ -210,7 +210,7 @@ sub printCertificate {
 	}
 
 	$self->{PDF}->writeLine(44-$xDiff, 722-$yDiff, 'X' ); ##Driver Education School
-	$self->{PDF}->writeLine(178-$xDiff, 722-$yDiff, 'X' ); ##Transfer
+	#$self->{PDF}->writeLine(178-$xDiff, 722-$yDiff, 'X' ); ##Transfer
 	$self->{PDF}->writeLine(44-$xDiff, 687-$yDiff, 'X' ); ##7hrs BTW
 	$self->{PDF}->writeLine(90-$xDiff, 633-$yDiff, $userData->{LEARNERSPERMITNUMBER} );
 
@@ -409,7 +409,7 @@ sub printCertificate {
 	close $ph;
 	if(-e $outputFile){
 		unlink $outputFile;
-		#print STDERR "\nCert lable: /usr/bin/lp -o nobanner -q 1 -d $printer -o sides=two-sided-long-edge -o media=$media $outputFile \n";
+		##print STDERR "\nCert lable: /usr/bin/lp -o nobanner -q 1 -d $printer -o sides=two-sided-long-edge -o media=$media $outputFile \n";
 	}
 
 	my $schoolData;
@@ -509,7 +509,7 @@ sub printRegularLabel {
 		open ($ph,"| /usr/bin/lp -o nobanner -q 1 -d $printer -o media=$media $outputFile");
 		close $ph;
 		if(-e $outputFile){
-			#print STDERR "\n printRegularLabel :: /usr/bin/lp -o nobanner -q 1 -d $printer -o media=$media $outputFile \n";
+			##print STDERR "\n printRegularLabel :: /usr/bin/lp -o nobanner -q 1 -d $printer -o media=$media $outputFile \n";
 			unlink $outputFile;
 		}
 	}

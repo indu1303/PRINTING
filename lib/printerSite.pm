@@ -48,7 +48,7 @@ $SITE_ORACLEPASS                        = 'web';
 
 ###################  Add a couple of entries for the CRM
 $CRM_DATABASE                           = 'crm';
-$CRM_DATABASE_HOST                      = '10.10.91.91';
+$CRM_DATABASE_HOST                      = '192.168.1.7';
 $CRM_DATABASE_USER                      = 'crm';
 $CRM_DATABASE_PASSWORD                  = 'ids';
 $SITE_FEDEX_SERVER                      = '172.20.2.155';
@@ -64,46 +64,46 @@ $SITE_PROD_IMAGE_AFFILIATES_URL_SECURE  = '/images';
 $SITE_PNG_PATH                          = '/ids/tools/PRINTING/PNG';          
 $SITE_TEMPLATES_PATH                    = '/ids/tools/PRINTING/templates';          
 $SITE_PRINTING_PATH                     = '/ids/tools/PRINTING';
-$DIP_DATABASE                           = 'dip';
-$DIP_DATABASE_USER                      = 'dip';
-$DIP_DATABASE_PASSWORD                  = 'dip';
-$DIP_DATABASE_HOST                      = '10.10.91.93';
+$DIP_DATABASE                           = 'rajesh_dip';
+$DIP_DATABASE_USER                      = 'rajesh_dip';
+$DIP_DATABASE_PASSWORD                  = 'rajesh_dip';
+$DIP_DATABASE_HOST                      = '192.168.1.7';
 $TEEN_DATABASE                          = 'teen';
 $TEEN_DATABASE_USER                     = 'teen';
 $TEEN_DATABASE_PASSWORD                 = 'teen';
-$TEEN_DATABASE_HOST                     = '10.10.91.90';
+$TEEN_DATABASE_HOST                     = '192.168.1.7';
 $AZTS_DATABASE                          = 'azts';
 $AZTS_DATABASE_USER                     = 'azts';
 $AZTS_DATABASE_PASSWORD                 = 'azts';
-$AZTS_DATABASE_HOST                     = '10.10.90.60:3306';
+$AZTS_DATABASE_HOST                     = '192.168.1.7';
 $TSTG_DATABASE                          = 'tstg';
 $TSTG_DATABASE_USER                     = 'tstg';
 $TSTG_DATABASE_PASSWORD                 = 'tstg';
-$TSTG_DATABASE_HOST                     = '10.10.90.60:3306';
+$TSTG_DATABASE_HOST                     = '192.168.1.7';
 $FLEET_DATABASE                         = 'fleet';
 $FLEET_DATABASE_USER                    = 'fleet';
 $FLEET_DATABASE_PASSWORD                = 'fleet';
-$FLEET_DATABASE_HOST                    = '10.10.91.90';
+$FLEET_DATABASE_HOST                    = '192.168.1.7';
 $CLASSROOM_DATABASE                     = 'classroom';
 $CLASSROOM_DATABASE_USER                = 'classroom';
 $CLASSROOM_DATABASE_PASSWORD            = 'classroom';
-$CLASSROOM_DATABASE_HOST                = '10.10.91.90';
+$CLASSROOM_DATABASE_HOST                = '192.168.1.7';
 $PRINTING_DATABASE                      = 'crm';
 $PRINTING_DATABASE_USER                 = 'crm';
 $PRINTING_DATABASE_PASSWORD             = 'ids';
-$PRINTING_DATABASE_HOST                 = '10.10.90.60:3306';
+$PRINTING_DATABASE_HOST                 = '192.168.1.7';
 $CLASS_DATABASE                         = 'class';
 $CLASS_DATABASE_USER                    = 'class';
 $CLASS_DATABASE_PASSWORD                = 'class';
-$CLASS_DATABASE_HOST                    = '10.10.91.90';
+$CLASS_DATABASE_HOST                    = '192.168.1.7';
 $AHST_DATABASE                          = 'ahst';
 $AHST_DATABASE_USER                     = 'ahst';
 $AHST_DATABASE_PASSWORD                 = 'ahst';
-$AHST_DATABASE_HOST                     = '10.10.90.60:3306';
+$AHST_DATABASE_HOST                     = '192.168.1.7';
 $HTS_DATABASE                           = 'hts';
 $HTS_DATABASE_USER                      = 'hts';
 $HTS_DATABASE_PASSWORD                  = 'hts';
-$HTS_DATABASE_HOST                      = '10.10.90.60:3306';
+$HTS_DATABASE_HOST                      = '192.168.1.7';
 
 $SITE_PROD_MATURE_URL                   = 'http://mature.idrivesafely.com';
 $SITE_PROD_TEEN_URL                     = 'http://teen.idrivesafely.com';
@@ -118,32 +118,32 @@ $HTS_SUPPORT_NUMBER                     = '1-800-582-8025';
 $DSMS_DATABASE                          = 'dsms';
 $DSMS_DATABASE_USER                     = 'dsms';
 $DSMS_DATABASE_PASSWORD                 = 'dsms';
-$DSMS_DATABASE_HOST                     = '10.10.91.90';
+$DSMS_DATABASE_HOST                     = '192.168.1.7';
 
 $ADULT_DATABASE                          = 'adult';
 $ADULT_DATABASE_USER                     = 'adult';
 $ADULT_DATABASE_PASSWORD                 = 'adult';
-$ADULT_DATABASE_HOST                     = '10.10.91.90';
+$ADULT_DATABASE_HOST                     = '192.168.1.7';
 
 $AAAFLEET_DATABASE                      = 'aaa';
 $AAAFLEET_DATABASE_USER                 = 'aaa';
 $AAAFLEET_DATABASE_PASSWORD             = 'aaa';
-$AAAFLEET_DATABASE_HOST                 = '10.10.91.90';
+$AAAFLEET_DATABASE_HOST                 = '192.168.1.7';
 
 $AAADIP_DATABASE                      = 'aaadip';
 $AAADIP_DATABASE_USER                 = 'aaadip';
 $AAADIP_DATABASE_PASSWORD             = 'aaadip';
-$AAADIP_DATABASE_HOST                 = '10.10.91.90';
+$AAADIP_DATABASE_HOST                 = '192.168.1.7';
 
 $AAATEEN_DATABASE                      = 'aaateen';
 $AAATEEN_DATABASE_USER                 = 'aaateen';
 $AAATEEN_DATABASE_PASSWORD             = 'aaateen';
-$AAATEEN_DATABASE_HOST                 = '10.10.91.90';
+$AAATEEN_DATABASE_HOST                 = '192.168.1.7';
 
 $CAAFLEET_DATABASE                      = 'caa';
 $CAAFLEET_DATABASE_USER                 = 'caa';
 $CAAFLEET_DATABASE_PASSWORD             = 'caa';
-$CAAFLEET_DATABASE_HOST                 = '10.10.91.90';
+$CAAFLEET_DATABASE_HOST                 = '192.168.1.7';
 
 $DIPDVD_DATABASE                      = 'FOUNDATIONDB';
 $DIPDVD_DATABASE_USER                 = 'foundationuser';
@@ -152,51 +152,51 @@ $DIPDVD_DATABASE_PASSWORD             = 'ragnar0s';
 $TAKEHOME_DATABASE                      = 'usi';
 $TAKEHOME_DATABASE_USER                 = 'usi';
 $TAKEHOME_DATABASE_PASSWORD             = 'usi';
-$TAKEHOME_DATABASE_HOST                 = '10.10.91.90';
+$TAKEHOME_DATABASE_HOST                 = '192.168.1.7';
 
 $USI_ONLINE_DATABASE                      = 'usi_diponline';
 $USI_ONLINE_DATABASE_USER                 = 'usi_diponline';
 $USI_ONLINE_DATABASE_PASSWORD             = 'usi_diponline';
-$USI_ONLINE_DATABASE_HOST                 = '10.10.90.60';
+$USI_ONLINE_DATABASE_HOST                 = '192.168.1.7';
 
 $AARP_DATABASE                      = 'aarp';
 $AARP_DATABASE_USER                 = 'aarp';
 $AARP_DATABASE_PASSWORD             = 'aarp';
-$AARP_DATABASE_HOST                 = '10.10.91.211'; 
+$AARP_DATABASE_HOST                 = '192.168.1.7'; 
 
 $AARP_CLASSROOM_DATABASE                = 'aarp_classroom';
 $AARP_CLASSROOM_DATABASE_USER           = 'aarp_classroom';
 $AARP_CLASSROOM_DATABASE_PASSWORD       = 'aarp_classroom';
-$AARP_CLASSROOM_DATABASE_HOST           = '10.10.91.90';
+$AARP_CLASSROOM_DATABASE_HOST           = '192.168.1.7';
 
 $FLEET_CA_DATABASE                      = 'fleet_ca';
 $FLEET_CA_DATABASE_USER                 = 'fleet_ca';
 $FLEET_CA_DATABASE_PASSWORD             = 'fleet_ca';
-$FLEET_CA_DATABASE_HOST                 = '10.10.91.90';
+$FLEET_CA_DATABASE_HOST                 = '192.168.1.7';
 
 $AARP_VOLUNTEER_DATABASE                      = 'aarp_vol';
 $AARP_VOLUNTEER_DATABASE_USER                 = 'aarp_vol';
 $AARP_VOLUNTEER_DATABASE_PASSWORD             = 'aarp_vol';
-$AARP_VOLUNTEER_DATABASE_HOST                 = '10.10.91.90';
+$AARP_VOLUNTEER_DATABASE_HOST                 = '192.168.1.7';
 
 $SCORM_DATABASE                      = 'idsscorm';
 $SCORM_DATABASE_USER                 = 'idsscorm';
 $SCORM_DATABASE_PASSWORD             = 'idsscorm';
-$SCORM_DATABASE_HOST                 = '10.10.91.90';
+$SCORM_DATABASE_HOST                 = '192.168.1.7';
 
 $AAA_SENIORS_DATABASE           = 'aaa_seniors';
 $AAA_SENIORS_DATABASE_USER      = 'aaa_seniors';
 $AAA_SENIORS_DATABASE_PASSWORD  = 'aaa_seniors';
-$AAA_SENIORS_DATABASE_HOST      = '10.10.91.90';
+$AAA_SENIORS_DATABASE_HOST      = '192.168.1.7';
 
 $DRIVERSED_DATABASE           = 'driversed';
 $DRIVERSED_DATABASE_USER      = 'driversed';
 $DRIVERSED_DATABASE_PASSWORD  = 'driversed';
-$DRIVERSED_DATABASE_HOST      = '10.10.91.90';
+$DRIVERSED_DATABASE_HOST      = '192.168.1.7';
 
-$EDRIVING_DATABASE           = 'dip';
-$EDRIVING_DATABASE_USER      = 'dip';
-$EDRIVING_DATABASE_PASSWORD  = 'dip';
-$EDRIVING_DATABASE_HOST      = '10.10.91.93';
+$EDRIVING_DATABASE           = 'rajesh_dip';
+$EDRIVING_DATABASE_USER      = 'rajesh_dip';
+$EDRIVING_DATABASE_PASSWORD  = 'rajesh_dip';
+$EDRIVING_DATABASE_HOST      = '192.168.1.7';
 
 1;

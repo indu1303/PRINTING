@@ -17,7 +17,7 @@ use Certificate::PDF;
 use Certificate::California;
 use Certificate::AAA;
 use Certificate::Delaware;
-use Certificate::Texas;
+use Certificate::DIPTexas;
 use Certificate::NewYork;
 use Certificate::CertForStudent;
 use Certificate::AAADIPCertificate;
@@ -822,6 +822,8 @@ sub getUserCertificate
 #print Dumper($idsPrint->submitCTSIUserData('8369909'));
 #print Dumper($idsPrint->printRefaxUser('8326877','1111','111','hari@ed-ventures-online.com'));
 #print Dumper($idsPrint->printAAADIPUser('365','20003:365'));
+my $idsPrint = IDSPrinter->new;
+print Dumper($idsPrint->printUser('22222934','13023124'));
 
 ######### below are helper functions.  They should never be instantiated by anyone except 
 ######### other members in this class

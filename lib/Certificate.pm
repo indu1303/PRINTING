@@ -92,6 +92,8 @@ sub printCertificate
 		$crsId = '56002';		
 	}
 	my $templates=$self->getCourseCertificateTemplate($crsId,$productId);
+print "\n____ $crsId,$productId \n";
+print Dumper($templates);
 	if($productId eq '41' && exists $self->{SETTINGS}->{DRIVERSED_COURSE_MAPPING}->{$crsId}){
 		$templates=$self->getCourseCertificateTemplate($self->{SETTINGS}->{DRIVERSED_COURSE_MAPPING}->{$crsId},$productId);
 	}	
@@ -146,6 +148,7 @@ sub printCertificate
 	} elsif($productId && $productId==21) {
 		$self->constructor($userId,$templates->{TOP},$templates->{BOTTOM},$faxEmail,$userData->{AAA_TIDEWATER_CLUB} );
 	}else{
+print "\n->>>>>>>>>>>>>>$userId,$templates->{TOP},$templates->{BOTTOM},$faxEmail,$userData->{RESIDENT_STATE}, $userData->{COUNTY_ID}, $productId, $userData->{UPSELLMAIL}, $userData->{UPSELLEMAIL}, $userData->{COURSE_STATE} \n";
 		$self->constructor($userId,$templates->{TOP},$templates->{BOTTOM},$faxEmail,$userData->{RESIDENT_STATE}, $userData->{COUNTY_ID}, $productId, $userData->{UPSELLMAIL}, $userData->{UPSELLEMAIL}, $userData->{COURSE_STATE} );
 	}
 	if($outputType->{FILE}){
@@ -560,13 +563,15 @@ CMD
 			###### error out.....printer is not set
 			$pId=0;	
 		}
-		my $ph = gensym;
+		#my $ph = gensym;
 		my $certType = 'RED_CERT';
 		if(($userData->{COURSE_ID} eq '5001' || $userData->{COURSE_ID} eq '5002' || $userData->{COURSE_ID} eq '5003' || $userData->{COURSE_ID} eq '5013') && ($productId == 2 || $productId == 32)){
-			open ($ph,  "| /usr/bin/lp -o nobanner  -q 1 -d $printer -o media=$media $outputFile");
+			#open ($ph,  "| /usr/bin/lp -o nobanner  -q 1 -d $printer -o media=$media $outputFile");
+print STDERR "\n1 --- $printer $media $outputFile \n";
 			$certType = 'CATEEN_CERT';
 		}elsif($userData->{COURSE_ID} eq '6002' && $productId == 2){
-			open ($ph,  "| /usr/bin/lp -o nobanner  -q 1 -d $printer -o media=$media $outputFile");
+			#open ($ph,  "| /usr/bin/lp -o nobanner  -q 1 -d $printer -o media=$media $outputFile");
+print STDERR "\n2 --- $printer $media $outputFile \n";
 			$certType = 'COTEEN_CERT';
 		}elsif($userData->{COURSE_ID} eq '44003' && $productId == 2){
 			my $loginDate=$userData->{LOGIN_DATE};
@@ -576,21 +581,26 @@ CMD
 			}else{
                        		($printer,$media)=Settings::getPrintingDetails($self, $productId, $st,'PERMITCERT');
 			}
-			open ($ph,  "| /usr/bin/lp -o nobanner  -q 1 -d $printer -o media=$media $outputFile");
+			#open ($ph,  "| /usr/bin/lp -o nobanner  -q 1 -d $printer -o media=$media $outputFile");
+print STDERR "\n3 --- $printer $media $outputFile \n";
 			$certType = 'TXTEEN_CERT';
 		}elsif(($userData->{COURSE_ID} eq '44004' || $userData->{COURSE_ID} eq '44005')  && $productId == 18){
-			open ($ph,  "| /usr/bin/lp -o nobanner  -q 1 -d $printer -o media=$media $outputFile");
+			#open ($ph,  "| /usr/bin/lp -o nobanner  -q 1 -d $printer -o media=$media $outputFile");
+print STDERR "\n4 --- $printer $media $outputFile \n";
 			$certType = 'TXADULT_CERT';
 		}elsif(($userData->{COURSE_ID} eq '200005' || $userData->{COURSE_ID} eq '100005' || $userData->{COURSE_ID} eq '400005') && $productId == 8){
-			open ($ph,  "| /usr/bin/lp -o nobanner -q 1 -d $printer  -o media=$media $outputFile");
+			#open ($ph,  "| /usr/bin/lp -o nobanner -q 1 -d $printer  -o media=$media $outputFile");
+print STDERR "\n5 --- $printer $media $outputFile \n";
 			$certType = 'CAMATURE_CERT';
 		} elsif ($productId == 28 && ($userData->{COURSE_ID} eq '5001' || $userData->{COURSE_ID} eq '5002' || $userData->{COURSE_ID} eq '5003' || $userData->{COURSE_ID} eq '5011' || $userData->{COURSE_ID} eq '5012')) {
-			open ($ph,  "| /usr/bin/lp -o nobanner -q 1 -d $printer  -o media=$media  $outputFile");
+			#open ($ph,  "| /usr/bin/lp -o nobanner -q 1 -d $printer  -o media=$media  $outputFile");
+print STDERR "\n6 --- $printer $media $outputFile \n";
 			$certType = 'CAAARP_CERT';
 		} else{
-			open ($ph,  "| /usr/bin/lp -o nobanner -q 1 -d $printer  -o media=$media $outputFile");
+			#open ($ph,  "| /usr/bin/lp -o nobanner -q 1 -d $printer  -o media=$media $outputFile");
+print STDERR "\n7 --- $printer $media $outputFile \n";
 		}
-		close $ph;
+		#close $ph;
 		if (exists $self->{SETTINGS}->{WHITE_PAPER_CERTS}->{$self->{SETTINGS}->{PRODUCT_NAME}->{$productId}} && exists $self->{SETTINGS}->{WHITE_PAPER_CERTS}->{$self->{SETTINGS}->{PRODUCT_NAME}->{$productId}}->{$st})
 		{
 			$certType = "";	
@@ -611,7 +621,8 @@ CMD
 	}
 #	$cert->end;
 	if(-e $outputFile){
-		unlink $outputFile;
+print STDERR "\noutputFile : $outputFile \n";
+		#unlink $outputFile;
 	}
 	return $pId;
 }
@@ -931,6 +942,7 @@ sub getCourseCertificateAlias
 	##### return the appropriate field information based on the field id
 	my $sql = $self->{CRM_CON}->selectrow_hashref("select alias_course_id from printing_course_alias where course_id = ? and product_id=?", 
                                                 {}, $courseId,$productId);
+print "\nselect alias_course_id from printing_course_alias where course_id = $courseId and product_id=$productId;\n";
 	
 	##### return the field data
 	return ($sql->{alias_course_id}) ? $sql->{alias_course_id} : 0;
@@ -1201,10 +1213,12 @@ sub getCourseCertificateTemplate
         my ($courseId,$productId) = @_;
         $productId=($productId)?$productId:1;
         ###### ok, it's not defined, but is it aliased?
+print STDERR "\n________________________ $courseId \n";
         my $alias = $self->getCourseCertificateAlias($courseId,$productId);
 	if($alias){
 		$courseId=$alias;
 	}
+print STDERR "\n222________________________ $courseId \n";
         ###### get a all template/type  for this particular course
         ######
         ###### Let's see if we already have it defined
@@ -1215,11 +1229,14 @@ sub getCourseCertificateTemplate
 	my $count=$self->{CRM_CON}->selectrow_array("select count(*) from printing_course_fields where course_id = ? and product_id=?",{},$courseId,$productId);
 	my $productName=(exists $self->{SETTINGS}->{PRODUCT_NAME}->{$productId})?$self->{SETTINGS}->{PRODUCT_NAME}->{$productId}:'DIP';
         $productName=(!$productName)?'DIP':$productName;
+print "\n CourseID: $courseId \n";
         if((!$count || $count == 0) && !(exists $self->{SETTINGS}->{TEXASPRINTING}->{$productName}->{$courseId} && $self->{SETTINGS}->{TEXASPRINTING}->{$productName}->{$courseId} eq 'TX')){
                 my $cId = $self->{CRM_CON}->selectrow_array("select course_id from printing_course_templates  where product_id=? and default_course_id=?",{},$productId,1);
                 $courseId = $cId;
+print "\n 2 CourseID: $courseId \n";
         }
 
+print "\nselect top_template,bottom_template,coversheet_template,template_type_id  from printing_course_templates where course_id = $courseId and product_id=$productId;\n";
         my $sql = $self->{CRM_CON}->prepare("select top_template,bottom_template,coversheet_template,template_type_id  from printing_course_templates where course_id = ? and product_id=?");         
         $sql->execute($courseId,$productId);
         while (my ($top,$bottom,$coverSheet,$type) = $sql->fetchrow)

@@ -153,13 +153,8 @@ print "\n ____Comp Dte:  $userData->{COMPLETION_DATE} \n";
     	my $helvetica       = 'HELVETICA';
 	my $helveticaBold   = 'HELVETICABOLD';
 
-	##Certificate Number
-	$self->{PDF}->setFont($helvetica, 8);
-        $self->{PDF}->writeLine(515, 376, $certNumber);
-        $self->{PDF}->writeLine(515, 759, $certNumber);
 
 	
-	##print Student Address
     	my $yPos = 124;
         my $userAddressInfo;
         my $userDLInfo;
@@ -257,9 +252,27 @@ print "\n ____Comp Dte:  $userData->{COMPLETION_DATE} \n";
                 $userAddressInfo = $userData;
         }
 
+	##print Student Address
         $self->_printAddress(124, $userAddressInfo);
         $self->_printAddress(500, $userAddressInfo);
 
+
+	##Certificate Number
+	if($reprintData) {
+		$self->{PDF}->setFont($helvetica, 8);
+	        $self->{PDF}->writeLine(515, 376, $certNumber);
+        	$self->{PDF}->writeLine(515, 759, $certNumber);
+
+		$self->{PDF}->setFont($helvetica, 7);
+		$self->{PDF}->writeLine(445, 366, "Changed from: $reprintData->{CERTIFICATE_NUMBER}");
+		$self->{PDF}->writeLine(445, 749, "Changed from: $reprintData->{CERTIFICATE_NUMBER}");
+
+	} else {
+		$self->{PDF}->setFont($helvetica, 8);
+	        $self->{PDF}->writeLine(515, 376, $certNumber);
+        	$self->{PDF}->writeLine(515, 759, $certNumber);
+	}
+#$reprintData->{CERTIFICATE_NUMBER}
 	##Student Name
 print "_________________ $userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_NAME} ---- \n";
 	if ($nameChange) {

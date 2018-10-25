@@ -30,6 +30,9 @@ sub new
 	###### let's create the current PDF
 	$self->{FONT}->{HELVETICA} 	= 'Helvetica';
 	$self->{FONT}->{HELVETICABOLD} 	= 'Helvetica-Bold';
+
+	$self->{FONT}->{CALIBRI} 	= 'Calibri';
+	$self->{FONT}->{CALIBRIBOLD} 	= 'Calibri-Bold';
 	bless ($self, $class);
 
 	return $self;

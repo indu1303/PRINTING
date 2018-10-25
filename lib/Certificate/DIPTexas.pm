@@ -25,7 +25,9 @@ sub _generateCertificate {
     my $self = shift;
     my ($userId, $userData,$printId,$productId,$reprintData,$faxEmail) = @_;
 #print STDERR "\n USER HERE --- $userId, $userData,$printId,$productId,$reprintData,$faxEmail \n";
-print Dumper($reprintData);
+#print Dumper($reprintData);
+print Dumper($userData);
+#exit;
     my $ycoord = 0;
     my $ctrMysql=0;
     my $xDiff=0;
@@ -53,6 +55,7 @@ print Dumper($reprintData);
     my $instructor = "REYNA, CARLOS (7014)";
     my $reasonForAttendance = "Traffic Citation";
     my $headerRef = 'REGULAR';
+    my $courseProvider = '';
     my $seatBeltCourse = 0;
     my $certNumber = $userData->{CERTIFICATE_NUMBER};
     my $printDate = Settings::getDate();
@@ -70,6 +73,7 @@ print Dumper($reprintData);
         }
         $headerRef = 'OCPS';
         $seatBeltCourse = 'SPECIALIZED "SEAT BELT" COURSE';
+	$courseProvider = "CP225-C1635";
     }
     elsif($productId && $productId eq '25'){
     	my $productName=$self->{SETTINGS}->{PRODUCT_NAME}->{$productId};
@@ -88,6 +92,7 @@ print Dumper($reprintData);
         {
             $reprintData->{CERTIFICATE_NUMBER} = "CP490-" . $reprintData->{CERTIFICATE_NUMBER};
         }
+	$courseProvider = "CP490-C0399";
 
     }
     else
@@ -98,12 +103,14 @@ print Dumper($reprintData);
         	{
 	            $reprintData->{CERTIFICATE_NUMBER} = "CP490-" . $reprintData->{CERTIFICATE_NUMBER};
         	}
+		$courseProvider = "CP490-C0399";
 	}else{
         	$certNumber = "CP225-" . $certNumber;
 	        if ($reprintData && $reprintData->{CERTIFICATE_NUMBER})
         	{
 	            $reprintData->{CERTIFICATE_NUMBER} = "CP225-" . $reprintData->{CERTIFICATE_NUMBER};
         	}
+		$courseProvider = "CP225-C1635";
 	}
     }
 
@@ -124,9 +131,13 @@ print Dumper($reprintData);
     }
     
 
+    if ($reprintData) {
+	$userData->{COMPLETION_DATE} = $userData->{COMPLETIONDATE};
+    }
     my @cData = split(/ /,$userData->{COMPLETION_DATE});
     $cData[0] =~ s/\-/\//g;
     $userData->{COMPLETION_DATE} = $cData[0];
+print "\n ____Comp Dte:  $userData->{COMPLETION_DATE} \n";
   
     @cData = split(/-/, $printDate);
     if ($cData[0] <10)  { $cData[0] = "0" . $cData[0];  };
@@ -142,14 +153,8 @@ print Dumper($reprintData);
     	my $helvetica       = 'HELVETICA';
 	my $helveticaBold   = 'HELVETICABOLD';
 
-        my $calibri       = 'CALIBRI';
-        my $calibriBold   = 'CALIBRIBOLD';
-        #my $calibriItalica = 'CALIBRIBOLD';
-
-	##Print the data
-
 	##Certificate Number
-	$self->{PDF}->setFont($calibri, 8);
+	$self->{PDF}->setFont($helvetica, 8);
         $self->{PDF}->writeLine(515, 376, $certNumber);
         $self->{PDF}->writeLine(515, 759, $certNumber);
 
@@ -258,49 +263,60 @@ print Dumper($reprintData);
 	##Student Name
 print "_________________ $userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_NAME} ---- \n";
 	if ($nameChange) {
+		$self->{PDF}->setFont($helvetica, 8);
 		$self->{PDF}->writeLine(445, 330, "$userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_NAME}");
 		$self->{PDF}->writeLine(445, 709, "$userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_NAME}");
 
-		$self->{PDF}->setFont('Times-Italic', 7);
+		$self->{PDF}->setFont($helvetica, 7);
 		$self->{PDF}->writeLine(445, 320, "Changed from: $userData->{FIRST_NAME} $userData->{LAST_NAME}");
 		$self->{PDF}->writeLine(445, 700, "Changed from: $userData->{FIRST_NAME} $userData->{LAST_NAME}");		
 	} else {
-
-		#$userData->{FIRST_NAME} = ucfirst(lc($userData->{FIRST_NAME}));
-		#$userData->{LAST_NAME} = ucfirst(lc($userData->{LAST_NAME}));
-		$self->{PDF}->writeLine(445, 330, "$userData->{FIRST_NAME}, $userData->{LAST_NAME}");
-		$self->{PDF}->writeLine(445, 709, "$userData->{FIRST_NAME}, $userData->{LAST_NAME}");
+		$self->{PDF}->setFont($helvetica, 8);
+		$self->{PDF}->writeLine(445, 330, "$userData->{FIRST_NAME} $userData->{LAST_NAME}");
+		$self->{PDF}->writeLine(445, 709, "$userData->{FIRST_NAME} $userData->{LAST_NAME}");
 	}
 
 	##DL
 	if($dlChange) {
+		$self->{PDF}->setFont($helvetica, 8);
 		$self->{PDF}->writeLine(445, 295, "$userDLInfo->{DRIVERS_LICENSE}");
 		$self->{PDF}->writeLine(445, 676, "$userDLInfo->{DRIVERS_LICENSE}");
 
-		$self->{PDF}->setFont('Times-Italic', 7);
+		$self->{PDF}->setFont($helvetica, 7);
 		$self->{PDF}->writeLine(445, 285, "Changed from: $userData->{DRIVERS_LICENSE}");
 		$self->{PDF}->writeLine(445, 666, "Changed from: $userData->{DRIVERS_LICENSE}");		
 	} else {
+		$self->{PDF}->setFont($helvetica, 8);
 		$self->{PDF}->writeLine(445, 295, "$userData->{DRIVERS_LICENSE}");
 		$self->{PDF}->writeLine(445, 676, "$userData->{DRIVERS_LICENSE}");
 	}
 
 	##DOB
 	if($reprintData->{DATE_OF_BIRTH}) {
-		$self->{PDF}->writeLine(445, 256, "$reprintData->{DATE_OF_BIRTH}");
-		$self->{PDF}->writeLine(445, 640, "$reprintData->{DATE_OF_BIRTH}");
+print "\n HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
+		$self->{PDF}->setFont($helvetica, 8);
+		$self->{PDF}->writeLine(445, 256, "$reprintData->{DOBFORMATTED}");
+		$self->{PDF}->writeLine(445, 640, "$reprintData->{DOBFORMATTED}");
 
-		$self->{PDF}->setFont('Times-Italic', 7);
+		$self->{PDF}->setFont($helvetica, 7);
 		$self->{PDF}->writeLine(445, 245, "Changed from: $userData->{DATE_OF_BIRTH}");
 		$self->{PDF}->writeLine(445, 630, "Changed from: $userData->{DATE_OF_BIRTH}");		
 	} else {
-		$self->{PDF}->writeLine(445, 256, "$userData->{DATE_OF_BIRTH}");
-		$self->{PDF}->writeLine(445, 640, "$userData->{DATE_OF_BIRTH}");
+print "\n ELSE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! $userData->{DATE_OF_BIRTH}  !!!\n";
+		$self->{PDF}->setFont($helvetica, 8);
+		if($userData->{DOBFORMATTED}) {
+			$self->{PDF}->writeLine(445, 256, "$userData->{DOBFORMATTED}");
+			$self->{PDF}->writeLine(445, 640, "$userData->{DOBFORMATTED}");
+		} else {
+			$self->{PDF}->writeLine(445, 256, "$userData->{DATE_OF_BIRTH}");
+			$self->{PDF}->writeLine(445, 640, "$userData->{DATE_OF_BIRTH}");
+		}
 	}
+	$self->{PDF}->setFont($helvetica, 8);
 
 	##Course Provider
-	$self->{PDF}->writeLine(445, 206, "Course Provider");
-	$self->{PDF}->writeLine(445, 590, "Course Provider");
+	$self->{PDF}->writeLine(445, 206, "$courseProvider");
+	$self->{PDF}->writeLine(445, 590, "$courseProvider");
 
 	##Shool-Classroom
 	$self->{PDF}->writeLine(445, 180, "$classroom");

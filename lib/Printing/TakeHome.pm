@@ -524,6 +524,7 @@ EOM
 
 sub putUserPrintRecord {
     my $self    = shift;
+return 1;
     my ($userId, $certNumber, $type, $duplicateId) = @_;
     my $deliveryId =  $self->{PRODUCT_CON}->selectrow_array('select delivery_id from user_delivery where user_id = ?', {}, $userId);
     if(!defined $deliveryId){

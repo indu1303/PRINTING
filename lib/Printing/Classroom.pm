@@ -119,6 +119,7 @@ EOM
 
         $sqlStmt =~ s/\[CONSTRAINT\]/$constraint/;
         $sqlStmt =~ s/\[STC\]/$stcConstraint/;
+print "\n$sqlStmt;\n";
     	my $sql     = $self->{PRODUCT_CON}->prepare($sqlStmt);
     	$sql->execute;
 
@@ -288,6 +289,7 @@ sub getUserShipping
 
 sub putUserPrintRecord{
         my $self    = shift;
+return 1;
         my ($studentId, $certNumber, $type, $duplicateId) = @_;
         my $deliveryId = $self->{PRODUCT_CON}->selectrow_array('select delivery_id from classroom_students where student_id = ?', {}, $studentId);
         if(!$deliveryId){

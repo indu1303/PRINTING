@@ -230,7 +230,7 @@ sub new
 					1001  => 'Texas',
 					1015  => 'DIPTexas',
 					1007  => 'Texas',
-					1006  => 'Texas',
+					1006  => 'DIPTexas',
 					40004 => 'NewYork',
 					40005 => 'NewYork',
 					},
@@ -270,6 +270,9 @@ sub new
 						DEFAULT => 'Texas',
 						1008 => 'California',
 						1009 => 'California',
+						1005 => 'DIPTexas',
+						1009 => 'DIPTexas',
+						1007 => 'DIPTexas',
                                         },
 				     TSTG => 
 					{
@@ -323,7 +326,7 @@ sub new
 				      TAKEHOME => 
                                         {
                                         	DEFAULT =>'California',
-                                        	1011  => 'Texas',
+                                        	1011  => 'DIPTexas',
                                         	40004 => 'NewYork',
 					},
 				      USI_ONLINE => 
@@ -1042,6 +1045,17 @@ sub new
 	NEW_EMAIL_POC_STATES	=> { 
 		'DIP' => {'MI' => 1, },
 		'TEEN' => { 'FL' => 1,},
+	},
+	CERTIFICATE_ON_WHITE_PAPER => {
+		1 => {
+			1011 =>1, 1006=>1, 1015 =>1,
+		},
+		25 =>{
+			1011=>1, 
+		},
+		5 =>{
+			1005=>1, 1007=>1,
+		},
 	},
 
 

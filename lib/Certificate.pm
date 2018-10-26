@@ -92,8 +92,6 @@ sub printCertificate
 		$crsId = '56002';		
 	}
 	my $templates=$self->getCourseCertificateTemplate($crsId,$productId);
-print "\n____ $crsId,$productId \n";
-print Dumper($templates);
 	if($productId eq '41' && exists $self->{SETTINGS}->{DRIVERSED_COURSE_MAPPING}->{$crsId}){
 		$templates=$self->getCourseCertificateTemplate($self->{SETTINGS}->{DRIVERSED_COURSE_MAPPING}->{$crsId},$productId);
 	}	
@@ -549,7 +547,11 @@ CMD
 		}
 		else
 		{
-			($printer,$media)=Settings::getPrintingDetails($self, $productId, $st,'CERT');
+			my $printerLabel = 'CERT';
+			if(exists $self->{SETTINGS}->{CERTIFICATE_ON_WHITE_PAPER}->{$productId}->{$userData->{COURSE_ID}}) {
+				$printerLabel = 'CERTWHITEPAPER';
+			}
+			($printer,$media)=Settings::getPrintingDetails($self, $productId, $st,$printerLabel);
 		}
 	        if(!$printer){
         	        $printer = 'HP-PDF-HOU05';
@@ -1213,12 +1215,10 @@ sub getCourseCertificateTemplate
         my ($courseId,$productId) = @_;
         $productId=($productId)?$productId:1;
         ###### ok, it's not defined, but is it aliased?
-print STDERR "\n________________________ $courseId \n";
         my $alias = $self->getCourseCertificateAlias($courseId,$productId);
 	if($alias){
 		$courseId=$alias;
 	}
-print STDERR "\n222________________________ $courseId \n";
         ###### get a all template/type  for this particular course
         ######
         ###### Let's see if we already have it defined
@@ -1229,14 +1229,11 @@ print STDERR "\n222________________________ $courseId \n";
 	my $count=$self->{CRM_CON}->selectrow_array("select count(*) from printing_course_fields where course_id = ? and product_id=?",{},$courseId,$productId);
 	my $productName=(exists $self->{SETTINGS}->{PRODUCT_NAME}->{$productId})?$self->{SETTINGS}->{PRODUCT_NAME}->{$productId}:'DIP';
         $productName=(!$productName)?'DIP':$productName;
-print "\n CourseID: $courseId \n";
         if((!$count || $count == 0) && !(exists $self->{SETTINGS}->{TEXASPRINTING}->{$productName}->{$courseId} && $self->{SETTINGS}->{TEXASPRINTING}->{$productName}->{$courseId} eq 'TX')){
                 my $cId = $self->{CRM_CON}->selectrow_array("select course_id from printing_course_templates  where product_id=? and default_course_id=?",{},$productId,1);
                 $courseId = $cId;
-print "\n 2 CourseID: $courseId \n";
         }
 
-print "\nselect top_template,bottom_template,coversheet_template,template_type_id  from printing_course_templates where course_id = $courseId and product_id=$productId;\n";
         my $sql = $self->{CRM_CON}->prepare("select top_template,bottom_template,coversheet_template,template_type_id  from printing_course_templates where course_id = ? and product_id=?");         
         $sql->execute($courseId,$productId);
         while (my ($top,$bottom,$coverSheet,$type) = $sql->fetchrow)

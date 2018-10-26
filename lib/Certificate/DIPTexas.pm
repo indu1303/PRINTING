@@ -26,7 +26,7 @@ sub _generateCertificate {
     my ($userId, $userData,$printId,$productId,$reprintData,$faxEmail) = @_;
 #print STDERR "\n USER HERE --- $userId, $userData,$printId,$productId,$reprintData,$faxEmail \n";
 #print Dumper($reprintData);
-print Dumper($userData);
+#print Dumper($userData);
 #exit;
     my $ycoord = 0;
     my $ctrMysql=0;
@@ -137,7 +137,7 @@ print Dumper($userData);
     my @cData = split(/ /,$userData->{COMPLETION_DATE});
     $cData[0] =~ s/\-/\//g;
     $userData->{COMPLETION_DATE} = $cData[0];
-print "\n ____Comp Dte:  $userData->{COMPLETION_DATE} \n";
+#print "\n ____Comp Dte:  $userData->{COMPLETION_DATE} \n";
   
     @cData = split(/-/, $printDate);
     if ($cData[0] <10)  { $cData[0] = "0" . $cData[0];  };
@@ -253,7 +253,7 @@ print "\n ____Comp Dte:  $userData->{COMPLETION_DATE} \n";
         }
 
 	##print Student Addresse
-	
+	$self->{PDF}->setFont($helvetica, 9);
         $self->_printAddress(124, $userAddressInfo);
         $self->_printAddress(500, $userAddressInfo);
 
@@ -273,7 +273,7 @@ print "\n ____Comp Dte:  $userData->{COMPLETION_DATE} \n";
         	$self->{PDF}->writeLine(515, 759, $certNumber);
 	}
 	##Student Name
-print "_________________ $userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_NAME} ---- \n";
+#print "_________________ $userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_NAME} ---- \n";
 	if ($nameChange) {
 		$self->{PDF}->setFont($helvetica, 8);
 		$self->{PDF}->writeLine(445, 330, "$userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_NAME}");
@@ -305,7 +305,7 @@ print "_________________ $userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_
 
 	##DOB
 	if($reprintData->{DATE_OF_BIRTH}) {
-print "\n HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
+#print "\n HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
 		$self->{PDF}->setFont($helvetica, 8);
 		$self->{PDF}->writeLine(445, 256, "$reprintData->{DOBFORMATTED}");
 		$self->{PDF}->writeLine(445, 640, "$reprintData->{DOBFORMATTED}");
@@ -314,7 +314,7 @@ print "\n HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		$self->{PDF}->writeLine(445, 245, "Changed from: $userData->{DATE_OF_BIRTH}");
 		$self->{PDF}->writeLine(445, 630, "Changed from: $userData->{DATE_OF_BIRTH}");		
 	} else {
-print "\n ELSE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! $userData->{DATE_OF_BIRTH}  !!!\n";
+#print "\n ELSE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! $userData->{DATE_OF_BIRTH}  !!!\n";
 		$self->{PDF}->setFont($helvetica, 8);
 		if($userData->{DOBFORMATTED}) {
 			$self->{PDF}->writeLine(445, 256, "$userData->{DOBFORMATTED}");
@@ -351,12 +351,18 @@ print "\n ELSE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	$self->{PDF}->writeLine(445, 433, "$reasonForAttendance");
 
 	##Court
+	if($reprintData) {
+		if($userData->{DATA}->{REGULATOR_DEF}) {
+			$regDef = $userData->{DATA}->{REGULATOR_DEF};
+		}
+	}
 	$self->{PDF}->writeLine(38, 560, "$regDef");
-
-
-
-
-
+	#print "$regDef ->>> if($reprintData && $userData->{DATA}->{REGULATOR_DEF} ne $userData->{REGULATOR_DEF}) { \n";
+	if($reprintData && $userData->{DATA}->{REGULATOR_DEF} && $userData->{DATA}->{REGULATOR_DEF} ne $userData->{REGULATOR_DEF}) {
+		$self->{PDF}->setFont($helvetica, 7);
+		$self->{PDF}->writeLine(38, 550, "Changed from: $userData->{REGULATOR_DEF}");
+	}
+	$self->{PDF}->setFont($helvetica, 8);
 
 
 ########################################################
@@ -409,8 +415,8 @@ print "\n ELSE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     $self->{PDF}->writeLine(140-$xDiff, 696, $flag);
     if(!$faxEmail){
 	if($productId && $productId eq '25'){
-        	$self->_printCorporateAddress(60-$xDiff,686, $OFFICECA,'www.takehome.com');
-	        $self->_printCorporateAddress(60-$xDiff,294, $OFFICECA,'www.takehome.com');
+        	#$self->_printCorporateAddress(60-$xDiff,686, $OFFICECA,'www.takehome.com');
+	        #$self->_printCorporateAddress(60-$xDiff,294, $OFFICECA,'www.takehome.com');
 	}else{
         	#$self->_printCorporateAddress(60-$xDiff,686, $OFFICECA,'www.idrivesafely.com');
 	        #$self->_printCorporateAddress(60-$xDiff,294, $OFFICECA,'www.idrivesafely.com');
@@ -650,11 +656,82 @@ print "\n ELSE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     if(!$printId){
         $printId=$self->MysqlDB::getNextId('contact_id');
     }
-    $self->MysqlDB::dbInsertPrintManifestStudentInfo($printId,$fixedData,$variableDataStr);
+   $self->MysqlDB::dbInsertPrintManifestStudentInfo($printId,$fixedData,$variableDataStr);
+  
+print  "\n->>> Deliveery Id: $userData->{DELIVERY_ID} |||| $productId \n";
+   if(!$userData->{DELIVERY_ID} || ($userData->{DELIVERY_ID} && ($userData->{DELIVERY_ID} eq '1' || $userData->{DELIVERY_ID} eq '18' || $userData->{DELIVERY_ID} eq '100'))){
+	$self->printTexasLabel($userId, $userData, $productId);
+   }
    return ($self->{PDF},$printId);
 
 }
 
+sub printTexasLabel
+{
+    my $self = shift;
+    my ($userId, $userData, $productId) = @_;
+
+    my $siteUrl = "www.idrivesafely.com";
+    my $productURL = { '1' => 'www.idrivesafely.com', '25' => 'www.takehome.com', '5' => 'www.idrivesafely.com' };
+    if($productURL->{$productId}) {
+	$siteUrl = $productURL->{$productId};
+    }
+    if(!$userData->{DELIVERY_ID} || ($userData->{DELIVERY_ID} && ($userData->{DELIVERY_ID} eq '1' || $userData->{DELIVERY_ID} eq '18' || $userData->{DELIVERY_ID} eq '100'))){
+
+    $self->{PDF} = Certificate::PDF->new("LABEL$userId",'','','','','',612,792);
+    my $top = $self->{SETTINGS}->{TEMPLATESPATH}."/printing/DIP_Certificate_Label.pdf";
+    my $full=1;
+    my $bottom='';
+    $self->{PDF}->setTemplate($top,$bottom,$full);
+    ###### as we do w/ all things, let's start at the top.  Print the header
+    ###### now, print the user's name and address
+
+    my $OFFICECA = $self->{SETTINGS}->getOfficeCa();
+    if(!($userData->{COURSE_STATE} && exists $self->{SETTINGS}->{WEST_COAST_STATES}->{$userData->{COURSE_STATE}})){
+        $OFFICECA = $self->{SETTINGS}->getOfficeCa('',1);
+    }
+    my $xDiff='';
+    $self->_printCorporateAddress(21-$xDiff,662, $OFFICECA,$siteUrl);
+
+    my $yPos=579;
+    $self->{PDF}->setFont('HELVETICABOLD', 9);
+    $self->{PDF}->writeLine( 21, $yPos, $userData->{FIRST_NAME} . ' ' . $userData->{LAST_NAME} );
+    $yPos -=11;
+    $self->{PDF}->setFont('HELVETICABOLD', 8);
+    $self->{PDF}->writeLine( 21, $yPos, $userData->{ADDRESS_1} );
+    $yPos -=11;
+    if($userData->{ADDRESS_2}){
+        $self->{PDF}->writeLine( 21, $yPos, $userData->{ADDRESS_2} );
+        $yPos -=11;
+    }
+    $self->{PDF}->writeLine( 21, $yPos, "$userData->{CITY}, $userData->{STATE} $userData->{ZIP}");
+    $self->{PDF}->getCertificate;
+    my $printer = 0;
+    my $media = 0;
+    my $st='XX';   ##########  Default state, we have mentioned as XX;
+    my $productId=18;  ##### This is for Adult 
+    $st=($userData->{COURSE_STATE})?$userData->{COURSE_STATE}:$st;
+    ($printer,$media)=Settings::getPrintingDetails($self, $productId, $st,'RLBL');
+    if(!$printer){
+                $printer = 'HP-PDF-MANUAL';
+    }
+    if(!$media){
+                $media='Tray2';
+    }
+
+                my $outputFile = "/tmp/LABEL$userId.pdf";
+                ######## send the certificate to the printer
+
+                #my $ph;
+                #open ($ph,  "| /usr/bin/lp -o nobanner -q 1 -d $printer -o media=$media  $outputFile");
+                #close $ph;
+                #if(-e $outputFile){
+                        #unlink $outputFile;
+                #}
+print "\noutputFile : LABLE:L $outputFile -- $printer -o media=$media  $outputFile \n";
+    }
+
+}
 
 sub constructor
 {

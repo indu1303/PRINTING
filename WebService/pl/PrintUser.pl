@@ -17,7 +17,7 @@ use Certificate::PDF;
 use Certificate::California;
 use Certificate::AAA;
 use Certificate::Delaware;
-use Certificate::DIPTexas;
+use Certificate::Texas;
 use Certificate::NewYork;
 use Certificate::CertForStudent;
 use Certificate::AAADIPCertificate;

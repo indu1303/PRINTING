@@ -219,7 +219,7 @@ print "\n ____Comp Dte:  $userData->{COMPLETION_DATE} \n";
                         $reprintData->{STATE} ne $userData->{STATE})
                 {
                         $addressChange = 1;
-                        $userAddressInfo->{STATE} = $reprintData->{DATA}->{STATE};
+                        $userAddressInfo->{STATE} = $reprintData->{STATE};
                 }
                 else
                 {
@@ -252,10 +252,10 @@ print "\n ____Comp Dte:  $userData->{COMPLETION_DATE} \n";
                 $userAddressInfo = $userData;
         }
 
-	##print Student Address
+	##print Student Addresse
+	
         $self->_printAddress(124, $userAddressInfo);
         $self->_printAddress(500, $userAddressInfo);
-
 
 	##Certificate Number
 	if($reprintData) {
@@ -272,7 +272,6 @@ print "\n ____Comp Dte:  $userData->{COMPLETION_DATE} \n";
 	        $self->{PDF}->writeLine(515, 376, $certNumber);
         	$self->{PDF}->writeLine(515, 759, $certNumber);
 	}
-#$reprintData->{CERTIFICATE_NUMBER}
 	##Student Name
 print "_________________ $userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_NAME} ---- \n";
 	if ($nameChange) {

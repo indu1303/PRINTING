@@ -228,7 +228,7 @@ sub new
 					#1011  => 'Texas',
 					1011  => 'DIPTexas',
 					1001  => 'Texas',
-					1015  => 'Texas',
+					1015  => 'DIPTexas',
 					1007  => 'Texas',
 					1006  => 'Texas',
 					40004 => 'NewYork',

@@ -332,10 +332,74 @@ sub _generateCertificate {
 	if(!$printId){
 		$printId=$self->MysqlDB::getNextId('contact_id');
 	}
+	print "\n->>> Deliveery Id: $userData->{DELIVERY_ID} |||| $productId \n";
+	if(!$userData->{DELIVERY_ID} || ($userData->{DELIVERY_ID} && $userData->{DELIVERY_ID} eq '1')){
+		$self->printTexasLabel($userId, $userData, $productId);
+	}
 	$self->MysqlDB::dbInsertPrintManifestStudentInfo($printId,$fixedData,$variableDataStr);
 	return ($self->{PDF},$printId);
 }
 
+sub printTexasLabel {
+	my $self = shift;
+	my ($userId, $userData) = @_;
+
+	$self->{PDF} = Certificate::PDF->new("LABEL$userId",'','','','','',612,792);
+	#my $top = $self->{SETTINGS}->{TEMPLATESPATH}."/printing/DRIVERSED_Certificate_Label.pdf";
+	#my $full=1;
+	#my $bottom='';
+	#$self->{PDF}->setTemplate($top,$bottom,$full);
+	###### as we do w/ all things, let's start at the top. Print the header
+	###### now, print the user's name and address
+
+	my $OFFICECA = $self->{SETTINGS}->getOfficeCa('DRIVERSED');
+	$self->{PRODUCT}='DRIVERSED';
+	if(!($userData->{COURSE_STATE} && exists $self->{SETTINGS}->{WEST_COAST_STATES}->{$userData->{COURSE_STATE}})){
+		if(exists $self->{SETTINGS}->{NON_WEST_COAST_STATES_OFFICE_ADDRESS}->{$self->{PRODUCT}}){
+			$OFFICECA=$self->{SETTINGS}->{NON_WEST_COAST_STATES_OFFICE_ADDRESS}->{$self->{PRODUCT}}; ####### Set for Houston Offfice with product'
+		}
+	}
+	my $xDiff='';
+	$self->{PDF}->setFont('HELVETICA', 9);
+	$self->_printCorporateAddress2(21-$xDiff,662, $OFFICECA,'DriversEd.com');
+
+	my $yPos=579;
+	$self->{PDF}->setFont('HELVETICABOLD', 9);
+	$self->{PDF}->writeLine( 21, $yPos, $userData->{FIRST_NAME} . ' ' . $userData->{LAST_NAME} );
+	$yPos -=11;
+	$self->{PDF}->setFont('HELVETICABOLD', 8);
+	$self->{PDF}->writeLine( 21, $yPos, $userData->{ADDRESS_1} );
+	$yPos -=11;
+	if($userData->{ADDRESS_2}){
+		$self->{PDF}->writeLine( 21, $yPos, $userData->{ADDRESS_2} );
+		$yPos -=11;
+	}
+	$self->{PDF}->writeLine( 21, $yPos, "$userData->{CITY}, $userData->{STATE} $userData->{ZIP}");
+	$self->{PDF}->getCertificate;
+	my $printer = 0;
+	my $media = 0;
+	my $st='XX'; ########## Default state, we have mentioned as XX;
+	my $productId=41; ##### This is for DE TX DIP
+	$st=($userData->{COURSE_STATE})?$userData->{COURSE_STATE}:$st;
+	($printer,$media)=Settings::getPrintingDetails($self, $productId, $st,'RLBL');
+	if(!$printer){
+		$printer = 'HP-PDF-HOU02';
+	}
+	if(!$media){
+		$media='Tray4';
+	}
+
+	my $outputFile = "/tmp/LABEL$userId.pdf";
+	######## send the certificate to the printer
+
+	print "\n$printer -o media=$media $outputFile \n";
+	#my $ph;
+	#open ($ph, "| /usr/bin/lp -o nobanner -q 1 -d $printer -o media=$media $outputFile");
+	#close $ph;
+	#if(-e $outputFile){
+		#unlink $outputFile;
+	#}
+}
 
 sub constructor {
 	my $self = shift;

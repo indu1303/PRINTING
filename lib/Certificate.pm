@@ -542,11 +542,15 @@ CMD
 		elsif (($productId == 1 || $productId == 21)&& $userData->{COURSE_STATE} eq 'OK'  && $userData->{REGULATOR_ID} && $userData->{REGULATOR_ID} == $self->{SETTINGS}->{OKLAHOMA_CITY_COURT}) {
 			($printer,$media)=Settings::getPrintingDetails($self, $productId, 'XX','POC');
         	} elsif($productId == 41 && $userData->{COURSE_ID} eq 'C0000020') {
-			($printer,$media)=Settings::getPrintingDetails($self, $productId, 'TT','CERT');
+			($printer,$media)=Settings::getPrintingDetails($self, $productId, $st,'CERTWHITEPAPER');
 		}
 		else
 		{
-			($printer,$media)=Settings::getPrintingDetails($self, $productId, $st,'CERT');
+			my $printerLabel = 'CERT';
+			if(exists $self->{SETTINGS}->{CERTIFICATE_ON_WHITE_PAPER}->{$productId}->{$userData->{COURSE_ID}}) {
+				$printerLabel = 'CERTWHITEPAPER';
+			}
+			($printer,$media)=Settings::getPrintingDetails($self, $productId, $st,$printerLabel);
 		}
 	        if(!$printer){
         	        $printer = 'HP-PDF-HOU05';

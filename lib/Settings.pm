@@ -269,6 +269,9 @@ sub new
 						DEFAULT => 'Texas',
 						1008 => 'California',
 						1009 => 'California',
+						1005 => 'Texas',
+						1009 => 'Texas',
+						1007 => 'Texas',
                                         },
 				     TSTG => 
 					{
@@ -1041,6 +1044,20 @@ sub new
 	NEW_EMAIL_POC_STATES	=> { 
 		'DIP' => {'MI' => 1, },
 		'TEEN' => { 'FL' => 1,},
+	},
+	CERTIFICATE_ON_WHITE_PAPER => {
+		1 => {
+			1011 =>1, 1006=>1, 1015 =>1,
+		},
+		25 =>{
+			1011=>1, 
+		},
+		5 =>{
+			1005=>1, 1007=>1,
+		},
+		41 =>{
+			'C0000020'=>1,
+		},
 	},
 
 

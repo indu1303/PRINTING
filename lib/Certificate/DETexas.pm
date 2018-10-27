@@ -299,72 +299,10 @@ sub _generateCertificate {
 	}
 
 	my $insertData = "";
-
-	###### add the delivery flag
-	$self->{PDF}->setFont($helveticaBold, 9);
-	$self->{PDF}->writeLine(140-$xDiff, 696, $flag);
-	$self->{PDF}->setFont($helvetica, 10);
-
 	for (my $i = 1; $i <= 2; ++$i) {
 		if ($i == 1 && $reprintData && $reprintData->{CERTIFICATE_NUMBER}) {
 			$variableData[$ctrMysql++] = "Replaces Certificate Number:$reprintData->{CERTIFICATE_NUMBER}";
 		}
-
-		my $userAddressInfo;
-		my $nameChange = 0;
-		my $addressChange = 0;
-
-=pod
-		###### reprint data 
-		if ($reprintData) {
-		if ($reprintData->{FIRST_NAME} && $reprintData->{FIRST_NAME} ne $userData->{FIRST_NAME}) {
-			$nameChange = 1;
-			$userAddressInfo->{FIRST_NAME} = $reprintData->{FIRST_NAME};
-		} else {
-			$userAddressInfo->{FIRST_NAME} = $userData->{FIRST_NAME};
-		}
-
-		if ($reprintData->{LAST_NAME} && $reprintData->{LAST_NAME} ne $userData->{LAST_NAME}) {
-			$nameChange = 1;
-			$userAddressInfo->{LAST_NAME} = $reprintData->{LAST_NAME};
-		} else {
-			$userAddressInfo->{LAST_NAME} = $userData->{LAST_NAME};
-		}
-
-		if ($reprintData->{ADDRESS_1} && $reprintData->{ADDRESS_1} ne $userData->{ADDRESS_1}) {
-			$addressChange = 1;
-			$userAddressInfo->{ADDRESS_1} = $reprintData->{ADDRESS_1};
-		} else {
-			$userAddressInfo->{ADDRESS_1} = $userData->{ADDRESS_1};
-		}
-		if ($reprintData->{ADDRESS_2} && $reprintData->{ADDRESS_2} ne $userData->{ADDRESS_2}) {
-			$addressChange = 1;
-			$userAddressInfo->{ADDRESS_2} = $reprintData->{ADDRESS_2};
-		} else {
-			$userAddressInfo->{ADDRESS_2} = $userData->{ADDRESS_2};
-		}
-		if ($reprintData->{CITY} && $reprintData->{CITY} ne $userData->{CITY}) {
-			$addressChange = 1;
-			$userAddressInfo->{CITY} = $reprintData->{CITY};
-		} else {
-			$userAddressInfo->{CITY} = $userData->{CITY};
-		}
-		if ($reprintData->{STATE} && $reprintData->{STATE} ne $userData->{STATE}) {
-			$addressChange = 1;
-			$userAddressInfo->{STATE} = $reprintData->{DATA}->{STATE};
-		} else {
-			$userAddressInfo->{STATE} = $userData->{STATE};
-		}
-		if ($reprintData->{ZIP} && $reprintData->{ZIP} ne $userData->{ZIP}) {
-			$addressChange = 1;
-			$userAddressInfo->{ZIP} = $reprintData->{ZIP};
-		} else {
-			$userAddressInfo->{ZIP} = $userData->{ZIP};
-		}
-	} else {
-		$userAddressInfo = $userData;
-	}
-=cut
 	}
 	foreach my $id (sort keys %$txFieldNames) {
 		###### we're going to do this in two different areas
@@ -388,7 +326,6 @@ sub _generateCertificate {
 		$newField =~ s/$searchStr/$replaceStr/gi;
 		$variableData[$ctrMysql++]="$newField:$insertData";
 	}
-
 	my $variableDataStr=join '~',@variableData;
 	print "\nvariableDataStr || $variableDataStr \n";
 	my $fixedData=Certificate::_generateFixedData($userData);

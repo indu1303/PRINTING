@@ -465,6 +465,7 @@ sub isPrintableCourse
 sub putUserPrintRecord {
     my $self    = shift;
     my ($de_cert_data_id, $certNumber, $type) = @_;
+return 1;
     my $sth =  $self->{PRODUCT_CON}->prepare('update user_info set print_date = sysdate(), certificate_number = ? where  de_cert_data_id = ?');
     $sth->execute($certNumber, $de_cert_data_id);
 }
@@ -474,6 +475,7 @@ sub putUserPrintRecord {
 sub putUserAirbillNumber {
     my $self    = shift;
     my ($de_cert_data_id, $airbillNumber) = @_;
+return 1;
     my $sth =  $self->{PRODUCT_CON}->prepare('update user_info set airbill_number = ? where de_cert_data_id= ? ');
     $sth->execute($airbillNumber, $de_cert_data_id);
 }
@@ -1086,6 +1088,8 @@ sub updateDriveredData
 {
 	my $self = shift;
 	my ($de_cert_data_id) = @_;
+print "\nAt: updateDriveredData : $de_cert_data_id \n";
+return 1;
 	my $addr = inet_ntoa(scalar gethostbyname(hostname() || 'localhost'));
 	my $host = $self->{SETTINGS}->{DRIVERSED_CONSTRAINTS}->{HOST}->{BETA} ;
 	my $postURL = $self->{SETTINGS}->{DRIVERSED_CONSTRAINTS}->{URL}->{BETA} ;
@@ -1187,6 +1191,8 @@ sub updateDriveredAirbillData
 {
 	my $self = shift;
 	my ($de_cert_data_id) = @_;
+print "\nAt: updateDriveredAirbillData $de_cert_data_id \n";
+return 1;
 	my $addr = inet_ntoa(scalar gethostbyname(hostname() || 'localhost'));
 	my $host = $self->{SETTINGS}->{DRIVERSED_CONSTRAINTS}->{HOST}->{BETA} ;
 	my $postURL = $self->{SETTINGS}->{DRIVERSED_CONSTRAINTS}->{URL}->{BETA} ;

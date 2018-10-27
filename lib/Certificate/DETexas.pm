@@ -87,7 +87,6 @@ print Dumper($reprintData);
 	}
     }
 
-
     if ($userData->{COURSE_ID} eq "1006")
     {
         $instructor = "REYNA, CARLOS (7014)";
@@ -316,40 +315,20 @@ print "Reprint DOB ->$reprintData->{DATE_OF_BIRTH}<-  DOBFORMATTED->$userData->{
         if ($reprintData->{REGULATOR_DEF})          { $txFieldNames->{8}[3] = $reprintData->{REGULATOR_DEF}; }
     }
 
-
-    my $header =
-        {
-            REGULAR    => ['STATE OF TEXAS DRIVING SAFETY COURSE UNIFORM CERTIFICATE OF COURSE COMPLETION', 10.5],
-            OCPS       => ['STATE OF TEXAS 6HR SPECIALIZED SAFETY COURSE FOR OCCUPANT PROTECTION UNIFORM CERTIFICATE OF COURSE COMPLETION',7.5],
-            YPOS       => [0, 755, 363]
-        };
-
-    my $fieldCoords =
-        {
-            CERTIFICATE_NUMBER      => { 1 => [ 440, 730 ], 2 => [ 440, 338 ] },
-            STUDENT_NAME            => { 1 => [ 30, 600 ],  2 => [ 30, 96 ]  }
-        };
-
-    my $LINESPACE       = 12;
     my $insertData      = "";
 
 
-    my $yPos = 184;
-    
     ###### add the delivery flag
     $self->{PDF}->setFont($helveticaBold, 9);
     $self->{PDF}->writeLine(140-$xDiff, 696, $flag);
     $self->{PDF}->setFont($helvetica, 10);
 
-#=pod
     for (my $i = 1; $i <= 2; ++$i)
     {
         if ($i == 1 && $reprintData && $reprintData->{CERTIFICATE_NUMBER})
         {
            $variableData[$ctrMysql++] = "Replaces Certificate Number:$reprintData->{CERTIFICATE_NUMBER}";
         }
-
-        $yPos -= 35;
 
         my $userAddressInfo;
         my $nameChange = 0;
@@ -435,57 +414,7 @@ print "Reprint DOB ->$reprintData->{DATE_OF_BIRTH}<-  DOBFORMATTED->$userData->{
         {
                 $userAddressInfo = $userData;
         }
-
-        #$self->_printAddress($yPos, $userAddressInfo);
-        
-        #if ($nameChange && $i == 1)
-        ##{
-        #        $yPos = 472;
-        #        $self->{PDF}->setFont($helveticaBold, 7);
-        #        $self->{PDF}->writeLine(60-$xDiff, $yPos, "NAME CHANGED FROM:");
-#
-#                $yPos -= 8;
-#                $self->{PDF}->setFont($helvetica, 7);
-#                $self->{PDF}->writeLine(60-$xDiff, $yPos, "$userData->{FIRST_NAME} $userData->{LAST_NAME}");
-#
-#        }
-        
-#        if ($addressChange && $i == 1)
-#        {
-#                $yPos = 472;
-#                my $xPos = ($nameChange) ? 150 : 60;
-#                $self->{PDF}->setFont($helveticaBold, 7);
-#                $self->{PDF}->writeLine($xPos-$xDiff, $yPos, "ADDRESS CHANGED FROM:");
-#
-#                $yPos -= 8;
-#                $self->{PDF}->setFont($helvetica, 7);
-#                $self->{PDF}->writeLine($xPos-$xDiff, $yPos, $userData->{ADDRESS_1});
-#
-#                $yPos -= 8;
-#                if ($userData->{ADDRESS_2})
-#                {
-#                        $self->{PDF}->writeLine($xPos-$xDiff, $yPos, $userData->{ADDRESS_2});
-#                        $yPos -= 8;
-#                }
-#                $self->{PDF}->writeLine($xPos-$xDiff, $yPos, "$userData->{CITY}, $userData->{STATE}  $userData->{ZIP}");
-#
-#                $yPos = 472;
-#        }
-      
-#        if ($seatBeltCourse)
-#        {
-#            $self->{PDF}->setFont($helvetica, 12);
-#            $self->{PDF}->writeLine(60-$xDiff, 600, $seatBeltCourse);
-#        }
-       
-#        $yPos = 576;
-#        $self->{PDF}->setFont($helveticaBold, $header->{$headerRef}[1]);
-#        $self->{PDF}->writeLine(60-$xDiff, $header->{YPOS}[$i], $header->{$headerRef}[0]);
-#        $self->{PDF}->setFont($helvetica, 10);
- 
     }
-#  $self->{PDF}->setFont($helvetica, 9);
-   #my @yPosArr = ( 690, 318);
     foreach my $id (sort keys %$txFieldNames)
     {
         ###### we're going to do this in two different areas
@@ -496,23 +425,6 @@ print "Reprint DOB ->$reprintData->{DATE_OF_BIRTH}<-  DOBFORMATTED->$userData->{
                 ####### do not print out the attendance reason
                 next;
             }
-
-
-            ###### let's make an allowance for the court.  Some courts are going to be
-            ###### too long for the row.  For this, we're going to split the court based
-            ###### on a space
-
-            #my $mainPrintVal = Certificate::maxLineWidth($txFieldNames->{$id}[$id2]);
-            #$self->{PDF}->writeLine( 440-$xDiff, $yPos, $mainPrintVal->{MAINLINE} );
-
-            #if ($mainPrintVal->{REM})
-            #{
-                #$yPosArr[$i] -= $LINESPACE-2;
-                #$yPos = $yPosArr[$i];
-                #$self->{PDF}->writeLine( 440-$xDiff, $yPos, $mainPrintVal->{REM});
-            #}
-
-
             ####### add the "changed from" row
             if ($i == 0 && ! $txFieldNames->{$id}[3])
             {
@@ -539,7 +451,6 @@ print "\nvariableDataStr || $variableDataStr \n";
     }
     $self->MysqlDB::dbInsertPrintManifestStudentInfo($printId,$fixedData,$variableDataStr);
    return ($self->{PDF},$printId);
-
 }
 
 

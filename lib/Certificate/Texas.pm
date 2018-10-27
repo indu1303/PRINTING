@@ -108,7 +108,7 @@ sub _generateCertificate{
 	if ($userData->{COURSE_ID} eq "1006") {
 		$instructor = "REYNA, CARLOS (7014)";
 	} elsif ($userData->{COURSE_ID} eq "1005" || $userData->{COURSE_ID} eq "1007") {
-		###### these are classroom taught courses.  Get the appropriate information from the database
+		###### these are classroom taught courses. Get the appropriate information from the database
 		$classroom = $userData->{LOCATION_ID};
 		$instructor = "$userData->{INSTRUCTOR_NAME} ($userData->{EDUCATOR_ID})";
 	}
@@ -124,21 +124,21 @@ sub _generateCertificate{
 	my @cData = split(/ /,$userData->{COMPLETION_DATE});
 	$cData[0] =~ s/\-/\//g;
 	$userData->{COMPLETION_DATE} = $cData[0];
-	#print "\n ____Comp Dte:  $userData->{COMPLETION_DATE} \n";
+	#print "\n ____Comp Dte: $userData->{COMPLETION_DATE} \n";
 
 	@cData = split(/-/, $printDate);
-	if ($cData[0] <10)  { $cData[0] = "0" . $cData[0];  };
+	if ($cData[0] <10) { $cData[0] = "0" . $cData[0]; };
 	my $tempDate = $cData[0];
 	$cData[0] = $self->{SETTINGS}->{MONTH_NUM}->{uc $cData[1]};
 	$cData[1] = $tempDate;
 	$printDate = join('/',@cData);
-	if(!$reprintData  && $userData->{PRINT_DATE}){
+	if(!$reprintData && $userData->{PRINT_DATE}){
 		$printDate =$userData->{PRINT_DATE};
 	}
 
 	#aabbcc
-	my $helvetica       = 'HELVETICA';
-	my $helveticaBold   = 'HELVETICABOLD';
+	my $helvetica = 'HELVETICA';
+	my $helveticaBold = 'HELVETICABOLD';
 	my $userAddressInfo;
 	my $userDLInfo;
 	my $nameChange = 0;
@@ -146,32 +146,32 @@ sub _generateCertificate{
 	my $dlChange = 0;
 
 	if ($reprintData) {
-		if ($reprintData->{FIRST_NAME} &&  $reprintData->{FIRST_NAME} ne $userData->{FIRST_NAME}) {
+		if ($reprintData->{FIRST_NAME} && lc $reprintData->{FIRST_NAME} ne lc $userData->{FIRST_NAME}) {
 			$nameChange = 1;
 			$userAddressInfo->{FIRST_NAME} = $reprintData->{FIRST_NAME};
 		} else {
 			$userAddressInfo->{FIRST_NAME} = $userData->{FIRST_NAME};
 		}
-		if ($reprintData->{LAST_NAME} &&  $reprintData->{LAST_NAME} ne $userData->{LAST_NAME}) {
+		if ($reprintData->{LAST_NAME} && lc $reprintData->{LAST_NAME} ne lc $userData->{LAST_NAME}) {
 			$nameChange = 1;
 			$userAddressInfo->{LAST_NAME} = $reprintData->{LAST_NAME};
 		} else {
 			$userAddressInfo->{LAST_NAME} = $userData->{LAST_NAME};
 		}
 
-		if ($reprintData->{ADDRESS_1} &&  $reprintData->{ADDRESS_1} ne $userData->{ADDRESS_1}) {
+		if ($reprintData->{ADDRESS_1} && lc $reprintData->{ADDRESS_1} ne lc $userData->{ADDRESS_1}) {
 			$addressChange = 1;
 			$userAddressInfo->{ADDRESS_1} = $reprintData->{ADDRESS_1};
 		} else {
 			$userAddressInfo->{ADDRESS_1} = $userData->{ADDRESS_1};
 		}
-		if ($reprintData->{ADDRESS_2} && $reprintData->{ADDRESS_2} ne $userData->{ADDRESS_2}) {
+		if ($reprintData->{ADDRESS_2} && lc $reprintData->{ADDRESS_2} ne lc $userData->{ADDRESS_2}) {
 			$addressChange = 1;
 			$userAddressInfo->{ADDRESS_2} = $reprintData->{ADDRESS_2};
 		} else {
 			$userAddressInfo->{ADDRESS_2} = $userData->{ADDRESS_2};
 		}
-		if ($reprintData->{CITY} &&  $reprintData->{CITY} ne $userData->{CITY}) {
+		if ($reprintData->{CITY} && $reprintData->{CITY} ne $userData->{CITY}) {
 			$addressChange = 1;
 			$userAddressInfo->{CITY} = $reprintData->{CITY};
 		} else {
@@ -183,13 +183,13 @@ sub _generateCertificate{
 		} else {
 			$userAddressInfo->{STATE} = $userData->{STATE};
 		}
-		if ($reprintData->{ZIP} &&  $reprintData->{ZIP} ne $userData->{ZIP}) {
+		if ($reprintData->{ZIP} && $reprintData->{ZIP} ne $userData->{ZIP}) {
 			$addressChange = 1;
 			$userAddressInfo->{ZIP} = $reprintData->{ZIP};
 		} else {
 			$userAddressInfo->{ZIP} = $userData->{ZIP};
 		}
-		if ($reprintData->{DRIVERS_LICENSE} &&  $reprintData->{DRIVERS_LICENSE} ne $userData->{DRIVERS_LICENSE}) {
+		if ($reprintData->{DRIVERS_LICENSE} && $reprintData->{DRIVERS_LICENSE} ne $userData->{DRIVERS_LICENSE}) {
 			$dlChange = 1;
 			$userDLInfo->{DRIVERS_LICENSE} = $reprintData->{DRIVERS_LICENSE};
 		} else {
@@ -260,7 +260,7 @@ sub _generateCertificate{
 		$self->{PDF}->writeLine(445, 245, "Changed from: $userData->{DATE_OF_BIRTH}");
 		$self->{PDF}->writeLine(445, 630, "Changed from: $userData->{DATE_OF_BIRTH}");		
 	} else {
-		#print "\n ELSE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! $userData->{DATE_OF_BIRTH}  !!!\n";
+		#print "\n ELSE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! $userData->{DATE_OF_BIRTH} !!!\n";
 		$self->{PDF}->setFont($helvetica, 8);
 		if($userData->{DOBFORMATTED}) {
 			$self->{PDF}->writeLine(445, 256, "$userData->{DOBFORMATTED}");
@@ -311,41 +311,48 @@ sub _generateCertificate{
 	$self->{PDF}->setFont($helvetica, 8);
 
 
-	my $txFieldNames = {       
-		1=>['School-Classroom:',         $classroom,'353'],
-		2=>['Instructor:',               $instructor,'389'],
-		3=>['Completion Date:',          $userData->{COMPLETION_DATE},'359'],
-		4=>['Issue Date:',               $printDate, '383'], 
-		5=>["Student's DL Number:",      $userData->{DRIVERS_LICENSE},'339'],
-		6=>["Student's DOB:",            $userData->{DATE_OF_BIRTH},'366'],
-		7=>["Student's Phone Number:",   $userData->{PHONE},'325'],
-		8=>['Court:',                    $regDef,'404'],
-		9=>['REASON FOR ATTENDANCE:',    $reasonForAttendance,'302'],
+	my $txFieldNames = {
+		1=>['School-Classroom:',	$classroom,'353'],
+		2=>['Instructor:',		$instructor,'389'],
+		3=>['Completion Date:',		$userData->{COMPLETION_DATE},'359'],
+		4=>['Issue Date:',		$printDate, '383'], 
+		5=>["Student's DL Number:",	$userData->{DRIVERS_LICENSE},'339'],
+		6=>["Student's DOB:",		$userData->{DATE_OF_BIRTH},'366'],
+		7=>["Student's Phone Number:",	$userData->{PHONE},'325'],
+		8=>['Court:',			$regDef,'404'],
+		9=>['REASON FOR ATTENDANCE:',	$reasonForAttendance,'302'],
 	};
 
 	if ($reprintData) {
 		##### let's update some fields:
-		if ($reprintData->{PRINT_DATE})             { $txFieldNames->{4}[3] = $reprintData->{PRINT_DATE}; }
-		if ($reprintData->{DRIVERS_LICENSE})        { $txFieldNames->{5}[3] = $reprintData->{DRIVERS_LICENSE}; }
-		if ($reprintData->{DATE_OF_BIRTH})          { $txFieldNames->{6}[3] = $reprintData->{DATE_OF_BIRTH}; }
-		if ($reprintData->{PHONE})                  { $txFieldNames->{7}[3] = $reprintData->{PHONE}; }
-		if ($reprintData->{REGULATOR_DEF})          { $txFieldNames->{8}[3] = $reprintData->{REGULATOR_DEF}; }
+		if ($reprintData->{PRINT_DATE})		{ $txFieldNames->{4}[3] = $reprintData->{PRINT_DATE}; }
+		if ($reprintData->{DRIVERS_LICENSE})	{ $txFieldNames->{5}[3] = $reprintData->{DRIVERS_LICENSE}; }
+		if ($reprintData->{DATE_OF_BIRTH})	{ $txFieldNames->{6}[3] = $reprintData->{DATE_OF_BIRTH}; }
+		if ($reprintData->{PHONE})		{ $txFieldNames->{7}[3] = $reprintData->{PHONE}; }
+		if ($reprintData->{REGULATOR_DEF})	{ $txFieldNames->{8}[3] = $reprintData->{REGULATOR_DEF}; }
 	}
-	my $insertData      = "";
-	###### add the delivery flag
-	$self->{PDF}->setFont($helveticaBold, 9);
-	$self->{PDF}->writeLine(140-$xDiff, 696, $flag);
-	if(!$faxEmail){
-		if($productId && $productId eq '25'){
-			#$self->_printCorporateAddress(60-$xDiff,686, $OFFICECA,'www.takehome.com');
-			#$self->_printCorporateAddress(60-$xDiff,294, $OFFICECA,'www.takehome.com');
-		}else{
-			#$self->_printCorporateAddress(60-$xDiff,686, $OFFICECA,'www.idrivesafely.com');
-			#$self->_printCorporateAddress(60-$xDiff,294, $OFFICECA,'www.idrivesafely.com');
+	my $insertData = "";
+	for (my $i = 1; $i <= 2; ++$i) {
+		if ($i == 1 && $reprintData && $reprintData->{CERTIFICATE_NUMBER}) {
+			$variableData[$ctrMysql++] = "Replaces Certificate Number:$reprintData->{CERTIFICATE_NUMBER}";
 		}
 	}
-
 	foreach my $id (sort keys %$txFieldNames) {
+		###### we're going to do this in two different areas
+		for (my $i=0; $i < 2; ++$i) {
+			if (($id == 9 || $id == 8) && $i == 1 ) {
+				####### do not print out the attendance reason
+				next;
+			}
+			####### add the "changed from" row
+			if ($i == 0 && ! $txFieldNames->{$id}[3]) {
+				$insertData="$txFieldNames->{$id}[1]";
+			}
+			if ($i == 0 && $txFieldNames->{$id}[3]) {
+				$insertData = "$txFieldNames->{$id}[3] CHANGED FROM {$id}[1]";
+			}
+		}
+
 		my $newField = $txFieldNames->{$id}[0];
 		my $searchStr = "'";
 		my $replaceStr = "''";
@@ -353,14 +360,15 @@ sub _generateCertificate{
 		$variableData[$ctrMysql++]="$newField:$insertData";
 	}
 
-	my $variableDataStr=join '~',@variableData;
+	my $variableDataStr = join '~',@variableData;
+print "\n->>>variableDataStr-->$variableDataStr<--- \n";
 	my $fixedData=Certificate::_generateFixedData($userData);
 	if(!$printId){
 		$printId=$self->MysqlDB::getNextId('contact_id');
 	}
 	$self->MysqlDB::dbInsertPrintManifestStudentInfo($printId,$fixedData,$variableDataStr);
 
-	print  "\n->>> Deliveery Id: $userData->{DELIVERY_ID} |||| $productId \n";
+	print "\n->>> Deliveery Id: $userData->{DELIVERY_ID} |||| $productId \n";
 	if(!$userData->{DELIVERY_ID} || ($userData->{DELIVERY_ID} && ($userData->{DELIVERY_ID} eq '1' || $userData->{DELIVERY_ID} eq '18' || $userData->{DELIVERY_ID} eq '100'))){
 		$self->printTexasLabel($userId, $userData, $productId);
 	}
@@ -382,7 +390,7 @@ sub printTexasLabel {
 		my $full=1;
 		my $bottom='';
 		$self->{PDF}->setTemplate($top,$bottom,$full);
-		###### as we do w/ all things, let's start at the top.  Print the header
+		###### as we do w/ all things, let's start at the top. Print the header
 		###### now, print the user's name and address
 
 		my $OFFICECA = $self->{SETTINGS}->getOfficeCa();
@@ -407,8 +415,8 @@ sub printTexasLabel {
 		$self->{PDF}->getCertificate;
 		my $printer = 0;
 		my $media = 0;
-		my $st='XX';   ##########  Default state, we have mentioned as XX;
-		my $productId=18;  ##### This is for Adult 
+		my $st='XX'; ########## Default state, we have mentioned as XX;
+		my $productId=18; ##### This is for Adult 
 		$st=($userData->{COURSE_STATE})?$userData->{COURSE_STATE}:$st;
 		($printer,$media)=Settings::getPrintingDetails($self, $productId, $st,'RLBL');
 		if(!$printer){
@@ -421,12 +429,12 @@ sub printTexasLabel {
 		my $outputFile = "/tmp/LABEL$userId.pdf";
 		######## send the certificate to the printer
 		#my $ph;
-		#open ($ph,  "| /usr/bin/lp -o nobanner -q 1 -d $printer -o media=$media  $outputFile");
+		#open ($ph, "| /usr/bin/lp -o nobanner -q 1 -d $printer -o media=$media $outputFile");
 		#close $ph;
 		#if(-e $outputFile){
 			#unlink $outputFile;
 		#}
-		print "\noutputFile : LABLE:L $outputFile -- $printer -o media=$media  $outputFile \n";
+		print "\noutputFile : LABLE:L $outputFile -- $printer -o media=$media $outputFile \n";
 	}
 }
 
@@ -441,9 +449,8 @@ sub constructor {
 	##### Texas only has one template for all of it's TEA-Reported courses
 	$self->{PDF}->setTemplate($self->{SETTINGS}->{TEMPLATESPATH}."/printing/$top",'',1);
 }
-
 ####### the following private functions are in place because STCs and California certificates
-####### will contain the same court-based information.  However, since they're declared in two
+####### will contain the same court-based information. However, since they're declared in two
 ####### different functions, it's easier this way to keep everything in one place
 
 =pod

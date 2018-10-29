@@ -67,7 +67,7 @@ sub _generateCertificate{
 		}
 		$headerRef = 'OCPS';
 		$seatBeltCourse = 'SPECIALIZED "SEAT BELT" COURSE';
-		$courseProvider = "CP225-C1635";
+		$courseProvider = "SP225-C1635";
 	} elsif($productId && $productId eq '25'){
 		my $productName=$self->{SETTINGS}->{PRODUCT_NAME}->{$productId};
 		$OFFICECA = $self->{SETTINGS}->getOfficeCa($productName);
@@ -359,14 +359,14 @@ sub _generateCertificate{
 	$self->MysqlDB::dbInsertPrintManifestStudentInfo($printId,$fixedData,$variableDataStr);
 
 	if(!$userData->{DELIVERY_ID} || ($userData->{DELIVERY_ID} && ($userData->{DELIVERY_ID} eq '1' || $userData->{DELIVERY_ID} eq '18' || $userData->{DELIVERY_ID} eq '100'))){
-		$self->printTexasLabel($userId, $userData, $productId);
+		$self->printTexasLabel($userId, $userData, $productId, $userAddressInfo);
 	}
 	return ($self->{PDF},$printId);
 }
 
 sub printTexasLabel {
 	my $self = shift;
-	my ($userId, $userData, $productId) = @_;
+	my ($userId, $userData, $productId, $userAddressInfo) = @_;
 
 	my $siteUrl = "www.idrivesafely.com";
 	my $productURL = { '1' => 'www.idrivesafely.com', '25' => 'www.takehome.com', '5' => 'www.idrivesafely.com' };
@@ -391,16 +391,16 @@ sub printTexasLabel {
 
 		my $yPos=579;
 		$self->{PDF}->setFont('HELVETICABOLD', 9);
-		$self->{PDF}->writeLine( 21, $yPos, $userData->{FIRST_NAME} . ' ' . $userData->{LAST_NAME} );
+		$self->{PDF}->writeLine( 21, $yPos, $userAddressInfo->{FIRST_NAME} . ' ' . $userAddressInfo->{LAST_NAME} );
 		$yPos -=11;
 		$self->{PDF}->setFont('HELVETICABOLD', 8);
-		$self->{PDF}->writeLine( 21, $yPos, $userData->{ADDRESS_1} );
+		$self->{PDF}->writeLine( 21, $yPos, $userAddressInfo->{ADDRESS_1} );
 		$yPos -=11;
-		if($userData->{ADDRESS_2}){
-			$self->{PDF}->writeLine( 21, $yPos, $userData->{ADDRESS_2} );
+		if($userAddressInfo->{ADDRESS_2}){
+			$self->{PDF}->writeLine( 21, $yPos, $userAddressInfo->{ADDRESS_2} );
 			$yPos -=11;
 		}
-		$self->{PDF}->writeLine( 21, $yPos, "$userData->{CITY}, $userData->{STATE} $userData->{ZIP}");
+		$self->{PDF}->writeLine( 21, $yPos, "$userAddressInfo->{CITY}, $userAddressInfo->{STATE} $userAddressInfo->{ZIP}");
 		$self->{PDF}->getCertificate;
 		my $printer = 0;
 		my $media = 0;
@@ -423,7 +423,7 @@ sub printTexasLabel {
 		if(-e $outputFile){
 			unlink $outputFile;
 		}
-		#print "\noutputFile : LABLE:L $outputFile -- $printer -o media=$media $outputFile \n";
+		#print "\noutputFile : LABLE: $outputFile -- $printer -o media=$media $outputFile \n";
 	}
 }
 

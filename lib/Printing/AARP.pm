@@ -15,7 +15,7 @@ use Data::Dumper;
 
 my $VERSION = 0.5;
 
-my $NO_PRINT_AARP_COURSE = { map { $_ => 1 } qw(5001 5002 5003 5011 5012) };
+my $NO_PRINT_AARP_COURSE = { map { $_ => 1 } qw(5001 5002 5003 5011 5012 5013) };
 =pod
 
 =head1 NAME

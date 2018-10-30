@@ -205,7 +205,7 @@ sub _generateCertificate{
 		$self->{PDF}->writeLine(515, 759, $certNumber);
 
 		$self->{PDF}->setFont($helvetica, 7);
-		$self->{PDF}->writeLine(445, 366, "Changed from: $reprintData->{CERTIFICATE_NUMBER}");
+		$self->{PDF}->writeLine(445, 368, "Changed from: $reprintData->{CERTIFICATE_NUMBER}");
 		$self->{PDF}->writeLine(445, 749, "Changed from: $reprintData->{CERTIFICATE_NUMBER}");
 	} else {
 		$self->{PDF}->setFont($helvetica, 8);

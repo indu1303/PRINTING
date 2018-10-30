@@ -293,9 +293,13 @@ sub _generateCertificate{
 		if($userData->{DATA}->{REGULATOR_DEF}) {
 			$regDef = $userData->{DATA}->{REGULATOR_DEF};
 		}
+		##Error checking for TX Classroom
+		if($userData->{DATA}->{REGULATOR_ID}) {
+			$regDef = $userData->{DATA}->{REGULATOR_ID};
+		}
 	}
 	$self->{PDF}->writeLine(38, 560, "$regDef");
-	if($reprintData && $userData->{DATA}->{REGULATOR_DEF} && $userData->{DATA}->{REGULATOR_DEF} ne $userData->{REGULATOR_DEF}) {
+	if($reprintData && $regDef && lc $regDef ne lc $userData->{REGULATOR_DEF}) {
 		$self->{PDF}->setFont($helvetica, 7);
 		$self->{PDF}->writeLine(38, 550, "Changed from: $userData->{REGULATOR_DEF}");
 	}

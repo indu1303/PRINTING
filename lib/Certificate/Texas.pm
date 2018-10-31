@@ -236,7 +236,7 @@ sub _generateCertificate{
 				$i++;
 			}
 			$self->{PDF}->setFont($helvetica, 7);
-			my $i = 0;
+			$i = 0;
 			my @userName = split(/\s+/, $userName);
 			my $fName = ''; my $lName = '';
 			foreach my $name(@userName) {

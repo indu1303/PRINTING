@@ -99,9 +99,9 @@ sub _generateCertificate
     $self->{PDF}->writeLine( 292-$xDiff, 518-$yDiff, '4433');
     $self->{PDF}->writeLine( 452-$xDiff, 518-$yDiff, 'I DRIVE SAFELY');
 
-    if($userData->{DELIVERY_ID} && $userData->{DELIVERY_ID} eq '12') {
+    #if($userData->{DELIVERY_ID} && $userData->{DELIVERY_ID} eq '12') {
 	##Signature not required for EML delivery, the signatures already available on the certificate image
-    } else {
+    #} else {
     $self->{PDF}->genImage($self->{SETTINGS}->{TEMPLATESPATH}."/printing/images/julio.jpg",
                                 54-$xDiff, 118-$yDiff, 60, 20,1050,305);
     $self->{PDF}->genImage($self->{SETTINGS}->{TEMPLATESPATH}."/printing/images/michaelblack.jpg",
@@ -110,7 +110,7 @@ sub _generateCertificate
                                 54-$xDiff, 517-$yDiff, 60, 20,1050,305);
     $self->{PDF}->genImage($self->{SETTINGS}->{TEMPLATESPATH}."/printing/images/michaelblack.jpg",
                                 54-$xDiff, 489-$yDiff, 60, 20,1050,305);
-    }
+    #}
     $self->{PDF}->writeLine( 292-$xDiff,91-$yDiff, 'C2267');
     $self->{PDF}->writeLine( 466-$xDiff, 91-$yDiff, Settings::getDateFormat());
     $self->{PDF}->writeLine( 292-$xDiff,491-$yDiff, 'C2267');
@@ -189,6 +189,7 @@ sub printAdultLabel
 	        if(-e $outputFile){
          	      	unlink $outputFile;
                 }
+		#print STDERR "\nLable: /usr/bin/lp -o nobanner -q 1 -d $printer -o media=$media  $outputFile \n";
     }
 
 }

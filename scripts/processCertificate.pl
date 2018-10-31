@@ -785,6 +785,15 @@ for my $key(keys %$users)
                 }
                 next;
         }
+    	if ($self->{PRODUCT} eq 'ADULT' && $userData->{DELIVERY_ID}  && $userData->{DELIVERY_ID} eq '12')
+        {
+		##Adult Delivery by Email User, need to exclude the user
+                if ($showError)
+                {
+                        print "User id:  $uid - User has Electronic Delivery, certificate will not be printed\n";
+                }
+                next;
+        }
 
 	if (($self->{PRODUCT} eq 'CLASS') && ($userData->{DRIVERS_LICENSE} =~ m/^DUP/)){
 		if($$duplicatelicenseusers{$userData->{INSTRUCTOR_ID}}->{STUDENT_ID}){

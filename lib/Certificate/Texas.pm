@@ -219,7 +219,6 @@ sub _generateCertificate{
 	if(length($userName) >= 30) {
 		if ($nameChange) {
 			$self->{PDF}->setFont($helvetica, 8);
-			print "TRUE \n";
 			my $i = 0;
 			my @userNameChanged = split(/\s+/, $userNameChanged);
 			my $fNameChanged = ''; my $lNameChanged = '';

@@ -214,18 +214,78 @@ sub _generateCertificate{
 	}
 	
 	##Student Name
-	if ($nameChange) {
-		$self->{PDF}->setFont($helvetica, 8);
-		$self->{PDF}->writeLine(445, 330, "$userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_NAME}");
-		$self->{PDF}->writeLine(445, 709, "$userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_NAME}");
-
-		$self->{PDF}->setFont($helvetica, 7);
-		$self->{PDF}->writeLine(445, 320, "Changed from: $userData->{FIRST_NAME} $userData->{LAST_NAME}");
-		$self->{PDF}->writeLine(445, 700, "Changed from: $userData->{FIRST_NAME} $userData->{LAST_NAME}");		
+	my $userName = "$userData->{FIRST_NAME} $userData->{LAST_NAME}";
+	my $userNameChanged = "$userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_NAME}";
+	if(length($userName) >= 30) {
+		if ($nameChange) {
+			$self->{PDF}->setFont($helvetica, 8);
+			print "TRUE \n";
+			my $i = 0;
+			my @userNameChanged = split(/\s+/, $userNameChanged);
+			my $fNameChanged = ''; my $lNameChanged = '';
+			foreach my $name(@userNameChanged) {
+				if($i<=1) {
+					$fNameChanged .= $userNameChanged[$i]. " ";
+					$self->{PDF}->writeLine(445, 332, "$fNameChanged");
+					$self->{PDF}->writeLine(445, 711, "$fNameChanged");	
+				}
+				if($i>=2) {
+					$lNameChanged .= $userNameChanged[$i]. " ";
+					$self->{PDF}->writeLine(445, 325, "$lNameChanged");	
+					$self->{PDF}->writeLine(445, 703, "$lNameChanged");	
+				}
+				$i++;
+			}
+			$self->{PDF}->setFont($helvetica, 7);
+			my $i = 0;
+			my @userName = split(/\s+/, $userName);
+			my $fName = ''; my $lName = '';
+			foreach my $name(@userName) {
+				if($i<=1) {
+					$fName .= $userName[$i]. " ";
+					$self->{PDF}->writeLine(445, 318, "Changed from: $fName");
+					$self->{PDF}->writeLine(445, 697, "Changed from: $fName");		
+				}
+				if($i>=2) {
+					$lName .= $userName[$i]. " ";
+					$self->{PDF}->writeLine(445, 312, "$lName");
+					$self->{PDF}->writeLine(445, 690, "$lName");	
+				}
+				$i++;
+			}
+		} else {
+			$self->{PDF}->setFont($helvetica, 8);
+			my $i = 0;
+			my @userName = split(/\s+/, $userName);
+			my $fName = ''; my $lName = '';
+			foreach my $name(@userName) {
+				if($i<=1) {
+					$fName .= $userName[$i]. " ";
+					$self->{PDF}->writeLine(445, 330, "$fName");		
+					$self->{PDF}->writeLine(445, 709, "$fName");		
+				}
+				if($i>=2) {
+					$lName .= $userName[$i]. " ";
+					$self->{PDF}->writeLine(445, 320, "$lName");		
+					$self->{PDF}->writeLine(445, 699, "$lName");		
+				}
+				$i++;
+			}
+		}
 	} else {
-		$self->{PDF}->setFont($helvetica, 8);
-		$self->{PDF}->writeLine(445, 330, "$userData->{FIRST_NAME} $userData->{LAST_NAME}");
-		$self->{PDF}->writeLine(445, 709, "$userData->{FIRST_NAME} $userData->{LAST_NAME}");
+		if ($nameChange) {
+			$self->{PDF}->setFont($helvetica, 8);
+			$self->{PDF}->writeLine(445, 330, "$userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_NAME}");
+			$self->{PDF}->writeLine(445, 709, "$userAddressInfo->{FIRST_NAME} $userAddressInfo->{LAST_NAME}");
+
+			$self->{PDF}->setFont($helvetica, 7);
+			$self->{PDF}->writeLine(445, 320, "Changed from: $userData->{FIRST_NAME} $userData->{LAST_NAME}");
+			$self->{PDF}->writeLine(445, 700, "Changed from: $userData->{FIRST_NAME} $userData->{LAST_NAME}");		
+		} else {
+			$self->{PDF}->setFont($helvetica, 8);
+			$self->{PDF}->writeLine(445, 330, "$userData->{FIRST_NAME} $userData->{LAST_NAME}");
+			$self->{PDF}->writeLine(445, 709, "$userData->{FIRST_NAME} $userData->{LAST_NAME}");
+		}
 	}
 
 	##DL

@@ -353,7 +353,7 @@ sub _generateCertificate{
 			$regDef = $userData->{DATA}->{REGULATOR_DEF};
 		}
 		##Error checking for TX Classroom
-		if($userData->{DATA}->{REGULATOR_ID}) {
+		if($userData->{DATA}->{REGULATOR_ID} && $productId eq '5') {
 			$regDef = $userData->{DATA}->{REGULATOR_ID};
 		}
 	}

@@ -750,7 +750,15 @@ for my $key(keys %$users)
 		}
             	next;
 	}
-
+	if(exists $self->{TEXASPRINTING}->{$self->{PRODUCT}}->{$courseId} && $userData->{DELIVERY_ID}  && $userData->{DELIVERY_ID} eq '26')
+        {
+                ###### the user has not completed the notary requirement
+                if ($showError)
+                {
+                        print "User id:  $uid - User has Electronic Delivery, certificate will not be printed\n";
+                }
+                next;
+        } 
         if ($self->{KENTUCKY_FLASHCOURSE} == $courseId && $self->{PRODUCT} eq 'DIP' && defined $userData->{THIRD_PARTY_DATA} && $userData->{THIRD_PARTY_DATA}==99)
         {
                 ###### the user has not completed the notary requirement

@@ -118,7 +118,7 @@ EOM
 sub getUserInfo{
     my $self=shift;
     my($userId) = @_;
-    my $sth =  $self->{PRODUCT_CON}->prepare('select USER_ID,sf_decrypt(DRIVERS_LICENSE) as DRIVERS_LICENSE,LOGIN_DATE,COURSE_ID,REGULATOR_ID,TEST_INFO,COMPLETION_DATE,PRINT_DATE,PASSWORD,CERTIFICATE_NUMBER from user_info ui where ui.user_id = ?');
+    my $sth =  $self->{PRODUCT_CON}->prepare("select USER_ID,sf_decrypt(DRIVERS_LICENSE) as DRIVERS_LICENSE,LOGIN_DATE,COURSE_ID,REGULATOR_ID,TEST_INFO,COMPLETION_DATE,date_format(COMPLETION_DATE,'%m/%d/%Y') as COMPLETIONDATE, PRINT_DATE,PASSWORD,CERTIFICATE_NUMBER from user_info ui where ui.user_id = ?");
     $sth->execute($userId);
     my $tmpHash = $sth->fetchrow_hashref;
     $sth->finish;
@@ -794,6 +794,11 @@ sub getUserCertDuplicateData
             }
 	    if($v1 eq 'DELIVERY_ID' || $v1 eq 'SHIPPING_ID'){
 		$retval->{$v1}=$v2;
+	    }
+	    if($v1 eq 'DATE_OF_BIRTH') {
+		my ($d, $m, $y) = split(/\-/, $v2); 
+		my $mm = $self->{SETTINGS}->{MONTH_NUM}->{uc $m};
+		$retval->{DATA}->{DOBFORMATTED} = "$mm/$d/$y";
 	    }
         }
     	$retval->{DATA}->{CERTIFICATE_NUMBER} = $retval->{CERTIFICATE_REPLACED};

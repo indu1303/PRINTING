@@ -452,9 +452,9 @@ sub printTexasLabel {
 			$OFFICECA = $self->{SETTINGS}->getOfficeCa('',1);
 		}
 		my $xDiff='';
-		$self->_printCorporateAddress(21-$xDiff,662, $OFFICECA,$siteUrl);
+		$self->_printCorporateAddress(21-$xDiff,678, $OFFICECA,$siteUrl);
 
-		my $yPos=579;
+		my $yPos=569;
 		$self->{PDF}->setFont('HELVETICABOLD', 9);
 		$self->{PDF}->writeLine( 21, $yPos, $userAddressInfo->{FIRST_NAME} . ' ' . $userAddressInfo->{LAST_NAME} );
 		$yPos -=11;

@@ -132,9 +132,9 @@ sub printRegularLabel
     $self->{PDF}->getCertificate;
     my $printer = 0;
     my $media = 0;
-    my $st='XX';   ##########  Default state, we have mentioned as XX;
+    my $st='XI';   ##########  Default state, we have mentioned as XX;
     my $productId=41;  ##### This is for Driversed 
-    $st=($userData->{COURSE_STATE})?$userData->{COURSE_STATE}:$st;
+    #$st=($userData->{COURSE_STATE})?$userData->{COURSE_STATE}:$st;
     ($printer,$media)=Settings::getPrintingDetails($self, $productId, $st,'RLBL');
     if(!$printer){
                 $printer = 'HP-PDF-HOU02';

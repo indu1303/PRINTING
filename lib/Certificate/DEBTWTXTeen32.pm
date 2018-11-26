@@ -471,7 +471,7 @@ sub printRegularLabel {
 	$self->{PDF}->setTemplate($top,$bottom,$full);
 	my $OFFICECA = $self->{SETTINGS}->getOfficeCa('',1);
 	if(!($userData->{COURSE_STATE} && exists $self->{SETTINGS}->{WEST_COAST_STATES}->{$userData->{DR_STATE}})){
-		$OFFICECA = $self->{SETTINGS}->getOfficeCa('',1);
+		$OFFICECA = $self->{SETTINGS}->getOfficeCa('DRIVERSEDTX');
 	}
 	$self->_printCorporateAddress(21-$xDiff, 662, $OFFICECA, '');
 

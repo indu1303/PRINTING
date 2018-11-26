@@ -93,6 +93,7 @@ sub printStudentOHCerts {
 	if(-e $outputFile){
 		unlink $outputFile;
 	}
+	#print STDERR "\n/usr/bin/lp -o nobanner -q 1 -d $printer -o media=$media  $outputFile \n";
     
 	if(!$reprintCheck) {
 		my @variableData;
@@ -116,7 +117,7 @@ sub printOHTeenLabel
 
     $self->{PDF} = Certificate::PDF->new("LABEL$userId",'','','','','',612,792);
     my $xDiff='';
-    my $OFFICECA = $self->{SETTINGS}->getOfficeCa('FDK');
+    my $OFFICECA = $self->{SETTINGS}->getOfficeCa('DRIVERSEDTX');
     $self->{PRODUCT}='DRIVERSED';
     $self->{PDF}->setFont('HELVETICA', 9);
     $self->_printCorporateAddress2(21-$xDiff,662, $OFFICECA,'DriversEd.com');
@@ -171,6 +172,8 @@ sub printOHTeenLabel
     if(-e $outputFile){
    	unlink $outputFile;
     }
+	#print STDERR "\n/usr/bin/lp -o nobanner -q 1 -d $printer -o media=$media  $outputFile \n";
+
 }
 
 sub constructor

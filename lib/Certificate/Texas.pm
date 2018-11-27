@@ -67,7 +67,7 @@ sub _generateCertificate{
 		}
 		$headerRef = 'OCPS';
 		$seatBeltCourse = 'SPECIALIZED "SEAT BELT" COURSE';
-		$courseProvider = "SP225";
+		$courseProvider = "SP225 - I Drive Safely, LLC";
 	} elsif($productId && $productId eq '25'){
 		my $productName=$self->{SETTINGS}->{PRODUCT_NAME}->{$productId};
 		$OFFICECA = $self->{SETTINGS}->getOfficeCa($productName);
@@ -85,21 +85,21 @@ sub _generateCertificate{
 		if ($reprintData && $reprintData->{CERTIFICATE_NUMBER}) {
 			$reprintData->{CERTIFICATE_NUMBER} = "CP490-" . $reprintData->{CERTIFICATE_NUMBER};
 		}
-		$courseProvider = "CP490";
+		$courseProvider = "CP490 - American Driver Improvement ";
 	} else {
 		if($userData->{COURSE_ID} eq '1015' && $productId eq '1'){
 			$certNumber = "CP490-" . $certNumber;
 			if ($reprintData && $reprintData->{CERTIFICATE_NUMBER}) {
 				$reprintData->{CERTIFICATE_NUMBER} = "CP490-" . $reprintData->{CERTIFICATE_NUMBER};
 			}
-			$courseProvider = "CP490";
+			$courseProvider = "CP490 - American Driver Improvement ";
 			$classroom = "C0399";
 		} else {
 			$certNumber = "CP225-" . $certNumber;
 			if($reprintData && $reprintData->{CERTIFICATE_NUMBER}) {
 				$reprintData->{CERTIFICATE_NUMBER} = "CP225-" . $reprintData->{CERTIFICATE_NUMBER};
 			}
-			$courseProvider = "CP225";
+			$courseProvider = "CP225 - I Drive Safely, LLC";
 		}
 	}
 

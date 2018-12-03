@@ -95,16 +95,16 @@ sub _generateCertificate
 
 
     $self->{PDF}->setFont('HELVETICABOLD', 8);
-    $self->{PDF}->writeLine(60-$xDiff, 686, 'AARP');
-    $self->{PDF}->writeLine(60-$xDiff, 676, 'DRIVER SAFETY');
-    $self->{PDF}->writeLine(60-$xDiff, 294, 'AARP');
-    $self->{PDF}->writeLine(60-$xDiff, 284, 'DRIVER SAFETY');
+    $self->{PDF}->writeLine(60-$xDiff, 708, 'AARP');
+    $self->{PDF}->writeLine(60-$xDiff, 698, 'DRIVER SAFETY');
+    $self->{PDF}->writeLine(60-$xDiff, 316, 'AARP');
+    $self->{PDF}->writeLine(60-$xDiff, 306, 'DRIVER SAFETY');
 
 
     ###### print the signature
     #if(!$faxEmail){
-	$self->_printVertCorporateAddress(60-$xDiff,666, $OFFICECA,'www.aarpdriversafety.org');
-	$self->_printVertCorporateAddress(60-$xDiff,274, $OFFICECA,'www.aarpdriversafety.org');
+	$self->_printVertCorporateAddress(60-$xDiff,688, $OFFICECA,'www.aarpdriversafety.org');
+	$self->_printVertCorporateAddress(60-$xDiff,296, $OFFICECA,'www.aarpdriversafety.org');
 
     #}
 

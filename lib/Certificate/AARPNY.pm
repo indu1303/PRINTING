@@ -93,16 +93,16 @@ sub _generateCertificate
 
 
     $self->{PDF}->setFont('HELVETICABOLD', 8);
-    $self->{PDF}->writeLine(60-$xDiff, 686, 'AARP Smart Driver');
-    $self->{PDF}->writeLine(60-$xDiff, 676, "Online Course");
-    $self->{PDF}->writeLine(60-$xDiff, 294, 'AARP Smart Driver');
-    $self->{PDF}->writeLine(60-$xDiff, 284, 'Online Course');
+    $self->{PDF}->writeLine(60-$xDiff, 732, 'AARP Smart Driver');
+    $self->{PDF}->writeLine(60-$xDiff, 722, "Online Course");
+    $self->{PDF}->writeLine(60-$xDiff, 340, 'AARP Smart Driver');
+    $self->{PDF}->writeLine(60-$xDiff, 330, 'Online Course');
 
 
     ###### print the signature
     #if(!$faxEmail){
-	$self->_printVertCorporateAddress(60-$xDiff,666, $OFFICECA,'www.aarpdriversafety.org');
-	$self->_printVertCorporateAddress(60-$xDiff,274, $OFFICECA,'www.aarpdriversafety.org');
+	$self->_printVertCorporateAddress(60-$xDiff,712, $OFFICECA,'www.aarpdriversafety.org');
+	$self->_printVertCorporateAddress(60-$xDiff,320, $OFFICECA,'www.aarpdriversafety.org');
 
     #}
 

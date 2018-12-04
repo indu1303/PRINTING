@@ -1,0 +1,93 @@
+<html>
+
+
+<body>
+
+<div align="center">
+	<table border="1" width="650" cellspacing="0" cellpadding="10" id="table1">
+		<tr>
+			<td colspan="2"><font face="Arial"><span style="font-weight: 700">
+			Delaware Department of Insurance <br>
+			Approved Course Provider: I DRIVE SAFELY</span></font></td>
+		</tr>
+		<tr>
+			<td><br>
+			<font face="Arial">
+			<img src="http://www.idrivesafely.com/newsite/images/comp/logo_sale.gif" alt="" align="left"><span style="font-weight: bold">I 
+			DRIVE SAFELY</span><br>
+
+<font size='2'>283 4th st Unit 301<br>
+
+Oakland, CA 94607<br>
+
+Phone: 760.744.3070<br>
+
+			</font></font><font size='2' face="Arial"><br>
+
+&nbsp;</font></td>
+			<td valign="top">
+			<p align="right"><font face="Arial"><b><br>
+			Certificate Number:</b><br><TMPL_VAR NAME=CERTIFICATE_NUMBER></font></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<p align="center"><font face="Arial"><br>
+			This Certifies that <span style="font-weight: bold;"><TMPL_VAR NAME=STUDENT_NAME></span> has completed a 
+			Delaware Department of Insurance-approved <b><TMPL_VAR NAME=HOUR></b>-hour online 
+			Defensive Driving course for insurance discount purposes on <span style="font-weight: bold;"><TMPL_VAR NAME=COMPLETION_DATE></span>.<br>
+&nbsp;</font></td>
+		</tr>
+		<tr>
+			<td valign="top" width="300"><font face="Arial"><span style="font-weight: bold;">Student's Driver License:<br>
+			<br>
+			</span><TMPL_VAR NAME=DRIVERS_LICENSE></font></td>
+			<td valign="top"  width='300'><font face="Arial"><span style="font-weight: bold;">Student's Date of Birth:</span></font><p>
+			<font face="Arial"><TMPL_VAR NAME=DATE_OF_BIRTH></font></td>
+		</tr>
+		<tr>
+			<td rowspan="3" valign="top" width="300"><font face="Arial"><b>Student's Address:</b></br><br/><br/><br/>	
+        	<TMPL_VAR NAME=ADDRESS><br/>
+        	<TMPL_IF NAME=ADDRESS_2><TMPL_VAR NAME=ADDRESS_2><br/></TMPL_IF>
+        	<TMPL_VAR NAME=CITY>,  <TMPL_VAR NAME=STATE>  <TMPL_VAR NAME=ZIP></font></td>
+			<td valign="top"><font face="Arial"><b>State where certificate was executed:</b></font><p>
+			<font face="Arial">Delaware</font></td>
+		</tr>
+		<tr>
+			<td valign="top"><font face="Arial"><b>Date of Certificate:</b></font><p>
+			<font face="Arial"><TMPL_VAR NAME=PRINT_DATE></font></td>
+		</tr>
+		<tr>
+			<td valign="top"><font face="Arial"><b>Date of 
+			Certificate Transmittal:</b></font><p><font face="Arial"><TMPL_VAR NAME=TRANSMITTAL_DATE></font></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<p align="center">
+
+      <span style="font-weight: bold;"><font face="Arial"><br>
+			I CERTIFY UNDER PENALTY OF PERJURY THAT THE FOREGOING IS TRUE AND CORRECT.&nbsp;
+
+(PERJURY IS PUNISHABLE BY IMPRISONMENT, FINE OR BOTH.)<br>
+&nbsp;</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">
+
+				<img src='http://www.idrivesafely.com/newsite/images/comp/sig_1.gif'/><br>
+			__________________________<br>
+			</font><i><font size="2" face="Arial">Signature of Course Provider</font></i></td>
+			<td><font face="Arial">
+
+					<b><br>
+			Rick Hernandez - <TMPL_VAR NAME=TRANSMITTAL_DATE></b>
+
+				<br>
+			______________________________<br>
+			</font><i><font size="2" face="Arial">Printed Name - Date</font></i></td>
+		</tr>
+	</table>
+</div>
+
+</body>
+
+</html>

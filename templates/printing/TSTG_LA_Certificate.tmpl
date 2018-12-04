@@ -1,0 +1,93 @@
+<html>
+<head>
+  <title>LA Cert</title>
+</head>
+<body>
+
+
+<table width='700' border="1" cellpadding="0" cellspacing="0">
+    <tr>
+      <td colspan="2" rowspan="1">
+      <table width='100%' height='150' border="0" cellpadding="0" cellspacing="0">
+      <tr>
+      	<td width='250' align='left'><span style="font-weight: bold">Traffic School To Go &nbsp;(10014)</span><br>
+<font size='2'>15183 Encanto Drive<br>
+Sherman Oaks, CA 91403<br>
+Phone Number (888) 349-8425<br>
+Fax Number (760) 692-3226<br>
+TDD (818) 784-1980</font></td>
+        <td style="width: 141px;"></td>
+        <td style="width: 174px; text-align: center;"><b>Certificate Number:</b><br><TMPL_VAR NAME=CERTIFICATE_NUMBER></td>
+      </tr>
+      </table>
+      </td>
+    </tr>
+    <tr>
+      <td style="height: 63px;" colspan="2" rowspan="1">This Certifies that <span style="font-weight: bold;"><TMPL_VAR NAME=STUDENT_NAME></span> has completed on <span style="font-weight: bold;"><TMPL_VAR NAME=COMPLETION_DATE></span> a Los Angeles Superior Court-approved <span style="font-weight: bold;">English</span> <span style="font-weight: bold;">Internet</span> HSTS course, and has correcly answered <span style="font-weight: bold;"><TMPL_VAR NAME=FINAL_SCORE>%</span> of the questions on the final exam for this course.</td>
+    </tr>
+    <tr>
+      <td colspan="2" rowspan="1">
+      <table width='100%' border="1" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width='100' height='75'><span style="font-weight: bold;">Student's</span><br style="font-weight: bold;">
+            <span style="font-weight: bold;">Driver's Lic.</span><br style="font-weight: bold;">
+            <span style="font-weight: bold;">Number:</span></td>
+            <td style="width: 200px; text-align: center;"><TMPL_VAR NAME=DRIVERS_LICENSE></td>
+            <td style="width: 175px; text-align: center;"><span style="font-weight: bold;">Student's Date of Birth:</span></td>
+            <td align='center'><TMPL_VAR NAME=DATE_OF_BIRTH></td>
+          </tr>
+      </table>
+      <table width='100%' border="1" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width='100' height='75'><span style="font-weight: bold;">Court:</span></td>
+            <td width='200' align='center'><TMPL_VAR NAME=REGULATOR_DEF></td>
+            <td width='175' align='center'><span style="font-weight: bold;">Case or Docket Number:</span></td>
+            <td align='center'><TMPL_VAR NAME=CITATION_NUMBER></td>
+          </tr>
+      </table>
+      <table width='100%' border="1" cellpadding="0" cellspacing="0">
+      <tr>
+        <td rowspan="3" width='300' valign='top'><b>Student's Address:</b><br/><br/>
+        	<TMPL_VAR NAME=ADDRESS></td>
+        <td width='175' align='center' height='75'><b>City and State where <br>certificate was executed:</b></td>
+        <td align='center'>San Marcos, California</td>
+      </tr>
+      <tr>
+        <td align='center' height='75'><b>Date of Certificate:</b></td>
+        <td align='center'><TMPL_VAR NAME=PRINT_DATE></td>
+      </tr>
+      <tr>
+        <td align='center' height='75'><b>Date of Certificate<br>
+Transmittal to Court:</b></td>
+        <td align='center'><TMPL_VAR NAME=CERTIFICATE_TRANSMITTAL_DATE></td>
+      </tr>
+      </table>
+      <table width='100%' border='0' cellpadding='0' cellspacing='0'>
+      <tr>
+      	<td colspan='2'>
+To be completed by the HSTS Owner:<br>
+      <span style="font-weight: bold;">I CERTIFY UNDER PENALTY OF PERJURY THAT THE FOREGOING IS TRUE AND CORRECT.<br>
+(PERJURY IS PUNISHABLE BY IMPRISONMENT, FINE OR BOTH.)<br>
+			</td>
+			</tr>
+			<tr>
+				<td width='50%' align='center'>
+				<img src='http://www.idrivesafely.com/newsite/images/comp/sig_2.gif'/>
+				</td>
+				<td width='50%' align='center'>
+					<b>Craig Buck - <TMPL_VAR NAME=CERTIFICATE_TRANSMITTAL_DATE></b>
+				</td>
+			<tr>
+				<tr>
+					<td align='center'>Signature of HSTS Owner</td>
+    			<td align='center'>Printed Name of HSTS Owner - Date</td>
+    		</tr>
+    </table>
+      <br>
+      <br>
+      </span></td>
+    </tr>
+</table>
+<br>
+</body>
+</html>

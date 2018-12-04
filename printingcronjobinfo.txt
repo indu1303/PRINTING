@@ -1,0 +1,315 @@
+ 
+ 00 04 * * * /usr/sbin/ntpdate db05  > /dev/null 2>&1
+ 
+ #######################################Houston print jobs##########################
+   #######################################Print jobs houston ##############################
+   ##############Texas
+  05 5,7,9,11 * * 1-5   /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP  -s TX  -p TX -P  >> /www/logs/printing/tool_log 2>&1
+  35 14 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP  -s TX  -p TX -P  >> /www/logs/printing/tool_log 2>&1
+  10 13 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP  -s TX -p TX -P  >> /www/logs/printing/tool_log 2>&1
+ 
+ ############### TX Duplicates
+   15 09,13 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -R -s TX -P >> /www/logs/printing/tool_log 2>&1
+   15 14 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -R -s TX -P >> /www/logs/printing/tool_log 2>&1
+   15 09 * * 6  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -R -s TX -P -F >> /www/logs/printing/tool_log 2>&1
+   15 09 * * 0  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -R -s TX -P -F>> /www/logs/printing/tool_log 2>&1
+ 
+ ############### Other States Duplicates
+   30 09,11 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -R  -P >> /www/logs/printing/tool_log 2>&1
+   30 09,11 * * 6  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -R  -P -F >> /www/logs/printing/tool_log 2>&1
+   30 09 * * 0  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -R  -P -F >> /www/logs/printing/tool_log 2>&1
+ 
+ ############### saturday printing
+   05 7 * * 6  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP  -s TX -F -p TX   >> /www/logs/printing/tool_log 2>&1
+   30 11 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP  -s TX -F -p TX   >> /www/logs/printing/tool_log 2>&1
+   05 09 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP  -s TX  -F >> /www/logs/printing/tool_log 2>&1
+ 
+ 
+ #############DIP non tx jobs##################
+  05 5,7,9,11,13 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -d PRINT  >> /www/logs/printing/tool_log 2>&1
+   15 10,13 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -s DE  >> /www/logs/printing/tool_log 2>&1
+   53 12 * * 1-5 /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -s NM >> /www/logs/printing/tool_log 2>&1
+   45 13 * * 1-5  /usr/bin/perl   /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -S -d PRINT  >> /www/logs/printing/tool_log 2>&1
+   10 15 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -d PRINT -U CAOFFICE >> /www/logs/printing/tool_log 2>&1
+   10 00 * * *   /usr/bin/perl /ids/tools/PRINTING/scripts/processOklahomaCityCourt.pl  >> /www/logs/printing/tool_log 2>&1
+   27 * * * *   /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -d EMAIL >> /www/logs/printing/tool_log 2>&1
+ 
+ ################# sunday printing  
+   00 10 * * 0  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -s TX -p TX  -P -F
+  15 5,10 * * 0  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -d PRINT -F
+   15 10 * * 0  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -s DE 
+   20 10 * * 0  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -s NM 
+   25 13 * * 0  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -S -d PRINT -F  
+   15 5 * * 0  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -U TXOFFICE -d PRINT -F
+ 
+ ############Saturday############
+  30 7,9 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -d PRINT -F -U TXOFFICE >> /www/logs/printing/tool_log 2>&1
+  50 11 * * 6  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -d PRINT -F  -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+  05 12 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -S -d PRINT -F  -U TXOFFICE >> /www/logs/printing/tool_log 2>&1
+   15 10 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -s DE 
+   20 10 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -s NM 
+  #####01 12 * * 6  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIPDVD -F >> /www/logs/printing/tool_log 2>&1
+ 
+ #######Teen jobs ############
+  30 4,9,13 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN  >> /www/logs/printing/tool_log 2>&1
+   01 11 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN  >> /www/logs/printing/tool_log 2>&1
+   15 15 * * 1-5      /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -U CAOFFICE >> /www/logs/printing/tool_log 2>&1
+ 
+ ########Saturday#############
+   01 08 * * 6   /usr/bin/perl    /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -F  -U TXOFFICE >> /www/logs/printing/tool_log 2>&1
+   30 10 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -F -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+   45 11 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -F  -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+   00 05 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -F -U TXOFFICE >> /www/logs/printing/tool_log 2>&1
+ 
+ ########Sunday#############
+  30 04 * * 0   /usr/bin/perl    /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN   -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+ 
+ #######Teen TX Permit jobs #######
+ 00,06,11,16,21,26,31,36,41,46,51,56 * * * *   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -T >> /www/logs/printing/tool_log 2>&1
+ ####03 12 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -T >> /www/logs/printing/tool_log 2>&1
+ 
+ #######Teen TX Permit Saturday jobs #######
+ 03 12 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -T >> /www/logs/printing/tool_log 2>&1
+ 
+ 
+ ####Seller Server Print jobs#########
+  05 6 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K SS >> /www/logs/printing/tool_log 2>&1
+  40 13 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K SS >> /www/logs/printing/tool_log 2>&1
+   10 10 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K SS >> /www/logs/printing/tool_log 2>&1
+   10 14 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K SS -R >> /www/logs/printing/tool_log 2>&1
+   35 11 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K SS -F>> /www/logs/printing/tool_log 2>&1
+   05 6 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K SS -F >> /www/logs/printing/tool_log 2>&1
+   10 12 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K SS -R -F >> /www/logs/printing/tool_log 2>&1
+   05 6 * * 0  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K SS -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   30 08 * * 0  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K SS -R -F >> /www/logs/printing/tool_log 2>&1
+ 
+ ##############Adult ###########################
+   30 08,10 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT >> /www/logs/printing/tool_log 2>&1
+   10 13 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT >> /www/logs/printing/tool_log 2>&1
+   00 06 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT >> /www/logs/printing/tool_log 2>&1
+   45 12 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT >> /www/logs/printing/tool_log 2>&1
+ 
+ ##############Adult Reprint ###########################
+    40 08,10 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT  -R >> /www/logs/printing/tool_log 2>&1
+    20 13 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT  -R >> /www/logs/printing/tool_log 2>&1
+    55 12 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT  -R >> /www/logs/printing/tool_log 2>&1
+    ############Saturday############
+    10 08,12 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT -F -U TXOFFICE >> /www/logs/printing/tool_log 2>&1
+    30 04 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT  -F -U TXOFFICE >> /www/logs/printing/tool_log 2>&1
+    50 04 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT  -R -F -U TXOFFICE >> /www/logs/printing/tool_log 2>&1
+    40 10 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT  -R -F -U TXOFFICE >> /www/logs/printing/tool_log 2>&1
+    20 08,12 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT -F
+    ############Sunday############
+    30 08 * * 0  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT  -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+    50 04 * * 0  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT  -R -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+ 
+ ############Saturday############
+   01 09 * * 6  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K MATURE  -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   30 11 * * 6  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K MATURE   -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   20 13 * * 6  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K MATURE   -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+ 
+ ############Sunday############
+   00 10 * * 0  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K MATURE   -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+ 
+   ###monday cron jobs RT 9918#####
+  # 05 04 * * 1  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT >> /www/logs/printing/tool_log 2>&1
+   30 04 * * 1  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN   -U TXOFFICE >> /www/logs/printing/tool_log 2>&1
+ 
+ ########### Mature printing ############
+   35 11 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K MATURE  >> /www/logs/printing/tool_log 2>&1
+   20 13 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K MATURE  >> /www/logs/printing/tool_log 2>&1
+   05 15 * * 1-5 /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K MATURE -U CAOFFICE >> /www/logs/printing/tool_log 2>&1
+ 
+ ######Takehome cron jobs##########
+   00 07 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -s TX -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+   00 07 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -s TX -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   00 09 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -s TX -U TXOFFICE -F  >> /www/logs/printing/tool_log 2>&1
+   25 09 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -s TX -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+   25 11 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -s TX -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   30 13 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -s TX -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+   25 14 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -s TX -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+   45 07 * * 0   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -s TX -U TXOFFICE -F  >> /www/logs/printing/tool_log 2>&1
+   ### TH TX Duplicates
+   45 07 * * 0   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R -s TX  -U TXOFFICE -F  >> /www/logs/printing/tool_log 2>&1
+   45 07 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R -s TX  -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+   45 07 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R -s TX  -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   45 11 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R TX -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   55 11 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R TX -s TX -U TXOFFICE -F  >> /www/logs/printing/tool_log 2>&1
+   00 13 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R -s TX -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+   15 08 * * 0   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R TX -s TX -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   00 07 * * 0   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R TX -s TX -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   ### TH NONTX
+   20 09 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+   28 09 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME -s CA -U CAOFFICE  >> /www/logs/printing/tool_log 2>&1
+   35 09 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME -U TXOFFICE  -F >> /www/logs/printing/tool_log 2>&1
+   38 09 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME -s CA -U CAOFFICE -F  >> /www/logs/printing/tool_log 2>&1
+   40 11 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME -U TXOFFICE  -F >> /www/logs/printing/tool_log 2>&1
+   43 11 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME -s CA -U CAOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   25 13 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+   30 13 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME -s CA -U CAOFFICE  >> /www/logs/printing/tool_log 2>&1
+   00 07 * * 0   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME -s CA -U CAOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   ### TH NONTX Duplicates
+   55 07 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+   55 07 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R -U TXOFFICE -F  >> /www/logs/printing/tool_log 2>&1
+   10 13 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+   15 15 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R -s CA -U CAOFFICE  >> /www/logs/printing/tool_log 2>&1
+   55 08 * * 0   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R -F  >> /www/logs/printing/tool_log 2>&1
+ 
+ ####AARP Print jobs
+   50 6,9,12  * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP -s CA >> /www/logs/printing/tool_log 2>&1
+   00 7,10,13 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP   >> /www/logs/printing/tool_log 2>&1
+   50 7,10 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP -R >> /www/logs/printing/tool_log 2>&1
+   15 13 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP -R >> /www/logs/printing/tool_log 2>&1
+   50 6 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP -s CA -F  >> /www/logs/printing/tool_log 2>&1
+   00 7 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   20 11 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP -s CA -F  >> /www/logs/printing/tool_log 2>&1
+   30 11 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   50 7,11 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP -R -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   50 7 * * 0  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP -R -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+   57 12 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP -R -Q -s CA >> /www/logs/printing/tool_log 2>&1
+ 
+ ############AARP Sunday (no priority users)############
+ 00 07 * * 0   /usr/bin/perl    /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP  -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+ 
+ 
+ ######classsroom######
+   20 13 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -c 1007 -p TX  -P >> /www/logs/printing/tool_log 2>&1
+   20 13 * * 1-5  /usr/bin/perl     /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -c 1008 -p TX -P >> /www/logs/printing/tool_log 2>&1
+   20 13 * * 1-5  /usr/bin/perl   /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -c 1005 -p TX  -P >> /www/logs/printing/tool_log 2>&1
+   20 13 * * 1-5  /usr/bin/perl   /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -c 1009 -p TX  -P >> /www/logs/printing/tool_log 2>&1
+ 
+ ############ Classroom Duplicate printing ##########
+   55 13 * * 1-5   /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -R -s TX -c 1007 -p TX -P >> /www/logs/printing/tool_log 2>&1
+   55 13  * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -R -s TX -c 1005 -p TX -P >> /www/logs/printing/tool_log 2>&1
+   55 13 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -c 1009 -p TX -s TX -R  -P >> /www/logs/printing/tool_log 2>&1
+   55 13 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -c 1008 -p TX -s TX -R  -P >> /www/logs/printing/tool_log 2>&1
+ 
+  ###############Fleet###########
+   25 12,15 * * *   /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl  -K FLEET  >> /www/logs/printing/tool_log 2>&1
+ 
+  ############## AAAFLEET
+   27 15 * * *  /usr/bin/perl     /ids/tools/PRINTING/scripts/processCertificate.pl  -K AAAFLEET  >> /www/logs/printing/tool_log 2>&1
+ 
+  ######DSMS work book#############
+   30 14 * * 1-5   /usr/bin/perl /ids/tools/PRINTING/scripts/processDSMSWorkbooks.pl -K DSMS >> /www/logs/printing/tool_log 2>&1
+ 
+ ########AAA DIP certs##########
+   30 11,14 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K AAADIP  >> /www/logs/printing/tool_log 2>&1
+   30 08 * * 0  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K AAADIP -F >> /www/logs/printing/tool_log 2>&1
+   30 08 * * 6  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K AAADIP -F >> /www/logs/printing/tool_log 2>&1
+   50 13 * * 1-5 /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AAADIP -S -d PRINT >> /www/logs/printing/tool_log 2>&1
+   30 11 * * 0,6 /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AAADIP -S -d PRINT -F >> /www/logs/printing/tool_log 2>&1
+   #### Comemnted for RT 16058 50 13 * * 1-5 /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K AAADIP -S -d PRINT >> /www/logs/printing/tool_log 2>&1
+   00 01 * * *   /usr/bin/perl /ids/tools/PRINTING/scripts/processOklahomaCityCourt.pl -c 42004 -P >> /www/logs/printing/tool_log 2>&1
+ 
+ ####AARP Classroom Print jobs ##########
+ 00 09 * * 1-5 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP_CLASSROOM >> /www/logs/printing/tool_log 2>&1
+ ####AARP Classroom Duplicate Print jobs ###########
+ 15 06,09,11 * * 1-5 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP_CLASSROOM -R >> /www/logs/printing/tool_log 2>&1
+ ####AARP Classroom Duplicate Print jobs (at 3:30PM CST as requested by David) ###########
+ 30 13 * * 1-5 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K AARP_CLASSROOM -R >> /www/logs/printing/tool_log 2>&1
+ 
+ ####TEEN GA ####
+ 30 4,13 * * 1-5 /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -s GA >> /www/logs/printing/tool_log 2>&1
+ 
+ ####NEW IMPLEMANTION TO PRINT GA TEEN CERTS #####
+ 58 5 * * 2-5 /usr/bin/perl  /ids/tools/PRINTING/scripts/processPrintGACertifiate.pl -K TEEN -s GA >> /www/logs/printing/tool_log 2>&1
+ 15 14 * * 1-5 /usr/bin/perl  /ids/tools/PRINTING/scripts/processPrintGACertifiate.pl -K TEEN -s GA >> /www/logs/printing/tool_log 2>&1
+ 
+ ####NEW IMPLEMANTION TO PRINT GA TEEN CERTS ONLY ON MONDAY#####
+ 58 6 * * 1 /usr/bin/perl  /ids/tools/PRINTING/scripts/processPrintGACertifiate.pl -K TEEN -s GA >> /www/logs/printing/tool_log 2>&1
+ 
+ ####TEEN GA ####
+ 00 5,11 * * 6 /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -s GA -F >> /www/logs/printing/tool_log 2>&1
+ 
+ ####NEW IMPLEMANTION TO PRINT GA TEEN CERTS #####
+ 28 6,12 * * 6 /usr/bin/perl  /ids/tools/PRINTING/scripts/processPrintGACertifiate.pl -K TEEN -s GA >> /www/logs/printing/tool_log 2>&1
+ 
+ ####LA HArd COPY
+ 00 17 * * 2 /usr/bin/perl   /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -L  >> /www/logs/printing/tool_log 2>&1
+ 00 18 * * 2 /usr/bin/perl   /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME -L  >> /www/logs/printing/tool_log 2>&1
+ 
+ ####CA Evaluation HArd COPY
+ 00 17 * * 1 /usr/bin/perl   /ids/tools/PRINTING/scripts/processCaliforniaCourseEvaluation.pl -K DIP  >> /www/logs/printing/tool_log 2>&1
+ 
+ ##### LA FAXING
+ 15 * * * *  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -S -d FAX  >> /www/logs/printing/tool_log 2>&1
+ 45 * * * *  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME -S -d FAX >> /www/logs/printing/tool_log 2>&1
+ 
+ ##### ACCOMPANY LETTER
+ 00 19 * * *   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K DIP -A >> /www/logs/printing/tool_log 2>&1
+ 
+ ##### RETURN MAIL #############
+ 30 12 * * 1-5 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl  -K DIP -R -Q -s TX -P  >> /www/logs/printing/tool_log 2>&1
+ 00 10 * * 6 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl  -K DIP -R -Q -s TX -P -F  >> /www/logs/printing/tool_log 2>&1
+ 00 10 * * 0 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl  -K DIP -R -Q -s TX -P -F >> /www/logs/printing/tool_log 2>&1
+ 
+ 34 12 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K SS -R -Q -s TX >> /www/logs/printing/tool_log 2>&1
+ 04 10 * * 0  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K SS -R -Q -s TX  -F>> /www/logs/printing/tool_log 2>&1
+ 04 10 * * 6  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K SS -R -Q -s TX  -F>> /www/logs/printing/tool_log 2>&1
+ 
+ 37 12 * * 1-5 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K MATURE -R  >> /www/logs/printing/tool_log 2>&1
+ 30 14 * * 1-5 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K MATURE -R -Q -s CA  >> /www/logs/printing/tool_log 2>&1
+ 42 12 * * 1-5 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT -R -Q -s TX  >> /www/logs/printing/tool_log 2>&1
+ 
+ 06 10 * * 6 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K MATURE -R  -F >> /www/logs/printing/tool_log 2>&1
+ 08 10 * * 6 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K MATURE -R -Q -s CA -F >> /www/logs/printing/tool_log 2>&1
+ 12 10 * * 6 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT -R -Q -s TX -F >> /www/logs/printing/tool_log 2>&1
+ 
+ 06 10 * * 0 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K MATURE -R -F >> /www/logs/printing/tool_log 2>&1
+ 08 10 * * 0 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K MATURE -R -Q -s CA -F  >> /www/logs/printing/tool_log 2>&1
+ 11 10 * * 0 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K ADULT -R -Q -s TX -F  >> /www/logs/printing/tool_log 2>&1
+ 
+ 41 12 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -R -Q -s TX >> /www/logs/printing/tool_log 2>&1
+ 35 02 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -R -Q -s CA >> /www/logs/printing/tool_log 2>&1
+ 47 12 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -R >> /www/logs/printing/tool_log 2>&1
+ 
+ 14 10 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -R -Q -s TX -F>> /www/logs/printing/tool_log 2>&1
+ 17 10 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -R -Q -s CA -F>> /www/logs/printing/tool_log 2>&1
+ 21 10 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -R -F>> /www/logs/printing/tool_log 2>&1
+ 
+ 14 10 * * 0   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -R -Q -s TX -F >> /www/logs/printing/tool_log 2>&1
+ 17 10 * * 0  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -R -Q -s CA -F >> /www/logs/printing/tool_log 2>&1
+ 21 10 * * 0   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TEEN -R  -F>> /www/logs/printing/tool_log 2>&1
+ 
+ 51 12 * * 1-5   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R -s TX -Q -U TXOFFICE  >> /www/logs/printing/tool_log 2>&1
+ 24 10 * * 6   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R -s TX -Q -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+ 24 10 * * 0   /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K TAKEHOME  -R -s TX -Q -U TXOFFICE -F >> /www/logs/printing/tool_log 2>&1
+ 
+ 54 12 * * 1-5   /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl  -K FLEET -R >> /www/logs/printing/tool_log 2>&1
+ 27 10 * * 6   /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl  -K FLEET -R -F >> /www/logs/printing/tool_log 2>&1
+ 27 10 * * 0   /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl  -K FLEET -R -F >> /www/logs/printing/tool_log 2>&1
+ 
+ 57 12 * * 1-5  /usr/bin/perl     /ids/tools/PRINTING/scripts/processCertificate.pl  -K AAAFLEET -R >> /www/logs/printing/tool_log 2>&1
+ 31 10 * * 6   /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl  -K AAAFLEET -R -F >> /www/logs/printing/tool_log 2>&1
+ 31 10 * * 0   /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl  -K AAAFLEET -R -F >> /www/logs/printing/tool_log 2>&1
+ 
+ 59 12 * * 1-5   /usr/bin/perl /ids/tools/PRINTING/scripts/processDSMSWorkbooks.pl -K DSMS -R >> /www/logs/printing/tool_log 2>&1
+ 34 10 * * 6   /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl  -K DSMS -R -F >> /www/logs/printing/tool_log 2>&1
+ 34 10 * * 0   /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl  -K DSMS -R -F >> /www/logs/printing/tool_log 2>&1
+ 
+ 03 13 * * 1-5   /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -R -s TX -c 1007 -p TX -Q -P >> /www/logs/printing/tool_log 2>&1
+ 04 13  * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -R -s TX -c 1005 -p TX -Q -P >> /www/logs/printing/tool_log 2>&1
+ 06 13 * * 1-5  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -c 1009 -p TX -s TX -R -Q -P >> /www/logs/printing/tool_log 2>&1
+ 08 13 * * 1-5  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -c 1008 -p TX -s TX -R -Q -P >> /www/logs/printing/tool_log 2>&1
+ 
+ 36 10 * * 6  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -R -s TX -c 1007 -p TX -Q -P -F >> /www/logs/printing/tool_log 2>&1
+ 37 10  * * 6  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -R -s TX -c 1005 -p TX -Q -P -F >> /www/logs/printing/tool_log 2>&1
+ 38 10 * * 6  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -c 1009 -p TX -s TX -R -Q -P -F >> /www/logs/printing/tool_log 2>&1
+ 39 10 * * 6  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -c 1008 -p TX -s TX -R -Q -P -F >> /www/logs/printing/tool_log 2>&1
+ 
+ 36 10 * * 0  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -R -s TX -c 1007 -p TX -Q -P -F >> /www/logs/printing/tool_log 2>&1
+ 37 10  * * 0  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -R -s TX -c 1005 -p TX -Q -P -F >> /www/logs/printing/tool_log 2>&1
+ 38 10 * * 0  /usr/bin/perl  /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -c 1009 -p TX -s TX -R -Q -P -F >> /www/logs/printing/tool_log 2>&1
+ 39 10 * * 0  /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K CLASSROOM -c 1008 -p TX -s TX -R -Q -P -F >> /www/logs/printing/tool_log 2>&1
+
+ ####### AAA_SENIORS jobs ############
+
+  30 11,14 * * 1-5 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K AAA_SENIORS >> /www/logs/printing/tool_log 2>&1
+  00 15 * * 1-5 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K AAA_SENIORS -U CAOFFICE >> /www/logs/printing/tool_log 2>&1
+
+  42 12 * * 1-5 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K AAA_SENIORS -R >> /www/logs/printing/tool_log 2>&1
+  34 14 * * 1-5 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K AAA_SENIORS -R -U CAOFFICE >> /www/logs/printing/tool_log 2>&1
+
+  11 10 * * 1-5 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K AAA_SENIORS -R >> /www/logs/printing/tool_log 2>&1
+  15 10 * * 1-5 /usr/bin/perl /ids/tools/PRINTING/scripts/processCertificate.pl -K AAA_SENIORS -R -U CAOFFICE >> /www/logs/printing/tool_log 2>&1

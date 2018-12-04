@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>Nevada Report</title>
+<style type="text/css" media="screen">
+        @import url("http://crm.idrivesafely.com//themes/sitethemes/css/CRM_styles.css");
+    </style>
+
+</head>
+<body>
+
+<table width ="60%">
+<tr><td>&nbsp;</td><td>
+
+<table width ="100%">
+<tr>
+		<td>&nbsp;</td>
+</tr>
+<tr>
+	<td colspan=2 align="left">
+       <img width=103 height=88 src="http://crm.idrivesafely.com//themes/sitethemes/images/Missouri_IDS_logo.gif" v:shapes="_x0000_i1025">
+       Corporate Office</br>
+      283 4th st Unit 301</br>
+       <p>Oakland, CA 94607</br>
+  </td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+</tr>
+
+								<tr>
+									<td><TMPL_VAR NAME=REPORT_DATE></td>
+								</tr>
+<tr>
+	<td align='right'>&nbsp;</td>
+</tr>
+</table>
+<table width ="100%">
+<tr>
+       <td>
+       <table <table width='500'>>
+                <tr> 
+		 								<td class="DetailView_Text">Student Name:</td>	
+		 								<td class="DetailView_Text"><TMPL_VAR NAME=STUDENT_NAME></td>
+								</tr>
+		  					<tr>
+		  							<td class="DetailView_Text">Student Address:</td>
+		  							<td class="DetailView_Text"><TMPL_VAR NAME=ADDRESS></td>
+                </tr>
+                  <tr>
+                  <td class="DetailView_Text">Drivers License #:</td>
+                  <td class="DetailView_Text"><TMPL_VAR NAME=DRIVERS_LICENSE></td>
+                </tr>
+		  					<tr>
+		  							<td class="DetailView_Text">Date of Birth:</td>
+		  							<td class="DetailView_Text"><TMPL_VAR NAME=DATE_OF_BIRTH></td>
+                </tr>
+                  <tr>
+                  <td class="DetailView_Text">Date of Completion:</td>
+                  <td class="DetailView_Text"><TMPL_VAR NAME=COMPLETION_DATE></td>
+                </tr>
+                  <tr>
+                  <td class="DetailView_Text">Test Score:</td>
+                  <td class="DetailView_Text"><TMPL_VAR NAME=TEST_SCORE></td>
+                </tr>
+                  <tr>
+                  <td class="DetailView_Text">Pending traffic Violations at time of enrollment:</td>
+                  <td class="DetailView_Text"><TMPL_VAR NAME=I_HAVE_TRAFFIC_VIOLATIONS_PENDING_DURING_MY_ENROLLMENT_IN_THIS_COURSE></td>
+                </tr>
+		  					<tr>
+		  							<td class="DetailView_Text">Completing course for ticket dismissal/violation:</td>
+		  							<td class="DetailView_Text"><TMPL_VAR NAME=THE_COURT_IS_REDUCING_OR_DISMISSING_MY_TICKET_UPON_COMPLETION_OF_TRAFFIC_SCHOOL></td>
+                </tr>
+		  					<tr>
+		  							<td class="DetailView_Text">Attending a course within the past 12 months:</td>
+		  							<td class="DetailView_Text"><TMPL_VAR NAME=I_HAVE_COMPLETED_A_TRAFFIC_SAFETY_COURSE_FOR_CREDIT_WITHIN_THE_PAST_12_MONTH_PERIOD></td>
+                </tr>
+
+<tr>
+                                                                        <td class="DetailView_Text">Number of traffic violations in past 12 months: </td>
+                                                                        <td class="DetailView_Text"><TMPL_VAR NAME=NUMBER_OF_TRAFFIC_VIOLATIONS_IN_THE_PAST_12_MONTHS_(EXCLUDING_CURRENT_VIOLATION)></td>
+                </tr>
+
+
+	</table>
+	</td>
+</tr>
+</table>
+
+</body>
+</html>

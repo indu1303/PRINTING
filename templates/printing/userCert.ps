@@ -1,0 +1,189 @@
+%!PS-Adobe-3.0
+% The Fax itself info
+/Helvetica findfont 14 scalefont setfont
+newpath
+35 720 moveto (ATTENTION: [!IDS::ATTENTION!]) show
+35 690 moveto (FAX NUMBER: [!IDS::FAXNUMBER!]) show
+35 660 moveto (NUMBER OF PAGES: 1) show
+35 630 moveto (FROM: I DRIVE SAFELY) show
+35 600 moveto (PHONE: 760.744.3070) show
+closepath
+
+% The rectangular box
+newpath
+30 515 moveto 30 285 lineto 570 285 lineto 570 515 lineto
+closepath
+stroke
+
+% The SEAL begin,
+% Seal outer cirlce
+newpath 225 405 36 0 360 arc closepath stroke
+
+% Seal inner circle
+newpath 225 405 26 0 360 arc closepath stroke
+
+% The circle shade
+newpath 225 405 36 0 360 arc closepath .8 setgray fill
+
+% Repaint the white area inside the seal
+newpath 225 405 26 0 360 arc closepath 1 setgray fill
+
+% Seal stars rising
+gsave
+.8 setgray
+/smallstar
+  { 0 22 moveto -2 16 lineto 3 20 lineto -3 20 lineto 2 16 lineto
+    closepath fill
+    } def
+
+/starside
+  { 0 26 moveto 0 2 lineto 36 rotate 0 9 lineto  closepath fill
+    smallstar
+    -36 rotate
+    } def
+
+225 405 translate
+
+5{starside 72 rotate} repeat
+
+grestore
+
+0 setgray
+/Bold findfont 7 scalefont setfont
+newpath
+205 408 moveto (Certificate of) show
+206 398 moveto (Completion) show
+closepath
+
+% Seal end
+
+/Helvetica findfont 8 scalefont setfont
+newpath
+58 505 moveto ([!IDS::TITLE!]) show
+closepath
+
+/Helvetica findfont 12 scalefont setfont
+newpath
+50 488 moveto (I DRIVE SAFELY) show
+400 488 moveto (No: [!IDS::CERTNUMBER!])show
+closepath
+
+/Helvetica findfont 10 scalefont setfont
+newpath 50 476 moveto (283 4th st Unit 301) show
+50 464 moveto (Oakland, CA 94607) show
+50 452 moveto (www.idriveSafely.com) show
+50 440 moveto (800-723-1955) show
+closepath
+
+/Helvetica findfont 9 scalefont setfont
+newpath 50 334 moveto ([!IDS::FIRST_NAME!] [!IDS::LAST_NAME!])show
+50 322 moveto ([!IDS::ADDRESS!] )show
+50 310 moveto ([!IDS::CITY!] [!IDS::STATE!] [!IDS::ZIP!])show
+closepath
+
+% User Course Data
+
+% The signature
+/Helvetica findfont 5 scalefont setfont
+newpath
+[!IDS::CERT_MSG!]
+310 318 moveto (By:) show
+closepath
+/Helvetica findfont
+6 scalefont setfont newpath
+318 318 moveto (Rick Hernandez) show
+310 310 moveto (Authorized Signature of I DRIVE SAFELY  ) show
+closepath
+
+/Helvetica findfont 8 scalefont setfont
+newpath
+[!IDS::COURSE_DATA!]
+closepath
+
+stroke
+%%% String on a circle
+/outsidecircletext
+{ circtextdict begin
+/radius exch def
+/centerangle exch def
+/ptsize exch def
+/str exch def
+/xradius radius ptsize 4 div add def
+
+gsave
+centerangle str findhalfangle add rotate
+
+str
+{ /charcode exch def
+( ) dup 0 charcode put outsideplacechar
+} forall
+grestore
+end
+} def
+
+/insidecircletext
+{ circtextdict begin
+/radius exch def /centerangle exch def
+/ptsize exch def /str exch def
+
+/xradius radius ptsize 3 div sub def
+gsave
+centerangle str findhalfangle sub rotate
+str
+{ /charcode exch def
+( ) dup 0 charcode put insideplacechar
+} forall
+grestore
+end
+
+} def
+
+/circtextdict 16 dict def
+circtextdict begin
+/findhalfangle
+{ stringwidth pop 2 div
+2 xradius mul pi mul div 360 mul
+} def
+
+/outsideplacechar
+{ /char exch def
+/halfangle char findhalfangle def
+gsave
+
+halfangle neg rotate
+radius 0 translate
+
+-90 rotate
+char stringwidth pop 2 div neg 0 moveto
+char show
+grestore
+halfangle 2 mul neg rotate
+} def
+
+/insideplacechar
+{ /char exch def
+/halfangle char findhalfangle def
+gsave
+halfangle rotate
+radius 0 translate
+90 rotate
+
+char stringwidth pop 2 div neg 0 moveto
+char show
+grestore
+halfangle 2 mul rotate
+} def
+/pi 3.1415923 def
+end
+
+.4 setgray
+/Bold findfont 7 scalefont setfont
+225 405 translate
+(I DRIVE SAFELY)
+% usage radius angle ptsize outsidecircletext
+28 90 28 outsidecircletext
+/Bold findfont 5 scalefont setfont
+(ONLINE TRAFFIC SAFETY EDUCATION)
+33 270 33 insidecircletext
+showpage
+

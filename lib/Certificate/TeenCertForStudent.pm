@@ -221,8 +221,7 @@ sub _generateCertificate
 sub constructor
 {
 	my $self = shift;
-	my ($userId,$top,$bottom,$faxEmail, $courseState)=@_;
-	my ($userId,$top,$bottom,$faxEmail, $residentState, $countyId, $productId, $pocMail, $pocEmail)=@_;
+	my ($userId,$top,$bottom,$faxEmail, $residentState, $countyId, $productId, $pocMail, $pocEmail, $courseState)=@_;
 	###### let's create our certificate pdf object
 	$self->{PDF} = Certificate::PDF->new($userId,'','','','','',612,792);
 	my $certImage = "CertificateForStudent.jpg";
@@ -231,6 +230,9 @@ sub constructor
 	} elsif($pocEmail) {
 		 $certImage = "CertificateForStudentBG.jpg";
 	}
+        if($courseState && $courseState eq 'FL') {
+                $certImage = "CertificateForStudent_Celia.jpg";
+        }
 	$self->{PDF}->genImage($self->{SETTINGS}->{TEMPLATESPATH}."/printing/images/$certImage",
                          0, 0, 612, 792,1275,1650);
 	return $self;

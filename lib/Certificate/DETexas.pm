@@ -46,7 +46,7 @@ sub _generateCertificate {
 
 	###### default case
 	my $classroom = 'C2548';
-	my $instructor = 'Dr. Michael Black (6541)';
+	my $instructor = 'Renteria, Rebecca (7948)';
 	my $reasonForAttendance = "Traffic Citation";
 	my $headerRef = 'REGULAR';
 	my $courseProvider = '';
@@ -73,7 +73,7 @@ sub _generateCertificate {
 			if ($reprintData && $reprintData->{CERTIFICATE_NUMBER}) {
 				$reprintData->{CERTIFICATE_NUMBER} = "CP548-" . $reprintData->{CERTIFICATE_NUMBER};
 			}
-			$courseProvider = 'CP548-C2548';
+			$courseProvider = 'CP548 - DriversEd.com';
 		}
 	}
 

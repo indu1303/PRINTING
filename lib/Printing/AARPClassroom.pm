@@ -248,16 +248,16 @@ sub getUserData
 
 #    my $retval;
     my $sql         = $self->{PRODUCT_CON}->prepare(<<"EOM");
-		SELECT UI.USER_ID, UI.DRIVERS_LICENSE, UI.COURSE_ID,
+		SELECT UI.USER_ID, sf_decrypt(UI.DRIVERS_LICENSE) as DRIVERS_LICENSE, UI.COURSE_ID,
                 date_format(UI.COMPLETION_DATE,'%m/%d/%Y') AS COMPLETION_DATE,
                 date_format(UI.PRINT_DATE,'%m/%d/%Y') AS PRINT_DATE, UI.CERTIFICATE_NUMBER, 
                 date_format(date_sub(UI.PRINT_DATE,interval -2 year),'%m/%d/%Y') as EXPIRATION_DATE, date_format(date_sub(NOW(),interval -2 year),'%m/%d/%Y') as EXPIRATION_DATE2,
-                UPPER(UI.FIRST_NAME) as FIRST_NAME, UPPER(UI.LAST_NAME) as LAST_NAME, UI.ADDRESS1 as ADDRESS_1, UI.ADDRESS2 as ADDRESS_2, 
-                UI.CITY, UI.STATE, UI.ZIP, UI.EMAIL,UI.SEX,
+                UPPER(sf_decrypt(UI.FIRST_NAME)) as FIRST_NAME, UPPER(sf_decrypt(UI.LAST_NAME)) as LAST_NAME, sf_decrypt(UI.ADDRESS1) as ADDRESS_1, sf_decrypt(UI.ADDRESS2) as ADDRESS_2, 
+                sf_decrypt(UI.CITY) as CITY, sf_decrypt(UI.STATE) as STATE, sf_decrypt(UI.ZIP) as ZIP, UI.EMAIL,UI.SEX,
                 UD.DELIVERY_ID,
                 C.STATE AS COURSE_STATE,C.SHORT_DESC,D.DEFINITION AS DELIVERY_DEF,
                 UL.LOCK_DATE,round(UI.PRINT_DATE) as CERT_PRINT_DATE,
-                date_format(UI.DATE_OF_BIRTH,'%m/%d/%Y') AS DATE_OF_BIRTH,UI.PHONE, UI.INSTRUCTOR_NAME AS INSTRUCTOR_NAME
+                date_format(sf_decrypt(UI.DATE_OF_BIRTH),'%m/%d/%Y') AS DATE_OF_BIRTH,UI.PHONE, UI.INSTRUCTOR_NAME AS INSTRUCTOR_NAME
                 FROM
                 ((((user_info UI left outer join user_delivery UD on UI.USER_ID=UD.USER_ID) left outer join course C on UI.COURSE_ID=C.COURSE_ID)  left outer join user_lockout UL on UI.USER_ID=UL.USER_ID) left outer join delivery D on  UD.DELIVERY_ID=D.DELIVERY_ID)  WHERE UI.USER_ID = ? 
 EOM
@@ -525,9 +525,9 @@ sub getUserCitation{
     my $self=shift;
     my($userId, $param) = @_;
     if(defined $param){
-                return  $self->{PRODUCT_CON}->selectrow_array('SELECT VALUE FROM user_citation WHERE USER_ID = ? AND PARAM = ?', {}, $userId, $param);
+                return  $self->{PRODUCT_CON}->selectrow_array('SELECT sf_decrypt(VALUE) as VALUE FROM user_citation WHERE USER_ID = ? AND PARAM = ?', {}, $userId, $param);
     } else {
-                my $sth =  $self->{PRODUCT_CON}->prepare('SELECT PARAM, VALUE FROM user_citation WHERE USER_ID = ?');
+                my $sth =  $self->{PRODUCT_CON}->prepare('SELECT PARAM, sf_decrypt(VALUE) as VALUE FROM user_citation WHERE USER_ID = ?');
                 $sth->execute($userId);
                 my(%tmpHash, $key, $v1);
                 while(my @tmpArr = $sth->fetchrow_array){
@@ -652,7 +652,7 @@ sub getUserCertDuplicateData
         }
 
         ##### Now, get the data entries from user_cert_duplicate_data
-        $sth = $self->{PRODUCT_CON}->prepare("select param, value from user_cert_duplicate_data where duplicate_id = ?");
+        $sth = $self->{PRODUCT_CON}->prepare("select param, sf_decrypt(value) as value from user_cert_duplicate_data where duplicate_id = ?");
         $sth->execute($duplicateId);
 
         while (my ($v1, $v2) = $sth->fetchrow)
@@ -675,12 +675,12 @@ sub getUserCertDuplicateData
                 my $lastDuplicateId=$retval->{DATA}->{LAST_DUPLICATE_ID};
                 $duplicateId=$lastDuplicateId;
                 while($lastDuplicateId){
-                        $lastDuplicateId=$self->{PRODUCT_CON}->selectrow_array("select  value from user_cert_duplicate_data where duplicate_id = ? and param = ?",{},$duplicateId,'LAST_DUPLICATE_ID');
+                        $lastDuplicateId=$self->{PRODUCT_CON}->selectrow_array("select  sf_decrypt(value) as value from user_cert_duplicate_data where duplicate_id = ? and param = ?",{},$duplicateId,'LAST_DUPLICATE_ID');
                         if($lastDuplicateId){
                                 $duplicateId=$lastDuplicateId;
                         }
                 }
-                $sth = $self->{PRODUCT_CON}->prepare("select param, value from user_cert_duplicate_data where duplicate_id = ?");
+                $sth = $self->{PRODUCT_CON}->prepare("select param, sf_decrypt(value) as value from user_cert_duplicate_data where duplicate_id = ?");
                 $sth->execute($duplicateId);
 
                 while (my ($v1, $v2) = $sth->fetchrow)
@@ -709,7 +709,7 @@ sub getUserCertDuplicateData
     if ($oldDupId)
     {
         ##### ok, old data exists for him.  Get all of it from the duplicate table and place it in the return hash
-        $sth = $self->{PRODUCT_CON}->prepare("select param, value from user_cert_duplicate_data where duplicate_id = ?");
+        $sth = $self->{PRODUCT_CON}->prepare("select param, sf_decrypt(value) as value from user_cert_duplicate_data where duplicate_id = ?");
         $sth->execute($oldDupId);
 
         while (my ($v1, $v2) = $sth->fetchrow)
@@ -741,7 +741,7 @@ sub getUserCertDuplicateData
 sub getUserInfo{
     my $self=shift;
     my($userId) = @_;
-    my $sth =  $self->{PRODUCT_CON}->prepare('SELECT USER_ID,DRIVERS_LICENSE,COURSE_ID,COMPLETION_DATE,PRINT_DATE,CERTIFICATE_NUMBER from user_info ui where ui.user_id = ?');
+    my $sth =  $self->{PRODUCT_CON}->prepare('SELECT USER_ID,sf_decrypt(DRIVERS_LICENSE) as DRIVERS_LICENSE,COURSE_ID,COMPLETION_DATE,PRINT_DATE,CERTIFICATE_NUMBER from user_info ui where ui.user_id = ?');
     $sth->execute($userId);
     my $tmpHash = $sth->fetchrow_hashref;
     $sth->finish;
@@ -754,7 +754,7 @@ sub getUserContact
     my ($userId)    = @_;
 
     my $sql         = $self->{PRODUCT_CON}->prepare(<<"EOM");
-SELECT USER_ID,PHONE,EMAIL,ADDRESS1,ADDRESS2,CITY,STATE,ZIP,FIRST_NAME,LAST_NAME,SEX,DATE_FORMAT(DATE_OF_BIRTH,'%m/%d/%Y') AS DATE_OF_BIRTH FROM user_info WHERE USER_ID = ?
+SELECT USER_ID,PHONE,EMAIL,sf_decrypt(ADDRESS1) as ADDRESS1,sf_decrypt(ADDRESS2) as ADDRESS2,sf_decrypt(CITY) as CITY,sf_decrypt(STATE) as STATE,sf_decrypt(ZIP) as ZIP,sf_decrypt(FIRST_NAME) as FIRST_NAME,sf_decrypt(LAST_NAME) as LAST_NAME,SEX,DATE_FORMAT(sf_decrypt(DATE_OF_BIRTH),'%m/%d/%Y') AS DATE_OF_BIRTH FROM user_info WHERE USER_ID = ?
 EOM
 
     $sql->execute($userId);

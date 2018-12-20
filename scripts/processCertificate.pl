@@ -750,7 +750,7 @@ for my $key(keys %$users)
 		}
             	next;
 	}
-	if(exists $self->{TEXASPRINTING}->{$self->{PRODUCT}}->{$courseId} && $userData->{DELIVERY_ID}  && $userData->{DELIVERY_ID} eq '26')
+	if(exists $self->{TEXASPRINTING}->{$self->{PRODUCT}}->{$courseId} && $userData->{DELIVERY_ID}  && ($userData->{DELIVERY_ID} eq '26' || $userData->{DELIVERY_ID} eq '27'))
         {
                 ###### the user has not completed the notary requirement
                 if ($showError)
